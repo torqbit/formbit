@@ -14,7 +14,7 @@ import Logo from '~/svg/Logo.svg';
 import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import Brands from '@/components/Brands/Brands';
-import Works from '@/components/Works/Works';
+import Create from '@/components/Create/Create';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -30,7 +30,7 @@ export default function HomePage() {
         <Header />
         <Hero />
         <Brands />
-        <Works />
+        <Create />
       </section>
     </main>
   );
