@@ -12,7 +12,7 @@ const Pricing = () => {
         <h1 className=' py-4 text-center text-6xl font-[600] '>
           All features for one price. Try <br /> Formbit for free!
         </h1>
-        <div className='boxPrice grid w-[900px] grid-cols-4 gap-10 rounded-[15px] bg-black p-16'>
+        <div className='boxPrice flex w-[900px] justify-between  gap-x-10 rounded-[15px] bg-black p-16'>
           {packages.map((items, i) => {
             return (
               <div key={i} className='flex flex-col gap-8'>
@@ -30,7 +30,7 @@ const Pricing = () => {
               </div>
             );
           })}
-          <div></div>
+          <div className='priceDivider w-[20px] skew-x-[-10deg] bg-black bg-[length:10px_7px] bg-repeat  '></div>
           <div>
             <div className='flex items-center '>
               <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
