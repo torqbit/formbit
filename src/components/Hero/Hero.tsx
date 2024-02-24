@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Hero = () => {
   return (
-    <section className='py-20'>
-      <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center'>
+    <section className='  py-20'>
+      <div className=' relative z-10 mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center'>
         <h1 className=' py-4 text-center text-6xl font-[600] leading-tight'>
           Form that capture <br /> the world&apos;s attentions.{' '}
         </h1>
@@ -18,7 +18,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className='my-20 h-[500px] w-[1000px] rounded bg-white'>
+        <div className='boxHero my-20 h-[500px] w-[1000px] rounded bg-white'>
           <img src='/images/hero-image.png' alt='' />
         </div>
       </div>

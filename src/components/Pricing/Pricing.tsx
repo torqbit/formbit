@@ -7,12 +7,12 @@ const Pricing = () => {
     ['Custom domain', 'API access', 'Bulk importer'],
   ];
   return (
-    <section className='bg-gray-50 py-20' id='price'>
+    <section className='relative z-10 bg-gray-50 py-20' id='price'>
       <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center gap-10'>
         <h1 className=' py-4 text-center text-6xl font-[600] '>
           All features for one price. Try <br /> Formbit for free!
         </h1>
-        <div className='grid w-[900px] grid-cols-4 gap-10 rounded-[15px] bg-black p-16'>
+        <div className='boxPrice grid w-[900px] grid-cols-4 gap-10 rounded-[15px] bg-black p-16'>
           {packages.map((items, i) => {
             return (
               <div key={i} className='flex flex-col gap-8'>

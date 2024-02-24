@@ -119,3 +119,124 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+
+.create:before,
+.sign::before,
+.publish::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+
+  bottom: 0;
+  background: linear-gradient(-45deg, #f2b5d4 0%, #7bdff2 100%);
+  transform: translate3d(0px, 40px, 0) scale(0.92);
+
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.create:before {
+  right: 390px;
+  left: 390px;
+}
+.sign:before {
+  right: 800px;
+  left: -20px;
+}
+.publish:before {
+  right: -20px;
+  left: 800px;
+}
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  border-radius: inherit;
+}
+
+.footerBOx::after,
+.boxPrice::after,
+.boxHero::after,
+.sign::after,
+.create::after,
+.publish::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  border-radius: inherit;
+}
+
+.footerBOx::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 30px;
+  right: -40px;
+  bottom: 120px;
+  left: 760px;
+  background: linear-gradient(-45deg, #f2b5d4 0%, #7bdff2 100%);
+  transform: translate3d(0px, 25px, 0) scale(0.92);
+
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.boxPrice::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 220px;
+  right: 220px;
+  bottom: 70px;
+  left: 230px;
+  background: linear-gradient(-45deg, #f2b5d4 0%, #7bdff2 100%);
+  transform: translate3d(0px, 25px, 0) scale(0.89);
+
+  filter: blur(20px);
+  opacity: var(0.2);
+  transition: opacity 0.6s;
+  border-radius: inherit;
+}
+
+.boxHero::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 360px;
+  right: 55px;
+  bottom: 80px;
+  left: 55px;
+  background: linear-gradient(-45deg, #f2b5d4 0%, #7bdff2 100%);
+  transform: translate3d(0px, 40px, 0) scale(0.92);
+
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}

@@ -85,7 +85,7 @@ const Footer = () => {
             BIT
           </div>
         </div>
-        <div className='flex items-start justify-between border-b-2 border-gray-400 border-opacity-25 pb-8'>
+        <div className='relative z-40 flex items-start justify-between border-b-2 border-gray-400 border-opacity-25 pb-8'>
           {options.map((opt, i) => {
             return (
               <ul key={i}>
@@ -108,11 +108,11 @@ const Footer = () => {
               </ul>
             );
           })}
-          <div>
+          <div className=''>
             <div className='pb-4 text-xl font-[600] text-gray-700'>
               SUBSCRIBE TO NEWSLETTER
             </div>
-            <div className='flex  items-center justify-start py-6 '>
+            <div className='footerBOx  flex items-center justify-start py-6 '>
               <input
                 type='text'
                 placeholder='Enter email address'
