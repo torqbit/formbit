@@ -9,18 +9,18 @@ const Header = () => {
               BIT
             </div>
           </a>
-          <a href='' className='text-[18px] font-[500] text-gray-700'>
+          <a href='' className='text-[18px] font-[500] text-gray-400'>
             Product
           </a>
-          <a href='' className='text-[18px] font-[500]  text-gray-700'>
+          <a href='' className='text-[18px] font-[500]  text-gray-400'>
             Solutions
           </a>
-          <a href='' className='text-[18px] font-[500]  text-gray-700'>
+          <a href='' className='text-[18px] font-[500]  text-gray-400'>
             Pricing
           </a>
         </div>
         <div className='flex items-center gap-5'>
-          <a href='' className='text-[18px] font-[500]  text-gray-700'>
+          <a href='' className='text-[18px] font-[500]  text-gray-600'>
             Customer Login
           </a>
           <button className='flex h-[35px] w-[100px] items-center justify-center rounded-lg  bg-black   text-center font-[500] text-white shadow-lg'>
