@@ -23,7 +23,7 @@ const Header = () => {
           <a href='' className='text-[18px] font-[500]  text-gray-700'>
             Customer Login
           </a>
-          <button className='flex h-[30px] w-[100px] items-center justify-center  rounded-lg bg-black py-1 text-center font-[500] text-white shadow-lg'>
+          <button className='flex h-[35px] w-[100px] items-center justify-center rounded-lg  bg-black   text-center font-[500] text-white shadow-lg'>
             Sign up
           </button>
         </div>
