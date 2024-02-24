@@ -3,12 +3,15 @@ const Create = () => {
     {
       img: '/images/create.png',
       title: 'Create, publish and manage multiple forms',
+      logo: '/images/edit.svg',
       description:
         'With workspaces, you get to manage diverse set of applications for different departments in your organisation.',
     },
     {
       img: '/images/create.png',
       title: 'Create forms with different themes',
+      logo: '/images/templates.svg',
+
       description: `You can create forms with different themes to make it's look and feel match your brand, giving your unsers an amazing experience.`,
     },
   ];
@@ -41,11 +44,7 @@ const Create = () => {
             return (
               <div key={i} className='w-[520px]  rounded bg-gray-200 pt-10'>
                 <div className='px-16 '>
-                  <img
-                    src='/images/edit.svg'
-                    alt=''
-                    className='mb-4 h-10 w-10'
-                  />
+                  <img src={option.logo} alt='' className='mb-4 h-10 w-10' />
                   <h4 className='py-4'>{option.title}</h4>
                   <p className='max-w-[400px] pb-4 font-[600] text-gray-700'>
                     {option.description}

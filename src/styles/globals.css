@@ -40,6 +40,9 @@
       U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
       U+2215, U+FEFF, U+FFFD;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
@@ -115,32 +118,4 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
-}
-
-.gradient-box-shadow {
-  position: relative;
-}
-
-.gradient-box-shadow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(214, 229, 250, 1) 0%,
-    rgba(253, 211, 237, 1) 55%,
-    rgba(251, 211, 219, 1) 87%
-  );
-  z-index: -1;
-  opacity: 0.5; /* Adjust the opacity as needed */
-  box-shadow: 0 0 20px
-    linear-gradient(
-      90deg,
-      rgba(214, 229, 250, 1) 0%,
-      rgba(253, 211, 237, 1) 55%,
-      rgba(251, 211, 219, 1) 87%
-    ); /* Box shadow */
 }

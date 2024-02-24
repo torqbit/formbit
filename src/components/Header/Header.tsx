@@ -15,7 +15,7 @@ const Header = () => {
           <a href='' className='text-[18px] font-[500]  text-gray-400'>
             Solutions
           </a>
-          <a href='' className='text-[18px] font-[500]  text-gray-400'>
+          <a href='#price' className='text-[18px] font-[500]  text-gray-400'>
             Pricing
           </a>
         </div>

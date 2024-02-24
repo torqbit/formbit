@@ -15,6 +15,9 @@ import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import Brands from '@/components/Brands/Brands';
 import Create from '@/components/Create/Create';
+import Steps from '@/components/Steps/Steps';
+import Pricing from '@/components/Pricing/Pricing';
+import Footer from '@/components/Footer/Footer';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -30,7 +33,10 @@ export default function HomePage() {
         <Header />
         <Hero />
         <Brands />
+        <Steps />
         <Create />
+        <Pricing />
+        <Footer />
       </section>
     </main>
   );
