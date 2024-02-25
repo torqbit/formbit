@@ -1,6 +1,3 @@
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 const Hero = () => {
   return (
     <section className=' h-full  py-20'>

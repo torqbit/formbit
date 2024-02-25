@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
-const Header = () => {
-  const [open, setOpen] = useState<boolean>(false);
+const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
+  open,
+  setOpen,
+}) => {
   return (
     <header className='  h-[60px]  bg-white py-3'>
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] px-4 '>
@@ -84,11 +86,11 @@ const Header = () => {
             ></div>
           </div>
           <div
-            className={`absolute bottom-0 left-0 transition-all delay-100 ease-linear
+            className={`top-60px fixed bottom-0 left-0 top-0 z-[200] min-h-screen w-[300px]  transition-all delay-100 ease-linear
           ${open ? `translate-x-[0px]` : `-translate-x-[100%]`}
-          right-[145px] z-40 h-full bg-black shadow-slate-600`}
+      bg-black shadow-slate-600`}
           >
-            <div className=' flex h-[60px] w-full items-center justify-start   bg-white  px-4'>
+            <div className=' flex h-[60px] w-full items-center justify-start   bg-gray-100  px-4'>
               <a
                 href='#'
                 className='flex items-center gap-1 text-lg font-[600] '
@@ -100,13 +102,25 @@ const Header = () => {
               </a>
             </div>
             <div className='flex flex-col items-start justify-center gap-8 px-4 py-8'>
-              <a href='#' className='text-xl font-[600]  text-white'>
+              <a
+                href='#'
+                className='text-xl font-[600]  text-white'
+                onClick={() => setOpen(false)}
+              >
                 Product
               </a>
-              <a href='#' className='text-xl font-[600]  text-white'>
+              <a
+                href='#'
+                className='text-xl font-[600]  text-white'
+                onClick={() => setOpen(false)}
+              >
                 Solutions
               </a>
-              <a href='#' className='text-xl font-[600]  text-white'>
+              <a
+                href='#price'
+                className='text-xl font-[600]  text-white'
+                onClick={() => setOpen(false)}
+              >
                 Pricing
               </a>
             </div>

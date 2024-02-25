@@ -195,7 +195,7 @@ const Footer = () => {
             </div>
             <div className='relative z-10 -mt-[70px] mb-2 h-[50px] w-full rounded-lg  bg-gradient-to-r  from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-75 blur  md:w-[320px] lg:-mt-[80px] lg:h-[55px] lg:w-[400px]  '></div>
 
-            <div className='flex w-full items-center justify-between gap-2 md:w-[250px] lg:w-full lg:gap-0 '>
+            <div className='flex w-full items-center justify-between gap-2 pt-2 md:w-[250px] lg:w-full lg:gap-0 '>
               <div className='font-[600] lg:text-[18px]'>
                 <div className='text-gray-800'>CALL US</div>
                 <a
