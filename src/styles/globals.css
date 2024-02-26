@@ -119,3 +119,7 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+.priceDivider {
+  background-image: linear-gradient(180deg, transparent 50%, #1f2937b0 50%);
+}

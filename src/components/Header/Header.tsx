@@ -124,6 +124,17 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
                 Pricing
               </a>
             </div>
+            <div className='relative top-[300px] z-40 flex flex-col items-center justify-center gap-5 px-4'>
+              <a
+                href=''
+                className='flex h-[40px] w-full items-center justify-center rounded-lg bg-white text-[18px]  font-[500] text-black '
+              >
+                Customer Login
+              </a>
+              <button className='flex h-[40px] w-full items-center justify-center rounded-lg    bg-white text-center  text-lg font-[500] text-black shadow-lg'>
+                Sign up
+              </button>
+            </div>
           </div>
         </div>
       </div>

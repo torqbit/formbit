@@ -17,7 +17,7 @@ const Pricing = () => {
             return (
               <div
                 key={i}
-                className='grid grid-cols-3 items-center justify-center gap-8 sm:flex  sm:flex-col sm:gap-8'
+                className='grid grid-cols-3 items-center justify-center gap-8 sm:flex sm:flex-col  sm:gap-8 lg:items-start'
               >
                 {items.map((item, i) => {
                   return (
@@ -36,18 +36,20 @@ const Pricing = () => {
           <div className='priceDivider w-[20px] skew-x-[-10deg] bg-black bg-[length:10px_7px] bg-repeat  '></div>
           <div>
             <div className='flex items-end justify-center gap-1 pb-4 sm:justify-normal'>
-              <div>
+              <div className='flex items-center gap-1'>
                 <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
                 <span className=' text-5xl text-white'> 19</span>
               </div>
-              <span className=' text-lg font-[600] text-gray-600'>/months</span>
+              <span className=' pb-2 text-lg font-[600] text-gray-600'>
+                / months
+              </span>
             </div>
-            <button className='mt-6 flex h-[40px] w-full items-center justify-center rounded-xl bg-white px-4 font-[600] text-gray-800 lg:h-[50px] lg:w-[200px]'>
+            <button className='mt-6 flex h-[40px] w-full items-center justify-center rounded-xl bg-white px-4 font-[600] text-gray-800 transition-all hover:bg-gray-600 hover:text-white hover:shadow-lg hover:shadow-gray-900 sm:mt-0  lg:h-[50px] lg:w-[200px]'>
               Get started now
             </button>
           </div>
         </div>
-        <div className='relative z-10    -mt-[460px] h-[430px] w-full rounded-lg bg-gradient-to-r from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-75 blur sm:-mt-[310px] sm:h-[280px]  md:w-[800px] lg:w-[1020px] '></div>
+        <div className='relative z-10    -mt-[445px] h-[420px] w-full rounded-lg bg-gradient-to-r from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-75 blur sm:-mt-[295px] sm:h-[265px]  md:w-[800px] lg:w-[1015px] '></div>
       </div>
     </section>
   );
