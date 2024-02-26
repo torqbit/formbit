@@ -7,13 +7,13 @@ const Brands = () => {
     '/images/logos/stanford.png',
   ];
   return (
-    <section className='bg-white py-10'>
-      <div className='mx-auto my-0 max-w-[1200px]'>
+    <section className='bg-white  py-10'>
+      <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-start justify-center px-4 md:items-center '>
         <p className='pb-8 text-center text-lg font-[600] text-gray-400'>
           Join 100+ companies using Formbit
         </p>
 
-        <div className='flex items-center justify-between'>
+        <div className='grid grid-cols-2 items-center justify-between gap-8 gap-x-40  sm:grid-cols-2 md:grid-cols-3 lg:flex'>
           {brands.map((brand, i) => {
             return (
               <div key={i}>

@@ -8,20 +8,23 @@ const Pricing = () => {
   ];
   return (
     <section className='relative z-10 bg-gray-50 py-20' id='price'>
-      <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center gap-10'>
-        <h1 className=' py-4 text-center text-6xl font-[600] '>
-          All features for one price. Try <br /> Formbit for free!
+      <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center gap-10 px-4 '>
+        <h1 className=' py-4 text-center text-3xl font-[600] lg:max-w-[800px] lg:text-6xl '>
+          All features for one price. Try Formbit for free!
         </h1>
-        <div className='boxPrice flex w-[900px] justify-between  gap-x-10 rounded-[15px] bg-black p-16'>
+        <div className=' relative z-20 flex h-[400px] w-full flex-col justify-between rounded-[15px] bg-black  p-16 sm:h-[250px]   sm:flex-row  md:w-[800px] md:flex-row  lg:w-[1000px]'>
           {packages.map((items, i) => {
             return (
-              <div key={i} className='flex flex-col gap-8'>
+              <div
+                key={i}
+                className='grid grid-cols-3 items-center justify-center gap-8 sm:flex sm:flex-col  sm:gap-8 lg:items-start'
+              >
                 {items.map((item, i) => {
                   return (
                     <a
                       key={i}
                       href=''
-                      className='flex items-center gap-2 text-white'
+                      className='flex items-center gap-2 text-[14px] text-white sm:items-center md:text-lg'
                     >
                       <FontAwesomeIcon icon={faCheck} size='sm' /> {item}
                     </a>
@@ -32,16 +35,39 @@ const Pricing = () => {
           })}
           <div className='priceDivider w-[20px] skew-x-[-10deg] bg-black bg-[length:10px_7px] bg-repeat  '></div>
           <div>
-            <div className='flex items-center '>
-              <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
-              <span className='text-5xl text-white'> 19</span>
-              <span className='pt-6 text-lg font-[600] text-gray-600'>
-                /months
+            <div className='flex items-end justify-center gap-1 pb-4 sm:justify-normal'>
+              <div className='flex items-center gap-1'>
+                <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
+                <span className=' text-5xl text-white'> 19</span>
+              </div>
+              <span className=' pb-2 text-lg font-[600] text-gray-600'>
+                / months
               </span>
             </div>
-            <button className='mt-6 flex h-[50px] w-[200px] items-center justify-center rounded-xl bg-white font-[600] text-gray-800'>
+            <button className='mt-6 flex h-[40px] w-full items-center justify-center rounded-xl bg-white px-4 font-[600] text-gray-800 transition-all hover:bg-gray-600 hover:text-white hover:shadow-lg hover:shadow-gray-900 sm:mt-0  lg:h-[50px] lg:w-[200px]'>
               Get started now
             </button>
+          </div>
+        </div>
+        <div className='relative z-10    -mt-[445px] h-[420px] w-full rounded-lg bg-gradient-to-r from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-90 blur-lg sm:-mt-[295px] sm:h-[265px]  md:w-[800px] lg:w-[1015px] '></div>
+        <div className='flex items-start gap-12 pt-8'>
+          <img
+            src='/images/ceo.jpg'
+            className='h-[100px] w-[100px] rounded-[50%] object-cover'
+            alt=''
+          />
+          <div>
+            <p className='max-w-[200px] pb-4 text-sm font-[600] text-gray-500 sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] lg:text-lg'>
+              "You made it so simple. My new site so much faster and easier to
+              work with than my old sit. I just choose the page, make the
+              change."
+            </p>
+            <div>
+              <div className='text-lg font-[600] text-gray-900'>
+                Marvin McKinny
+              </div>
+              <div className='text-sm text-gray-400'>Founder StarBell</div>
+            </div>
           </div>
         </div>
       </div>
