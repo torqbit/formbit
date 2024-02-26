@@ -20,7 +20,7 @@ const Steps = () => {
     },
   ];
   return (
-    <section className='  overflow-hidden bg-gray-50 py-20'>
+    <section className='  overflow-hidden bg-white py-20'>
       <div className='mx-auto my-0 max-w-[1200px] px-4 '>
         <h1 className=' py-4 text-center text-4xl font-[600] lg:text-6xl '>
           How it works

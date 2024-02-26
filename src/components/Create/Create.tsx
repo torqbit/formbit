@@ -8,7 +8,7 @@ const Create = () => {
         'With workspaces, you get to manage diverse set of applications for different departments in your organisation.',
     },
     {
-      img: '/images/create.png',
+      img: '/images/template-form.png',
       title: 'Create forms with different themes',
       logo: '/images/templates.svg',
 
@@ -45,21 +45,17 @@ const Create = () => {
             return (
               <div
                 key={i}
-                className='w-full rounded  bg-gray-200 pt-10 lg:w-[520px]'
+                className='w-full rounded  bg-gray-200 pt-5 lg:w-[520px]'
               >
-                <div className='px-16 '>
-                  <img src={option.logo} alt='' className='mb-4 h-10 w-10' />
+                <div className='px-12 '>
+                  <img src={option.logo} alt='' className='mb-2 h-10 w-10' />
                   <h4 className='py-4'>{option.title}</h4>
-                  <p className='max-w-[400px] pb-4 font-[600] text-gray-700'>
+                  <p className='max-w-[400px] pb-2 font-[600] text-gray-700'>
                     {option.description}
                   </p>
                 </div>
                 <div className='flex items-end justify-end'>
-                  <img
-                    src={option.img}
-                    alt=''
-                    className='mt-8 w-[520px] pl-8'
-                  />
+                  <img src={option.img} alt='' className='mt-4  w-full pl-12' />
                 </div>
               </div>
             );
