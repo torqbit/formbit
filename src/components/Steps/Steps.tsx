@@ -31,7 +31,7 @@ const Steps = () => {
             contact, survey forms in just few minutes
           </p>
         </div>
-        <div className=' z-40 flex  w-full flex-col  items-center lg:flex-row   lg:gap-5 '>
+        <div className=' z-40 flex  w-full flex-col  items-center justify-center lg:flex-row   lg:gap-5 '>
           {steps.map((step, i) => {
             return (
               <div>

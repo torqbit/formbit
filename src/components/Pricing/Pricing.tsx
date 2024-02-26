@@ -49,7 +49,27 @@ const Pricing = () => {
             </button>
           </div>
         </div>
-        <div className='relative z-10    -mt-[445px] h-[420px] w-full rounded-lg bg-gradient-to-r from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-75 blur sm:-mt-[295px] sm:h-[265px]  md:w-[800px] lg:w-[1015px] '></div>
+        <div className='relative z-10    -mt-[445px] h-[420px] w-full rounded-lg bg-gradient-to-r from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-90 blur-lg sm:-mt-[295px] sm:h-[265px]  md:w-[800px] lg:w-[1015px] '></div>
+        <div className='flex items-start gap-12 pt-8'>
+          <img
+            src='/images/ceo.jpg'
+            className='h-[100px] w-[100px] rounded-[50%] object-cover'
+            alt=''
+          />
+          <div>
+            <p className='max-w-[200px] pb-4 text-sm font-[600] text-gray-500 sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] lg:text-lg'>
+              "You made it so simple. My new site so much faster and easier to
+              work with than my old sit. I just choose the page, make the
+              change."
+            </p>
+            <div>
+              <div className='text-lg font-[600] text-gray-900'>
+                Marvin McKinny
+              </div>
+              <div className='text-sm text-gray-400'>Founder StarBell</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

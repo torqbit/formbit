@@ -10,10 +10,11 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
         <div className=' hidden items-center justify-between lg:flex'>
           <div className='flex items-center gap-12 transition-all'>
             <a href='#' className='flex items-center gap-1 text-lg font-[600] '>
-              <div>FORM</div>
-              <div className='flex h-[30px] w-full items-center justify-center rounded-lg bg-black px-2 py-1 text-center font-[500] text-white shadow-lg '>
-                BIT
-              </div>
+              <img
+                src='/images/formbit-logo.png'
+                className='w-[120px]'
+                alt=''
+              />
             </a>
             <a
               href=''
@@ -51,10 +52,7 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
          */}
         <div className='flex h-[40px] items-center justify-between px-4 lg:hidden'>
           <a href='#' className='flex items-center gap-1 text-lg font-[600] '>
-            <div>FORM</div>
-            <div className='flex h-[30px] w-full items-center justify-center rounded-lg bg-black px-2 py-1 text-center font-[500] text-white shadow-lg '>
-              BIT
-            </div>
+            <img src='/images/formbit-logo.png' className='w-[100px]' alt='' />
           </a>
 
           <div
@@ -95,10 +93,11 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
                 href='#'
                 className='flex items-center gap-1 text-lg font-[600] '
               >
-                <div>FORM</div>
-                <div className='flex h-[30px] w-[70px] items-center justify-center rounded-lg bg-black px-2 py-1 text-center font-[500] text-white shadow-lg '>
-                  BIT
-                </div>
+                <img
+                  src='/images/formbit-logo.png'
+                  className='w-[100px]'
+                  alt=''
+                />
               </a>
             </div>
             <div className='flex flex-col items-start justify-center gap-8 px-4 py-8'>
@@ -124,7 +123,7 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
                 Pricing
               </a>
             </div>
-            <div className='relative top-[300px] z-40 flex flex-col items-center justify-center gap-5 px-4'>
+            <div className='absolute  bottom-[20px] left-0 right-0 z-40 flex flex-col items-center justify-center gap-5 px-4'>
               <a
                 href=''
                 className='flex h-[40px] w-full items-center justify-center rounded-lg bg-white text-[18px]  font-[500] text-black '

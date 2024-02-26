@@ -151,10 +151,7 @@ const Footer = () => {
           href='#'
           className='flex cursor-pointer items-center justify-start gap-1 pb-16  '
         >
-          <div className='text-xl font-[600]'>FORM</div>
-          <div className='flex h-[30px] w-[60px] items-center justify-center rounded-lg bg-black px-2 py-1 text-center font-[500] text-white shadow-lg'>
-            BIT
-          </div>
+          <img src='/images/formbit-logo.png' className='w-[120px]' alt='' />
         </a>
         <div className='relative z-40 grid grid-cols-1 items-start justify-between gap-x-0 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8  sm:grid-cols-2 lg:flex lg:gap-0'>
           {options.map((opt, i) => {
