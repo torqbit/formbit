@@ -1,9 +1,9 @@
-import { SideNav } from '@/app/page';
 import { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
+import SideNav from '@/components/SideNav/SideNav';
 
 const Header = () => {
-  const [showSideNav, setSideNav] = useState(false);
+  const [showSideNav, setSideNav] = useState<boolean>(false);
 
   const onAnchorClick = () => {
     setSideNav(false);
