@@ -123,7 +123,7 @@ const Header: FC<{ open: boolean; setOpen: (value: boolean) => void }> = ({
                 Pricing
               </a>
             </div>
-            <div className='absolute  bottom-[20px] left-0 right-0 z-40 flex flex-col items-center justify-center gap-5 px-4'>
+            <div className='absolute  bottom-[80px] left-0 right-0 z-40 flex flex-col items-center justify-center gap-5 px-4'>
               <a
                 href=''
                 className='flex h-[40px] w-full items-center justify-center rounded-lg bg-white text-[18px]  font-[500] text-black '
