@@ -6,7 +6,7 @@ const Hero = () => {
           Form that capture <br /> the world&apos;s attentions.{' '}
         </h1>
         <p className='max-w-[500px] text-center text-lg font-[600] text-gray-700 md:max-w-[600] lg:max-w-[800px] lg:text-2xl'>
-          With Frombit - capture feedbacks, assess students & employees, collect
+          With Formbit - capture feedbacks, assess students & employees, collect
           interests of potential clients and much more.
         </p>
         <div className='flex w-full items-center justify-center gap-3 px-4 py-8'>
