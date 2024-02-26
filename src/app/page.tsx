@@ -10,7 +10,6 @@ import * as React from 'react';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Logo from '~/svg/Logo.svg';
 import Header from '@/components/Header/Header';
 import Hero from '@/components/Hero/Hero';
 import Brands from '@/components/Brands/Brands';

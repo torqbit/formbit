@@ -34,7 +34,7 @@ const Steps = () => {
         <div className=' z-40 flex  w-full flex-col  items-center justify-center lg:flex-row   lg:gap-5 '>
           {steps.map((step, i) => {
             return (
-              <div>
+              <div key={i}>
                 <div
                   onMouseOver={() => {
                     setActive(step.name);
@@ -42,7 +42,6 @@ const Steps = () => {
                   onMouseLeave={() => {
                     setActive('');
                   }}
-                  key={i}
                   className={`relative z-20 mt-8 h-[200px]  w-full cursor-pointer rounded border-2 border-gray-400 border-opacity-40
                 bg-white
               
