@@ -31,14 +31,12 @@ export default function HomePage() {
       </Head>
       <section className={`bg-gray-200}`}>
         <Header />
-
         <div>
           <Hero />
           <Brands />
           <Steps />
           <Create />
           <Pricing />
-
           <Footer />
         </div>
       </section>

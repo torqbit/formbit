@@ -33,22 +33,22 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
           <title>{blogPost.title}</title>
           <meta property='og:image' content={blogPost.ogImage.url} />
         </Head>
-        <section className='bg-black'>
+        <section className='m-auto w-[full] bg-gray-50 '>
           <div>
-            <div className='flex h-[250px] items-end bg-gradient-to-b from-slate-900 via-slate-800 to-blue-900 p-10 align-baseline '></div>
+            <div className='flex  h-[250px] items-end bg-gradient-to-b from-gray-400 via-gray-300 to-gray-100 p-10 align-baseline '></div>
 
-            <div className='flex flex-col items-center justify-center rounded-lg bg-black p-2 '>
+            <div className='flex flex-col items-center justify-center rounded-lg p-2 '>
               <img
                 src={blogPost.coverImage}
-                className='-mt-[100px]   w-[900px] rounded-lg  border-8 border-black object-contain'
+                className='-mt-[100px] h-[500px]   rounded-lg border-4 border-gray-400  object-contain p-1 md:w-[full]'
                 alt=''
               />
             </div>
-            <div className='m-auto flex max-w-[1000px]	flex-col items-center justify-between'>
-              <h1 className=' w-[700px] pb-6 text-center text-[55px] font-light leading-[70px] text-white '>
+            <div className='m-auto flex max-w-[1000px]  	flex-col items-center justify-between'>
+              <h1 className='w-auto pb-6 text-center text-[55px] font-light leading-[70px] text-black md:w-[700px] '>
                 {blogPost.title}
               </h1>
-              <div className='text-xl font-[400] text-white'>
+              <div className='p-4 text-xl font-[400] text-gray-700'>
                 <DateFormater dateString={blogPost.date} />
                 <div>
                   <div>
