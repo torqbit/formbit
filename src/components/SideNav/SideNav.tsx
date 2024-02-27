@@ -42,7 +42,7 @@ const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
         ...springs,
       }}
     >
-      <div className='flex h-[60px] w-full items-center justify-start bg-white '>
+      <div className='flex h-[60px] w-full items-center justify-start bg-white pl-4 '>
         <img
           height={40}
           style={{ padding: 20 }}
