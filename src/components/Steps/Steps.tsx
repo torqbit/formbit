@@ -26,7 +26,7 @@ const Steps = () => {
           How it works
         </h1>
         <div className='flex w-full items-center justify-center'>
-          <p className='flex max-w-[400px]  text-left text-xl text-gray-700 md:max-w-[500px] lg:max-w-[800px] lg:px-0 lg:text-center lg:font-[600]'>
+          <p className='flex max-w-[400px]  text-left text-xl text-[#666] md:max-w-[500px] lg:max-w-[800px] lg:px-0 lg:text-center lg:font-[600]'>
             With lots of templates, you can easily build a quiz, a feedback,
             contact, survey forms in just few minutes
           </p>
@@ -42,10 +42,10 @@ const Steps = () => {
                   onMouseLeave={() => {
                     setActive('');
                   }}
-                  className={`relative z-20 mt-8 h-[200px]  w-full cursor-pointer rounded border-2 border-gray-400 border-opacity-40
-                bg-white
+                  className={`relative z-20 mt-8 h-[200px]  w-full cursor-pointer rounded border-2 border-opacity-40 bg-white
+                p-8
               
-                p-8 transition-all lg:m-0  lg:mt-16  `}
+                text-[#666] transition-all lg:m-0  lg:mt-16  `}
                 >
                   <div className='item-center flex  w-10 justify-center rounded bg-black text-lg font-[600] text-white'>
                     {step.num}

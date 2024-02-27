@@ -42,7 +42,7 @@ const Pricing = () => {
                 <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
                 <span className=' text-5xl text-white'> 19</span>
               </div>
-              <span className=' pb-2 text-lg font-[600] text-gray-600'>
+              <span className=' pb-2 text-lg font-[600] text-[#666]'>
                 / months
               </span>
             </div>
@@ -59,7 +59,7 @@ const Pricing = () => {
             alt=''
           />
           <div>
-            <p className='max-w-[200px] pb-4 text-sm text-gray-500 sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] lg:text-lg lg:font-[600]'>
+            <p className='max-w-[200px] pb-4 text-sm text-[#666] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] lg:text-lg lg:font-[600]'>
               "You made it so simple. My new site so much faster and easier to
               work with than my old sit. I just choose the page, make the
               change."
@@ -68,7 +68,7 @@ const Pricing = () => {
               <div className='text-lg text-gray-900 lg:font-[600]'>
                 Marvin McKinny
               </div>
-              <div className='text-sm text-gray-400'>Founder StarBell</div>
+              <div className='text-sm text-[#666]'>Founder StarBell</div>
             </div>
           </div>
         </div>

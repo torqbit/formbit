@@ -26,7 +26,7 @@ const Create = () => {
             <h1 className='py-6  text-left text-2xl lg:text-center lg:text-5xl  lg:font-[600]'>
               The most engaging forms <br /> with just few clicks
             </h1>
-            <p className=' max-w-[400px] text-left text-lg text-gray-700 md:max-w-[500px] lg:max-w-[500px] lg:text-center lg:font-[600] '>
+            <p className=' max-w-[400px] text-left text-lg text-[#666] md:max-w-[500px] lg:max-w-[500px] lg:text-center lg:font-[600] '>
               Formbit is a software to build creative and interactive forms like
               quiz, polls and surveys that helps you connect with your students,
               employees and clients in a fresh, innovative way.
@@ -50,7 +50,7 @@ const Create = () => {
                 <div className='px-8 lg:px-12 '>
                   <img src={option.logo} alt='' className='mb-2 h-10 w-10' />
                   <h4 className='py-4'>{option.title}</h4>
-                  <p className='max-w-[400px] pb-2 text-gray-700 lg:font-[600]'>
+                  <p className='max-w-[400px] pb-2 text-[#666] lg:font-[600]'>
                     {option.description}
                   </p>
                 </div>

@@ -16,7 +16,7 @@ const Brands = () => {
   return (
     <section className='bg-white  py-10'>
       <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center  px-8 text-center  '>
-        <p className='pb-8 text-center text-lg text-gray-400 lg:font-[600]'>
+        <p className='pb-8 text-center text-lg text-[#666] lg:font-[600]'>
           Join 100+ companies using Formbit
         </p>
 
