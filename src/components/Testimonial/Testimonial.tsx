@@ -44,20 +44,26 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className='  overflow-hidden bg-gray-200 py-10'>
+    <section className='  h-full overflow-hidden bg-gray-200 py-10'>
       <div className='mx-auto my-0 max-w-[1200px] px-4 '>
         <h1 className='text-center text-xl font-[600] text-gray-400 md:text-2xl lg:text-left lg:text-3xl'>
           Loved By <span className='text-gray-900'>Customers</span>
         </h1>
-        <div className='grid grid-cols-1 gap-8 pt-10 sm:grid-cols-2 lg:grid-cols-3'>
+        <div
+          // className='grid grid-cols-1 gap-8 pt-10 sm:grid-cols-2 lg:grid-cols-3'
+          className=' columns-1 gap-x-5 pt-10 sm:columns-2 lg:columns-3 lg:gap-x-10'
+        >
           {testimonialInfo.map((info, i) => {
             return (
               <div
+                onClick={() => console.log(i)}
                 key={i}
-                className={`rounded bg-gray-50 p-4 ${i === 1 && `mb-4`} ${
-                  i === 1 || i === 4
-                    ? `h-[210px] lg:h-[280px]`
-                    : `h-[210px] lg:h-[250px]`
+                className={` mb-5 w-full  rounded bg-gray-50 p-4 lg:mb-10
+                
+                ${
+                  i === 2 || i === 3
+                    ? `aspect-auto  sm:aspect-square lg:h-[284px] `
+                    : `aspect-auto sm:aspect-[3/2] lg:aspect-[5] lg:h-[260px]`
                 }`}
               >
                 <div className='flex items-center gap-4 pb-4'>
