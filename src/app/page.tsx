@@ -17,6 +17,7 @@ import Create from '@/components/Create/Create';
 import Steps from '@/components/Steps/Steps';
 import Pricing from '@/components/Pricing/Pricing';
 import Footer from '@/components/Footer/Footer';
+import Blog from '@/components/Blog/Blog';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -37,6 +38,7 @@ export default function HomePage() {
           <Steps />
           <Create />
           <Pricing />
+
           <Footer />
         </div>
       </section>
