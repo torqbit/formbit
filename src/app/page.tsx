@@ -17,7 +17,6 @@ import Create from '@/components/Create/Create';
 import Steps from '@/components/Steps/Steps';
 import Pricing from '@/components/Pricing/Pricing';
 import Footer from '@/components/Footer/Footer';
-import Blog from '@/components/Blog/Blog';
 import Testimonial from '@/components/Testimonial/Testimonial';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
