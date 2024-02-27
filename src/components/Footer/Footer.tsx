@@ -4,44 +4,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
   const options = [
     {
-      title: 'COMPANY',
+      title: 'Products',
       links: [
         {
-          title: 'About',
+          title: 'Atlas',
           href: '#',
         },
         {
-          title: 'Features',
+          title: 'Billing',
           href: '#',
         },
         {
-          title: 'Works',
+          title: 'Capital',
           href: '#',
         },
         {
-          title: 'Career',
+          title: 'Checkout',
           href: '#',
         },
       ],
     },
     {
-      title: 'HELP',
+      title: 'Solutions',
 
       links: [
         {
-          title: 'Customer Support',
+          title: 'Start-ups',
           href: '#',
         },
         {
-          title: 'Delivery Details',
+          title: 'Enterprises',
           href: '#',
         },
         {
-          title: 'Terms & Conditions',
+          title: 'SaaS',
           href: '#',
         },
         {
-          title: 'Privacy Policy',
+          title: 'Platforms',
           href: '#',
         },
       ],
@@ -50,19 +50,74 @@ const Footer = () => {
       title: 'RESOURCES',
       links: [
         {
-          title: 'Free eBooks',
+          title: 'Guides',
           href: '#',
         },
         {
-          title: 'Development Tutorial',
+          title: 'Customer',
           href: '#',
         },
         {
-          title: 'How to - Blog',
+          title: 'Stories',
           href: '#',
         },
         {
-          title: 'Youtube Playlist',
+          title: 'Blog',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Developers',
+      links: [
+        {
+          title: 'Documentation',
+          href: '#',
+        },
+        {
+          title: 'API Reference',
+          href: '#',
+        },
+        {
+          title: 'API Status',
+          href: '#',
+        },
+        {
+          title: 'API Changelog',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        {
+          title: 'Jobs',
+          href: '#',
+        },
+        {
+          title: 'Newsroom',
+          href: '#',
+        },
+        {
+          title: 'Become a Partner',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        {
+          title: 'Contact Sales',
+          href: '#',
+        },
+        {
+          title: 'Support Centre',
+          href: '#',
+        },
+        {
+          title: 'Support Plans',
           href: '#',
         },
       ],
@@ -146,14 +201,14 @@ const Footer = () => {
 
   return (
     <footer className='overflow-hidden bg-gray-50 py-20 '>
-      <div className='mx-auto my-0 max-w-[1200px] px-4 '>
+      <div className='mx-auto my-0 max-w-[1200px] px-8 '>
         <a
           href='#'
           className='flex cursor-pointer items-center justify-start gap-1 pb-16  '
         >
           <img src='/images/formbit-logo.png' className='w-[120px]' alt='' />
         </a>
-        <div className='relative z-40 grid grid-cols-1 items-start justify-between gap-x-0 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8  sm:grid-cols-2 lg:flex lg:gap-0'>
+        <div className='relative z-40 grid grid-cols-2 items-start justify-between gap-12 gap-x-8 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8 sm:grid-cols-3  md:grid-cols-4 lg:flex lg:gap-0'>
           {options.map((opt, i) => {
             return (
               <ul key={i}>
@@ -176,7 +231,7 @@ const Footer = () => {
               </ul>
             );
           })}
-          <div className=''>
+          {/* <div className=''>
             <div className='pb-4 text-lg font-[600] text-gray-700 lg:text-xl'>
               SUBSCRIBE TO NEWSLETTER
             </div>
@@ -212,7 +267,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='mt-10 flex flex-col-reverse items-center justify-between gap-4 lg:flex-row lg:gap-0'>
           <div className='flex cursor-pointer items-center gap-1 font-[600] text-gray-600 transition-all hover:text-gray-800'>
