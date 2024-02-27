@@ -60,7 +60,7 @@ const Header = () => {
         </div>
         <img
           src='/images/formbit-logo.png'
-          className='absolute left-5 top-3  text-black lg:hidden '
+          className='absolute left-8 top-3  text-black lg:hidden '
           alt=''
         />
         <div className='absolute right-5 top-1 text-black lg:hidden '>
