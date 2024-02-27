@@ -45,14 +45,11 @@ const Testimonial = () => {
   ];
   return (
     <section className='  h-full overflow-hidden bg-gray-200 py-10'>
-      <div className='mx-auto my-0 max-w-[1200px] px-4 '>
-        <h1 className='text-center text-xl font-[600] text-gray-400 md:text-2xl lg:text-left lg:text-3xl'>
+      <div className='mx-auto my-0 max-w-[1200px] px-8 '>
+        <h1 className='text-left text-xl text-[#666] md:text-2xl lg:text-center lg:text-3xl lg:font-[600]'>
           Loved By <span className='text-gray-900'>Customers</span>
         </h1>
-        <div
-          // className='grid grid-cols-1 gap-8 pt-10 sm:grid-cols-2 lg:grid-cols-3'
-          className=' columns-1 gap-x-5 pt-10 sm:columns-2 lg:columns-3 lg:gap-x-10'
-        >
+        <div className=' columns-1 gap-x-5 pt-10 sm:columns-2 lg:columns-3 lg:gap-x-10'>
           {testimonialInfo.map((info, i) => {
             return (
               <div
@@ -67,17 +64,17 @@ const Testimonial = () => {
                 }`}
               >
                 <div className='flex items-center gap-4 pb-4'>
-                  <div className='h-[60px] w-[60px] rounded-[50%] bg-gray-400'></div>
+                  <div className='h-[60px] w-[60px] rounded-[50%] bg-[#666]'></div>
                   <div>
-                    <h4 className='text-lg font-[600] text-gray-900'>
+                    <h4 className='text-lg text-gray-900 lg:font-[600]'>
                       {info.title}
                     </h4>
-                    <p className='text-sm font-[600] text-gray-400'>
+                    <p className='text-sm text-[#666] lg:font-[600]'>
                       {info.post}
                     </p>
                   </div>
                 </div>
-                <p className='text-sm font-[600] leading-relaxed text-gray-400'>
+                <p className='text-sm leading-relaxed text-[#666] lg:font-[600]'>
                   {info.description}
                 </p>
               </div>

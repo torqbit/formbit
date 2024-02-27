@@ -21,12 +21,12 @@ const Steps = () => {
   ];
   return (
     <section className='  overflow-hidden bg-white py-20'>
-      <div className='mx-auto my-0 max-w-[1200px] px-4 '>
-        <h1 className=' py-4 text-center text-4xl font-[600] lg:text-6xl '>
+      <div className='mx-auto my-0 max-w-[1200px] px-8 '>
+        <h1 className=' py-4 text-left text-2xl lg:text-center lg:text-6xl lg:font-[600] '>
           How it works
         </h1>
         <div className='flex w-full items-center justify-center'>
-          <p className='flex max-w-[400px]  text-center text-xl font-[600] text-gray-700 md:max-w-[500px] lg:max-w-[800px] lg:px-0'>
+          <p className='flex max-w-[400px]  text-left text-xl text-[#666] md:max-w-[500px] lg:max-w-[800px] lg:px-0 lg:text-center lg:font-[600]'>
             With lots of templates, you can easily build a quiz, a feedback,
             contact, survey forms in just few minutes
           </p>
@@ -42,15 +42,15 @@ const Steps = () => {
                   onMouseLeave={() => {
                     setActive('');
                   }}
-                  className={`relative z-20 mt-8 h-[200px]  w-full cursor-pointer rounded border-2 border-gray-400 border-opacity-40
-                bg-white
+                  className={`relative z-20 mt-8 h-[200px]  w-full cursor-pointer rounded border-2 border-opacity-40 bg-white
+                p-8
               
-                p-8 transition-all lg:m-0  lg:mt-16  `}
+                text-[#666] transition-all lg:m-0  lg:mt-16  `}
                 >
                   <div className='item-center flex  w-10 justify-center rounded bg-black text-lg font-[600] text-white'>
                     {step.num}
                   </div>
-                  <p className='max-w-[300px] py-4 text-lg font-[600] text-gray-400'>
+                  <p className='max-w-[300px] py-4 text-lg text-gray-400 lg:font-[600]'>
                     {step.description}
                   </p>
                 </div>
