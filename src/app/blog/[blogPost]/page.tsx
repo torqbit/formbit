@@ -11,13 +11,9 @@ const BlogBody: FC<{ params: Params }> = ({ params }) => {
     return <PostBody slug={slug as string} />;
   } else {
     return (
-      <button type='button' className='... bg-indigo-500' disabled>
-        <svg
-          className='... mr-3 h-5 w-5 animate-spin'
-          viewBox='0 0 24 24'
-        ></svg>
-        Processing...
-      </button>
+      <div className='spinner-border mt-10 flex justify-center' role='status'>
+        <span className='sr-only'>Loading...</span>
+      </div>
     );
   }
 };
