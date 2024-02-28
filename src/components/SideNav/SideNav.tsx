@@ -13,7 +13,7 @@ const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
     config: { duration: 400 },
   });
 
-  const items = [' Product', 'Solutions', 'Pricing'];
+  const items = [' Product', 'Solutions', 'Pricing', 'Docs', 'Blogs'];
 
   const trail = useTrail(3, {
     config: { mass: 5, tension: 2000, friction: 200 },
