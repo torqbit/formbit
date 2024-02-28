@@ -1,5 +1,5 @@
 ---
-title: 'Build your Dream Software & Engineering Career'
+title: 'System Design Blueprint: The Ultimate Guide'
 excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
 coverImage: '/img/blog/torqbit-front.png'
 date: '2024-01-26T05:35:07.322Z'

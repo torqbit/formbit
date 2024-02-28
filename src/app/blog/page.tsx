@@ -39,7 +39,7 @@ const BlogPage = () => {
 
   return (
     <>
-      <section>{allPost && <Blog morePost={allPost} />}</section>
+      <div>{allPost && <Blog morePost={allPost} />}</div>
     </>
   );
 };

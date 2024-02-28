@@ -34,38 +34,29 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
           <meta property='og:image' content={blogPost.ogImage.url} />
         </Head>
         <section className='m-auto w-[full] bg-gray-50 '>
-          <div>
-            <div className='flex  h-[250px] items-end bg-gradient-to-b from-gray-400 via-gray-300 to-gray-100 p-10 align-baseline '></div>
+          <div className='flex flex-col items-center justify-center rounded-lg p-2 '>
+            <img
+              src={blogPost.coverImage}
+              className=' h-[250px] rounded-lg  border-4 border-gray-400 object-contain  p-1 md:h-[500px] md:w-[full]'
+              alt=''
+            />
+          </div>
 
-            <div className='flex flex-col items-center justify-center rounded-lg p-2 '>
-              <img
-                src={blogPost.coverImage}
-                className='-mt-[100px] h-[500px]   rounded-lg border-4 border-gray-400  object-contain p-1 md:w-[full]'
-                alt=''
+          <div className='items-left m-auto flex flex-col justify-between p-[20px] text-xl font-[400] text-gray-700 md:max-w-[1000px]'>
+            <h1 className='w-[full] pb-6 text-center text-[40px] font-light leading-tight text-black md:text-[55px] md:leading-[70px]  '>
+              {blogPost.title}
+            </h1>
+            <DateFormater dateString={blogPost.date} />
+            <Avatar
+              picture={blogPost.author.picture}
+              name={blogPost.author.name}
+            />
+
+            <div>
+              <div
+                className='py-4'
+                dangerouslySetInnerHTML={{ __html: content as any }}
               />
-            </div>
-            <div className='m-auto flex max-w-[1000px]  	flex-col items-center justify-between'>
-              <h1 className='w-auto pb-6 text-center text-[55px] font-light leading-[70px] text-black md:w-[700px] '>
-                {blogPost.title}
-              </h1>
-              <div className='p-4 text-xl font-[400] text-gray-700'>
-                <DateFormater dateString={blogPost.date} />
-                <div>
-                  <div>
-                    <Avatar
-                      picture={blogPost.author.picture}
-                      name={blogPost.author.name}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div
-                    className='py-4'
-                    dangerouslySetInnerHTML={{ __html: content as any }}
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>

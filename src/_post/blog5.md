@@ -1,5 +1,5 @@
 ---
-title: 'Build your Dream Software & Engineering Career'
+title: 'Mobile App Developer.'
 excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
 coverImage: '/img/blog/cartoon1.jpg'
 date: '2020-03-16T05:35:07.322Z'

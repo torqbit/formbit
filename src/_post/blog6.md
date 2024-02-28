@@ -1,5 +1,5 @@
 ---
-title: 'Build your Dream Software & Engineering Career'
+title: 'Backend Web Developer.'
 excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
 coverImage: '/img/blog/shadab1.jpeg'
 date: '2024-01-25T05:35:07.322Z'

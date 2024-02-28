@@ -1,7 +1,7 @@
 'use client';
 
 import Head from 'next/head';
-import React, { FC, useEffect } from 'react';
+import React from 'react';
 
 /**
  * SVGR Support

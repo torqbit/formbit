@@ -1,5 +1,5 @@
 ---
-title: 'Build your Dream Software & Engineering Career'
+title: 'Artificial Intelligence/Machine Learning Developer.'
 excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
 coverImage: '/img/blog/zeeshan.jpeg'
 date: '2024-01-24T05:35:07.322Z'

@@ -1,5 +1,5 @@
 ---
-title: 'Build your Dream Software & Engineering Career'
+title: 'Free E-BOOK on Design Patterns In Use'
 excerpt: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.'
 coverImage: '/img/blog/classroom2.jpg'
 date: '2024-01-26T05:35:07.322Z'

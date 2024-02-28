@@ -16,55 +16,59 @@ const Blog: FC<{
   const [active, setActive] = useState<string>('');
 
   return (
-    <section id='blog'>
-      <div className='flex items-end bg-gradient-to-b from-gray-400 via-gray-300 to-gray-100 p-2 align-baseline md:h-[250px] md:p-10 '>
-        <p className=' text-left text-[30px] text-black md:text-[60px]'>BLOG</p>
-      </div>
-      <div className='z-40 bg-gray-100 p-2 md:p-10'>
-        {morePost?.length > 2 && (
-          <div className='flex flex-col gap-10 sm:flex-row md:items-center md:py-8 '>
-            {morePost.slice(3, 6).map((blog, i) => {
-              return (
+    <section id='blog' className=' bg-gray-100 p-2 md:p-10 '>
+      <div className='m-auto md:max-w-[1400px] '>
+        <h1 className='mb-6 text-[50px] font-normal'>BLOG</h1>
+        <div className='grid grid-rows-1 gap-1 sm:flex-row md:grid-cols-3 md:items-center md:gap-10 md:py-8 '>
+          {morePost.map((blog, i) => {
+            return (
+              <div
+                key={i}
+                className='h-[auto]  w-[full] rounded  bg-white  md:max-h-[600px] md:w-[400px]'
+              >
                 <div
-                  key={i}
-                  className='h-[auto] w-[350px] rounded border-2 border-gray-400 border-opacity-40 bg-white p-3  md:max-h-[600px] md:w-[400px]'
+                  onMouseOver={() => {
+                    setActive(blog.author.name);
+                  }}
+                  onMouseLeave={() => {
+                    setActive('');
+                  }}
+                  className={`relative z-20 cursor-pointer rounded border-2 border-opacity-40 bg-white
+                p-2 text-[#666]
+              
+                transition-all md:p-8 lg:m-0  `}
                 >
-                  <div>
-                    <a href={`/blog/${blog.slug}`}>
-                      <img
-                        src={blog.coverImage}
-                        alt=''
-                        className='h-[300px] w-[340px] rounded rounded-b-[0px] object-cover object-center md:h-[250px] md:w-full'
-                      />
-                      <div className='pt-4'>
-                        <h2 className='  text-2xl   font-[600] text-black transition-all  '>
-                          <a href={`/blog/${blog.slug}`}>{blog.title}</a>
-                        </h2>
-                        <hr className='mb-4 mt-4 bg-gray-400' />
+                  <a href={`/blog/${blog.slug}`}>
+                    <img
+                      src={blog.coverImage}
+                      alt=''
+                      className='h-[300px] w-[352px]  rounded rounded-b-[0px] object-cover md:h-[250px] md:w-full'
+                    />
+                    <h2 className='h-[100px] pt-6   text-2xl   font-[600] text-black transition-all  '>
+                      <a href={`/blog/${blog.slug}`}>{blog.title}</a>
+                    </h2>
+                    <hr className='mb-4 mt-4 bg-gray-400' />
 
-                        <div className='flex w-full items-center  text-[15px]  md:w-[300px]'>
-                          <div className='flex items-center gap-1  font-bold text-gray-700'>
-                            <DateFormater dateString={blog.date} />
-                          </div>
-                          <div>
-                            <img
-                              src={blog.author.picture}
-                              className='ml-4 mr-4 h-[30px] w-[30px] rounded-full object-cover '
-                              alt=''
-                            />
-                          </div>
-                          <div className='flex items-center gap-1  font-bold text-gray-700'>
-                            {blog.author.name}
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+                    <div className='flex w-full items-center gap-1 text-[15px] font-bold  text-gray-700  md:w-[300px]'>
+                      <DateFormater dateString={blog.date} />
+                      <img
+                        src={blog.author.picture}
+                        className='ml-4 mr-4 h-[30px] w-[30px] rounded-full object-cover '
+                        alt=''
+                      />
+                      <span className='flex items-center gap-1  font-bold text-gray-700'>
+                        {blog.author.name}
+                      </span>
+                    </div>
+                  </a>
                 </div>
-              );
-            })}
-          </div>
-        )}
+                {active === blog.author.name && (
+                  <div className='relative z-0 -mt-[480px] h-[480px] w-full rounded-lg   bg-gradient-to-r  from-[#f2b5d4]  via-pink-200 to-[#7bdff2]   opacity-75 blur '></div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
