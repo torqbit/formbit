@@ -85,12 +85,12 @@ const HeroPrice = () => {
   return (
     <section className='bg-gray-100 py-20'>
       <div className='mx-auto my-0   max-w-[1200px] px-8 lg:px-0'>
-        <h1 className='py-4 text-center text-2xl font-[600] text-black lg:text-6xl'>
+        <h1 className='py-4 text-center text-4xl font-[600] text-black lg:text-6xl'>
           Pricing
         </h1>
         <div className='flex w-full items-center justify-center'>
           <p className='text-center text-lg text-[#666] lg:max-w-[500px] lg:text-xl'>
-            Build on Index for free with your entire company. Upgrade for
+            Build on Formbit for free with your entire company. Upgrade for
             unlimited dashboards, editors, connections and dedicated enterprise
             features.
           </p>
@@ -119,7 +119,7 @@ const HeroPrice = () => {
             delay-70 flex items-center justify-center gap-x-2 transition-all`}
           >
             Annually{' '}
-            <span className='rounded-r-[15px] bg-gray-200 px-2  text-[10px]'>
+            <span className='min-w-[75px] rounded-r-[15px] bg-gray-200 px-2  text-center text-[10px] '>
               save 20%
             </span>
           </div>
@@ -186,7 +186,7 @@ const HeroPrice = () => {
                     >
                       {active === 'month' && data.monthlyPrice}
                       {active === 'annual' && data.yearlyPrice}
-                      {data.monthlyPrice != 'Free' &&
+                      {data.monthlyPrice != 'FREE' &&
                         data.monthlyPrice != 'Custom' && (
                           <span className='text-sm text-[#666]'>
                             editor / mo
