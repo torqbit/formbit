@@ -123,3 +123,35 @@
 .priceDivider {
   background-image: linear-gradient(180deg, transparent 50%, #1f2937b0 50%);
 }
+
+h1 {
+  text-align: center;
+}
+
+.radiowrapper {
+  border: none;
+
+  outline: none;
+}
+
+.radio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radiocontent {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 10px;
+  gap: 20px;
+  background: #ebebeb;
+  border-radius: 7px;
+}
+
+.radiocontent a {
+  text-decoration: none;
+  color: #4e4e4e;
+  padding: 6px 0;
+}

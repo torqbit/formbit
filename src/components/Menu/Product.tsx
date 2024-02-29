@@ -64,10 +64,10 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
   ];
   return (
     <div
-      className={`fixed left-[200px] top-16 z-40 flex
+      className={`absolute left-[200px] top-16 z-[100000] flex
     w-[800px] items-start justify-center rounded-lg bg-[#201e1d] transition-all `}
     >
-      <div className='h-[520px] w-[400px] cursor-pointer border-r-2 border-[#3d3d3d] p-6'>
+      <div className=' h-[520px] w-[400px] cursor-pointer border-r-2 border-[#3d3d3d] p-6'>
         {menuList.map((list, i) => {
           return (
             <div
