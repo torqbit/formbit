@@ -11,9 +11,9 @@ const BlogBody: FC<{ params: Params }> = ({ params }) => {
     return <PostBody slug={slug as string} />;
   } else {
     return (
-      <div className='spinner-border mt-10 flex justify-center' role='status'>
-        <span className='sr-only'>Loading...</span>
-      </div>
+      <>
+        <h1>No Blog Available</h1>
+      </>
     );
   }
 };
