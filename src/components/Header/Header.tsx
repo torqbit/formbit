@@ -2,41 +2,102 @@ import { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 
+import Product from '@/components/Menu/Product';
+import { Menu, Transition } from '@headlessui/react';
+
 const Header = () => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
+  const [menuActive, setMenuActive] = useState({
+    active: false,
+    menu: '',
+  });
 
   const onAnchorClick = () => {
     setSideNav(false);
   };
+
   return (
-    <header className='  h-[60px]  bg-white  '>
+    <header className='  fixed left-0 right-0 h-[60px]  bg-white  '>
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
-          <div className='flex items-center gap-12 transition-all'>
-            <a href='#' className='flex items-center gap-1 text-lg font-[600] '>
+          <div className='flex items-center gap-8 transition-all'>
+            <a href='/' className='flex items-center gap-1 text-lg font-[600] '>
               <img
                 src='/images/formbit-logo.png'
                 className='w-[120px]'
                 alt=''
               />
             </a>
-            <a
-              href=''
-              className='text-[18px] font-[500] text-gray-400 hover:text-gray-800'
+
+            <div
+              onClick={() =>
+                setMenuActive({
+                  active: !menuActive.active,
+                  menu: 'product',
+                })
+              }
             >
-              Product
+              <Menu as='div'>
+                <Menu.Button
+                  className={`group flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
+               ${
+                 menuActive.menu === 'product' && menuActive.active
+                   ? `text-gray-800`
+                   : `text-gray-400`
+               }
+               `}
+                >
+                  Product
+                </Menu.Button>
+                <Transition
+                  show={menuActive.active}
+                  enter='transition-all duration-150'
+                  enterFrom='opacity-0 '
+                  enterTo='opacity-100 '
+                  leave='transition-all duration-150'
+                  leaveFrom='opacity-100 '
+                  leaveTo='opacity-0 '
+                  unmount={true}
+                >
+                  <Menu.Items>
+                    <Menu.Item>
+                      <Product menu={menuActive.menu} />
+                    </Menu.Item>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+            </div>
+
+            <a
+              onClick={() =>
+                setMenuActive({
+                  active: !menuActive.active,
+                  menu: 'solution',
+                })
+              }
+              href='#price'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+            >
+              Solution
+            </a>
+
+            <a
+              href='/pricing'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+            >
+              Pricing
             </a>
             <a
-              href=''
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              href='/pricing'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
-              Solutions
+              Docs
             </a>
             <a
               href='#price'
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
-              Pricing
+              Blogs
             </a>
           </div>
           <div className='flex items-center gap-5'>
@@ -55,7 +116,7 @@ const Header = () => {
          * responsive
          */}
 
-        <div className=' lg:hidden'>
+        <div className=' relative  lg:hidden'>
           <SideNav isOpen={showSideNav} onAnchorClick={onAnchorClick} />
         </div>
         <img
@@ -69,10 +130,11 @@ const Header = () => {
             direction='left'
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
-              setSideNav(toggle);
+              setSideNav(!showSideNav);
             }}
           />
         </div>
+        {/* <Product menu={menuActive} /> */}
       </div>
     </header>
   );

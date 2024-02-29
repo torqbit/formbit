@@ -200,7 +200,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className='overflow-hidden bg-gray-50 py-20 '>
+    <footer className=' overflow-hidden bg-gray-50 py-20 '>
       <div className='mx-auto my-0 max-w-[1200px] px-8 '>
         <a
           href='#'
@@ -208,7 +208,7 @@ const Footer = () => {
         >
           <img src='/images/formbit-logo.png' className='w-[120px]' alt='' />
         </a>
-        <div className='relative z-40 grid grid-cols-2 items-start justify-between gap-12 gap-x-8 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8 sm:grid-cols-3  md:grid-cols-4 lg:flex lg:gap-0'>
+        <div className='  grid grid-cols-2 items-start justify-between gap-12 gap-x-8 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8 sm:grid-cols-3  md:grid-cols-4 lg:flex lg:gap-0'>
           {options.map((opt, i) => {
             return (
               <ul key={i}>

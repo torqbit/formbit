@@ -13,9 +13,9 @@ const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
     config: { duration: 400 },
   });
 
-  const items = [' Product', 'Solutions', 'Pricing'];
+  const items = ['Product', 'Solutions', 'Pricing', 'Docs', 'Blogs'];
 
-  const trail = useTrail(3, {
+  const trail = useTrail(5, {
     config: { mass: 5, tension: 2000, friction: 200 },
     delay: 450,
     opacity: isOpen ? 1 : 0,
@@ -53,15 +53,17 @@ const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
       {trail.map(({ height, ...style }, index) => (
         <animated.div
           key={index}
-          className='relative top-[25%] z-[200] h-[80px] w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white will-change-[transform,opacity]'
+          className='relative top-[15%] z-[200] h-[80px] w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white will-change-[transform,opacity]'
           style={style}
         >
           <animated.a
-            onClick={onAnchorClick}
+            onClick={() => {
+              items[index] !== 'Product' && onAnchorClick();
+            }}
             href={`#${items[index]}`}
             style={{ height }}
           >
-            {items[index]}
+            {items[index] === 'Product' ? items[index] : items[index]}
           </animated.a>
         </animated.div>
       ))}
