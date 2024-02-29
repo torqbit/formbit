@@ -1,5 +1,3 @@
-# A Complete SaaS Landing Page
-
 <p align="center">
   <a href="https://formbit.vercel.app/"><img height="300" src="public/images/screenshot-formbit.jpg" alt="formbit"></a>
 </p>
