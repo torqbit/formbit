@@ -1,7 +1,7 @@
 # A Complete SaaS Landing Page
 
 <p align="center">
-  <a href="https://creativedesignsguru.com/demo/Nextjs-Boilerplate/"><img height="300" src="public/assets/images/nextjs-starter-banner.png?raw=true" alt="formbit"></a>
+  <a href="https://formbit.vercel.app/"><img height="300" src="public/images/screenshot-formbit.jpg" alt="formbit"></a>
 </p>
 
 <div align="center">
