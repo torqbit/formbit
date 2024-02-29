@@ -48,7 +48,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🦺 Unit Testing with Jest and React Testing Library
 - 👷 Run tests on pull request with GitHub Actions
 - 🤖 SEO metadata, JSON-LD and Open Graph tags
-- 🗺️ Sitemap.xml and robots.txt with next-sitemap)
+- 🗺️ Sitemap.xml and robots.txt with next-sitemap
 - 🌈 Include a FREE minimalist theme
 - 💯 Maximize lighthouse score
 
