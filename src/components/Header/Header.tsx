@@ -33,7 +33,7 @@ const Header = () => {
               Solutions
             </a>
             <a
-              href='#price'
+              href='#Pricing'
               className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Pricing

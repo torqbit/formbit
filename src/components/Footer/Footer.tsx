@@ -235,7 +235,7 @@ const Footer = () => {
         <div className='mt-10 flex flex-col-reverse items-center justify-between gap-4 lg:flex-row lg:gap-0'>
           <div className='flex cursor-pointer items-center gap-1 font-[600] text-[#666] transition-all hover:text-gray-800'>
             <FontAwesomeIcon icon={faCopyright} size='sm' color='black' />
-            Copyright2021.All Rights Reserved
+            Copyright 2024. All Rights Reserved
           </div>
           <div className='flex items-center gap-5'>
             {socialIcons.map((icon, i) => {
