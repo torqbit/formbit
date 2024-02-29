@@ -37,7 +37,7 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
         <Header />
         <section className='m-auto bg-gray-50 md:w-[full] '>
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'></div>
-          <div className='m-auto mt-[-100px] flex w-[1200px] flex-col  items-center justify-center rounded-lg  p-2  '>
+          <div className='m-auto mt-[-100px] flex w-[full] flex-col items-center  justify-center rounded-lg p-2  md:w-[1200px]  '>
             <img
               src={blogPost.coverImage}
               className='  h-[250px]  w-[full] rounded-lg  border-4 border-gray-400  object-cover p-1 md:h-[600px] md:w-[1200px]'
