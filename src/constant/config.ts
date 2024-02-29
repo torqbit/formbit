@@ -1,5 +1,6 @@
 export const siteConfig = {
-  title: 'Torqbit - Next.js + Tailwind CSS + TypeScript Starter',
-  description: 'A Torqbit starter for Next.js, Tailwind CSS, and TypeScript',
-  url: 'http://torqbit.com',
+  title: 'formbit',
+  description:
+    'Next.JS + TailwindCSS + HeadlessUI powered website template for your next SaaS marketing website',
+  url: 'https://formbit.vercel.app/',
 };
