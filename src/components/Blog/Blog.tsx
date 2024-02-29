@@ -20,19 +20,19 @@ const Blog: FC<{
   return (
     <>
       <Header />
-      <section id='blog' className='  p-2 md:p-0 '>
+      <section id='blog'>
         <div className='m-auto bg-gray-50 '>
-          <div className='flex  items-end  bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]  '>
-            <h1 className='m-auto text-left text-[30px] font-normal text-black md:mb-[20px]  md:w-[1200px] md:text-[60px]'>
+          <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'>
+            <h1 className='mb-[50px] p-6 text-left text-[35px]  font-normal text-black md:m-auto md:mb-[20px] md:mt-0 md:w-[1200px]  md:p-2 md:text-[60px]'>
               Blog
             </h1>
           </div>
-          <div className='m-auto grid grid-rows-1 gap-2  sm:flex-row md:w-[1200px] md:grid-cols-3 md:items-center md:gap-6 md:py-8 '>
+          <div className='m-auto grid grid-rows-1 gap-2 pt-7  sm:flex-row md:w-[1200px] md:grid-cols-3 md:items-center md:gap-6 '>
             {morePost.map((blog, i) => {
               return (
                 <div
                   key={i}
-                  className='h-[auto]  w-[375px] rounded-lg bg-white  md:max-h-[600px] md:w-[390px]'
+                  className='ml-3  h-[auto] w-[350px] rounded-lg bg-white  md:max-h-[600px] md:w-[390px]'
                 >
                   <div
                     onMouseOver={() => {
@@ -79,6 +79,7 @@ const Blog: FC<{
           </div>
         </div>
       </section>
+
       <Footer />
     </>
   );
