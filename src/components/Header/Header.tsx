@@ -96,8 +96,10 @@ const Header = () => {
               Docs
             </a>
             <a
-              href='#price'
-              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+
+              href='#Pricing'
+              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+
             >
               Blogs
             </a>
