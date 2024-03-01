@@ -7,6 +7,8 @@ import { Menu, Transition } from '@headlessui/react';
 
 const Header = () => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
+  const [active, setActive] = useState(false);
+
   const [menuActive, setMenuActive] = useState({
     active: false,
     menu: '',
@@ -117,7 +119,12 @@ const Header = () => {
          */}
 
         <div className=' relative  lg:hidden'>
-          <SideNav isOpen={showSideNav} onAnchorClick={onAnchorClick} />
+          <SideNav
+            isOpen={showSideNav}
+            onAnchorClick={onAnchorClick}
+            active={active}
+            setActive={setActive}
+          />
         </div>
         <img
           src='/images/formbit-logo.png'
@@ -131,6 +138,7 @@ const Header = () => {
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
               setSideNav(!showSideNav);
+              setActive(false);
             }}
           />
         </div>

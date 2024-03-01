@@ -1,87 +1,16 @@
 import { menuList } from '@/components/Menu/Product';
+import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Menu, Transition } from '@headlessui/react';
 import { animated, useSpring, useSpringRef, useTrail } from '@react-spring/web';
 import { FC, useEffect, useState } from 'react';
 
-export const RadioContent = () => {
-  return (
-    <div
-    // className=' absolute z-[10000] h-[300px] w-full cursor-pointer border-r-2 border-[#3d3d3d] p-6'
-    >
-      {menuList.map((list, i) => {
-        return (
-          <div
-            key={i}
-            // className='flex items-center justify-start gap-4 rounded-lg p-2 pb-4 hover:bg-[#3b3a3a]'
-          >
-            <div
-            // className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#100f0f] bg-opacity-50 text-gray-100'
-            >
-              {list.icon}
-            </div>
-            <div>
-              <h4
-              // className='pb-1 text-lg font-[500] text-white'
-              >
-                {list.title}
-              </h4>
-              <p
-              // className='text-[15px] text-[#666]'
-              >
-                {list.description}
-              </p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-export const Radio: FC<{
-  isToggled: boolean;
-  setToggle: (value: boolean) => void;
-}> = ({ isToggled, setToggle }) => {
-  const menubg = useSpring({ background: isToggled ? '#000' : '#000' });
-  const { y } = useSpring({
-    y: isToggled ? 180 : 0,
-  });
-  const menuAppear = useSpring({
-    transform: isToggled ? 'translate3D(0,0,0)' : 'translate3D(0,-40px,0)',
-    opacity: isToggled ? 1 : 0,
-  });
-
-  return (
-    <div className='absolute z-[300] '>
-      <animated.button
-        style={menubg}
-        className='radiowrapper'
-        onClick={() => setToggle(!isToggled)}
-      >
-        <div className='radio'>
-          <p>Product</p>
-          <animated.p
-            style={{
-              transform: y.interpolate((y) => `rotateX(${y}deg)`),
-              paddingLeft: '10px',
-              fontSize: 25,
-            }}
-          >
-            ▼
-          </animated.p>
-        </div>
-      </animated.button>
-      <animated.div style={menuAppear}>
-        {isToggled ? <RadioContent /> : null}
-      </animated.div>
-    </div>
-  );
-};
-
-const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
-  isOpen,
-  onAnchorClick,
-}) => {
-  const [isToggled, setToggle] = useState(false);
-
+const SideNav: FC<{
+  isOpen: boolean;
+  onAnchorClick: () => void;
+  active: boolean;
+  setActive: (value: boolean) => void;
+}> = ({ isOpen, onAnchorClick, setActive, active }) => {
   const api = useSpringRef();
 
   const springs = useSpring({
@@ -128,31 +57,96 @@ const SideNav: FC<{ isOpen: boolean; onAnchorClick: () => void }> = ({
         />
       </div>
 
-      {trail.map(({ height, ...style }, index) => (
-        <animated.div
-          key={index}
-          className={`relative transition-all 
-        ${index > 0 && isToggled ? `top-[45%] ` : `top-[15%]`}
-          z-[200] h-[80px] w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white will-change-[transform,opacity]`}
-          style={style}
-        >
-          <animated.a
-            onClick={() => {
-              items[index] !== 'Product' && onAnchorClick();
-            }}
-            href={`#${items[index]}`}
-            style={{ height }}
+      <div className='mt-16'>
+        {trail.map(({ height, ...style }, index) => (
+          <animated.div
+            key={index}
+            className={`  
+
+ ${items[index] === 'Product' && active ? `h-96` : `h-full`}
+          h-[80px] w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white transition-all will-change-[transform,opacity]`}
+            style={style}
           >
-            {items[index] === 'Product' ? (
-              <>
-                <Radio isToggled={isToggled} setToggle={setToggle} />
-              </>
-            ) : (
-              items[index]
-            )}
-          </animated.a>
-        </animated.div>
-      ))}
+            <animated.a
+              className={'text-3xl'}
+              onClick={() => {
+                items[index] !== 'Product' && onAnchorClick();
+              }}
+              href={`#${items[index]}`}
+              style={{ height }}
+            >
+              {items[index] === 'Product' ? (
+                <>
+                  <div
+                    className='flex items-center gap-4 '
+                    onClick={() => {
+                      setActive(!active);
+                    }}
+                  >
+                    {items[index]}{' '}
+                    <FontAwesomeIcon
+                      icon={faGreaterThan}
+                      className=' rotate-90 text-[15px]'
+                    />
+                  </div>
+                  {
+                    <div
+                      className={` mr-4 mt-2  transition-all  ${
+                        active ? `h-[600px]` : `h-[0px]`
+                      } `}
+                    >
+                      <Menu as='div'>
+                        <Transition
+                          show={active}
+                          enter=''
+                          enterFrom='opacity-100 '
+                          enterTo='opacity-100 '
+                          leave=''
+                          leaveFrom='opacity-100 '
+                          leaveTo='opacity-100 '
+                        >
+                          <Menu.Items
+                            className={` mr-4 transition-all  ${
+                              active ? `h-full` : `h-[0px]`
+                            } `}
+                          >
+                            <Menu.Item>
+                              <div className=' h-full w-full cursor-pointer   py-2'>
+                                {menuList.map((list, i) => {
+                                  return (
+                                    <div
+                                      key={i}
+                                      className='flex items-center justify-start gap-2 rounded-lg p-2 tracking-wider hover:bg-[#3b3a3a]'
+                                    >
+                                      <div className='flex h-5 w-5 items-center  justify-center rounded-lg bg-[#100f0f] bg-opacity-50 text-[15px] text-gray-100'>
+                                        {list.icon}
+                                      </div>
+                                      <div>
+                                        <h4 className=' p-0 pb-1 text-[15px] font-[500] text-white'>
+                                          {list.title}
+                                        </h4>
+                                        <p className='text-[10px] leading-none text-[#666] '>
+                                          {list.description}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </Menu.Item>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    </div>
+                  }
+                </>
+              ) : (
+                items[index]
+              )}
+            </animated.a>
+          </animated.div>
+        ))}
+      </div>
     </animated.div>
   );
 };
