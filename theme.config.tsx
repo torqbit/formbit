@@ -1,7 +1,7 @@
 import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
-
+import { siteConfig } from '@/constant/config';
 const config: DocsThemeConfig = {
   logo: (
     <span>
@@ -16,8 +16,8 @@ const config: DocsThemeConfig = {
     const { route } = useRouter();
     const socialCard =
       route === '/' || !title
-        ? 'https://nextra.site/og.jpeg'
-        : `https://nextra.site/api/og?title=${title}`;
+        ? `${siteConfig.url}images/screenshot-formbit.jpg`
+        : `${siteConfig.url}images/screenshot-formbit.jpg?title=${title}`;
 
     return (
       <>
@@ -27,19 +27,19 @@ const config: DocsThemeConfig = {
         <meta httpEquiv='Content-Language' content='en' />
         <meta
           name='description'
-          content='Make beautiful websites with Next.js & MDX.'
+          content='Next.JS + TailwindCSS + HeadlessUI powered website template for your next SaaS marketing website'
         />
         <meta
           name='og:description'
-          content='Make beautiful websites with Next.js & MDX.'
+          content='Next.JS + TailwindCSS + HeadlessUI powered website template for your next SaaS marketing website'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:image' content={socialCard} />
-        <meta name='twitter:site:domain' content='nextra.site' />
-        <meta name='twitter:url' content='https://nextra.site' />
+        <meta name='twitter:site:domain' content='formbit' />
+        <meta name='twitter:url' content={siteConfig.url} />
         <meta
           name='og:title'
-          content={title ? title + ' – formbit' : 'formbit'}
+          content={title ? title + ' – Formbit' : 'Formbit'}
         />
         <meta name='og:image' content={socialCard} />
         <meta name='apple-mobile-web-app-title' content='formbit' />
