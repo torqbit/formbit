@@ -1,5 +1,6 @@
 import { faCheck, faDollar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const Pricing = () => {
   const packages = [
@@ -22,13 +23,13 @@ const Pricing = () => {
                 >
                   {items.map((item, i) => {
                     return (
-                      <a
+                      <Link
                         key={i}
                         href=''
                         className='mb-4 flex items-center gap-2 text-[14px] text-white sm:mb-8 sm:items-center md:text-lg lg:mb-0'
                       >
                         <FontAwesomeIcon icon={faCheck} size='sm' /> {item}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>

@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu } from '@headlessui/react';
+import Link from 'next/link';
 import { FC } from 'react';
 export const menuList = [
   {
@@ -88,7 +89,7 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
         })}
       </div>
       <div className='h-[520px] w-[400px] rounded-lg bg-[#161616] p-6'>
-        <a
+        <Link
           href=''
           className=' group cursor-pointer tracking-wider text-[#666] transition-all ease-in-out hover:text-white'
         >
@@ -99,7 +100,7 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
             // translate-x-[0px] hover:text-white group-hover:translate-x-[8px]
             // '
           />
-        </a>
+        </Link>
         <div className='py-4 '>
           {customerstories.map((stroy, i) => {
             return (

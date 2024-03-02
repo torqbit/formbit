@@ -1,5 +1,6 @@
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const Footer = () => {
   const options = [
@@ -202,12 +203,12 @@ const Footer = () => {
   return (
     <footer className=' overflow-hidden bg-gray-50 py-20 '>
       <div className='mx-auto my-0 max-w-[1200px] px-8 '>
-        <a
+        <Link
           href='#'
           className='flex cursor-pointer items-center justify-start gap-1 pb-16  '
         >
           <img src='/images/formbit-logo.png' className='w-[120px]' alt='' />
-        </a>
+        </Link>
         <div className='  grid grid-cols-2 items-start justify-between gap-12 gap-x-8 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8 sm:grid-cols-3  md:grid-cols-4 lg:flex lg:gap-0'>
           {options.map((opt, i) => {
             return (
@@ -218,13 +219,13 @@ const Footer = () => {
                 <div className='flex flex-col gap-4'>
                   {opt.links.map((link, i) => {
                     return (
-                      <a
+                      <Link
                         key={i}
                         className='cursor-pointer font-[500] text-[#666] transition-all hover:text-gray-800'
                         href={link.href}
                       >
                         {link.title}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
@@ -240,9 +241,9 @@ const Footer = () => {
           <div className='flex items-center gap-5'>
             {socialIcons.map((icon, i) => {
               return (
-                <a href={icon.href} className='transition-all' key={i}>
+                <Link href={icon.href} className='transition-all' key={i}>
                   {icon.icon}
-                </a>
+                </Link>
               );
             })}
           </div>

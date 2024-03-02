@@ -63,8 +63,8 @@ const SideNav: FC<{
             key={index}
             className={`  
 
- ${items[index] === 'Product' && active ? `h-96` : `h-full`}
-          h-[80px] w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white transition-all will-change-[transform,opacity]`}
+ ${items[index] === 'Product' && active ? `h-[460px]` : `h-full`}
+          w-full overflow-hidden pl-10 text-[3em] font-[700] leading-[80px] tracking-[-0.05em] text-white transition-all will-change-[transform,opacity]`}
             style={style}
           >
             <animated.a
@@ -92,7 +92,7 @@ const SideNav: FC<{
                   {
                     <div
                       className={` mr-4 mt-2  transition-all  ${
-                        active ? `h-[600px]` : `h-[0px]`
+                        active ? `h-full` : `h-[0px]`
                       } `}
                     >
                       <Menu as='div'>

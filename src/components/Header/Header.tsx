@@ -4,6 +4,7 @@ import SideNav from '@/components/SideNav/SideNav';
 
 import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
+import Link from 'next/link';
 
 const Header = () => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
@@ -23,14 +24,16 @@ const Header = () => {
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
           <div className='flex items-center gap-8 transition-all'>
-            <a href='/' className='flex items-center gap-1 text-lg font-[600] '>
+            <Link
+              href='/'
+              className='flex items-center gap-1 text-lg font-[600] '
+            >
               <img
                 src='/images/formbit-logo.png'
                 className='w-[120px]'
                 alt=''
               />
-            </a>
-
+            </Link>
             <div
               onClick={() =>
                 setMenuActive({
@@ -70,7 +73,7 @@ const Header = () => {
               </Menu>
             </div>
 
-            <a
+            <Link
               onClick={() =>
                 setMenuActive({
                   active: !menuActive.active,
@@ -81,34 +84,34 @@ const Header = () => {
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Solution
-            </a>
+            </Link>
 
-            <a
+            <Link
               href='/pricing'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href='/pricing'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Docs
-            </a>
-            <a
+            </Link>
+            <Link
               href='#price'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Blogs
-            </a>
+            </Link>
           </div>
           <div className='flex items-center gap-5'>
-            <a
+            <Link
               href=''
               className='text-[18px] font-[500]  text-gray-600 hover:text-gray-800'
             >
               Customer Login
-            </a>
+            </Link>
             <button className='flex h-[35px] w-[100px] items-center justify-center rounded-lg   bg-black   text-center font-[500] text-white shadow-lg'>
               Sign up
             </button>
@@ -138,11 +141,10 @@ const Header = () => {
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
               setSideNav(!showSideNav);
-              setActive(false);
+              // setActive(false);
             }}
           />
         </div>
-        {/* <Product menu={menuActive} /> */}
       </div>
     </header>
   );
