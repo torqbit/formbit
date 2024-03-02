@@ -9,35 +9,35 @@ const Testimonial = () => {
     },
     {
       img: '',
-      title: 'Ken',
-      post: 'Founder of Tabla.io',
+      title: 'Dorie Jane',
+      post: 'Program Manager at Monday.com',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In fermentum posuere urna nec. Pulvinar etiam non quam lacus. Mi quis hendrerit dolor magna eget.',
+    },
+    {
+      img: '',
+      title: 'James Antony',
+      post: 'CEO at Dummy',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+      img: '',
+      title: 'Jack',
+      post: 'Tech Lead at Instagram',
       description:
         'Formbit is dead simple, when it comes to creating amazing forms for our customers. I would love to recommend this product to my friends, anytime. I definetely plan to use it my other projects.',
     },
     {
       img: '',
-      title: 'Ken',
-      post: 'Founder of Tabla.io',
+      title: 'Vijay Shen',
+      post: 'Chief Architect at Infosys',
       description:
         'Formbit is dead simple, when it comes to creating amazing forms for our customers. I would love to recommend this product to my friends, anytime. I definetely plan to use it my other projects.',
     },
     {
       img: '',
-      title: 'Ken',
-      post: 'Founder of Tabla.io',
-      description:
-        'Formbit is dead simple, when it comes to creating amazing forms for our customers. I would love to recommend this product to my friends, anytime. I definetely plan to use it my other projects.',
-    },
-    {
-      img: '',
-      title: 'Ken',
-      post: 'Founder of Tabla.io',
-      description:
-        'Formbit is dead simple, when it comes to creating amazing forms for our customers. I would love to recommend this product to my friends, anytime. I definetely plan to use it my other projects.',
-    },
-    {
-      img: '',
-      title: 'Ken',
+      title: 'Salman Akhter',
       post: 'Founder of Tabla.io',
       description:
         'Formbit is dead simple, when it comes to creating amazing forms for our customers. I would love to recommend this product to my friends, anytime. I definetely plan to use it my other projects.',
@@ -74,7 +74,7 @@ const Testimonial = () => {
                     </p>
                   </div>
                 </div>
-                <p className='text-sm leading-relaxed text-[#666] lg:font-[600]'>
+                <p className='text-sm leading-relaxed text-[#666] lg:font-[400]'>
                   {info.description}
                 </p>
               </div>

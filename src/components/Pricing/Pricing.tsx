@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Pricing = () => {
   const packages = [
-    ['Unlimited members', '3 admin accounts', '100GB storage'],
+    ['Unlimited forms', '3 admin accounts', '100GB storage'],
     ['Custom domain', 'API access', 'Bulk importer'],
   ];
   return (
@@ -40,8 +40,8 @@ const Pricing = () => {
           <div>
             <div className='flex items-end justify-center gap-1 pb-4 sm:justify-normal'>
               <div className='flex items-center gap-1'>
-                <FontAwesomeIcon icon={faDollar} size='4x' color='white' />
-                <span className=' text-5xl text-white'> 19</span>
+                <FontAwesomeIcon icon={faDollar} size='3x' color='white' />
+                <span className=' text-5xl text-white'> 49</span>
               </div>
               <span className=' pb-2 text-lg font-[600] text-[#666]'>
                 / months
@@ -61,9 +61,8 @@ const Pricing = () => {
           />
           <div>
             <p className='max-w-[200px] pb-4 text-sm text-[#666] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] lg:text-lg lg:font-[600]'>
-              "You made it so simple. My new site so much faster and easier to
-              work with than my old sit. I just choose the page, make the
-              change."
+              "You made it so simple to build forms. My new website now has all
+              your forms embedded and captures all sorts of information."
             </p>
             <div>
               <div className='text-lg text-gray-900 lg:font-[600]'>
