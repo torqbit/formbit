@@ -60,6 +60,9 @@ const SideNav: FC<{
       <div className='mt-16'>
         {trail.map(({ height, ...style }, index) => (
           <animated.div
+            onClick={() => {
+              items[index] !== 'Product' && onAnchorClick();
+            }}
             key={index}
             className={`  
 
@@ -69,9 +72,6 @@ const SideNav: FC<{
           >
             <animated.a
               className={'text-3xl'}
-              onClick={() => {
-                items[index] !== 'Product' && onAnchorClick();
-              }}
               href={`#${items[index]}`}
               style={{ height }}
             >
@@ -116,16 +116,16 @@ const SideNav: FC<{
                                   return (
                                     <div
                                       key={i}
-                                      className='flex items-center justify-start gap-2 rounded-lg p-2 tracking-wider hover:bg-[#3b3a3a]'
+                                      className='flex items-center justify-start gap-2 rounded-lg py-2 tracking-wider'
                                     >
-                                      <div className='flex h-5 w-5 items-center  justify-center rounded-lg bg-[#100f0f] bg-opacity-50 text-[15px] text-gray-100'>
+                                      <div className='flex h-10 w-10 items-center  justify-center rounded-lg bg-[#100f0eef] bg-opacity-50 text-[15px] text-gray-100'>
                                         {list.icon}
                                       </div>
                                       <div>
-                                        <h4 className=' p-0 pb-1 text-[15px] font-[500] text-white'>
+                                        <h4 className=' p-0 pb-1 text-[15px] font-[500] text-[#666]'>
                                           {list.title}
                                         </h4>
-                                        <p className='text-[10px] leading-none text-[#666] '>
+                                        <p className='text-[10px] leading-none text-[#888] '>
                                           {list.description}
                                         </p>
                                       </div>
