@@ -1,3 +1,5 @@
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { FC } from 'react';
 export const menuList = [
@@ -9,7 +11,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -29,7 +31,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -49,7 +51,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -69,7 +71,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -90,7 +92,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -110,7 +112,7 @@ export const menuList = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='h-6 w-6 text-[#666]'
+        className='h-6 w-6 text-[#666] group-hover:text-[#444]'
       >
         <path
           strokeLinecap='round'
@@ -159,16 +161,22 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
           return (
             <div
               key={i}
-              className='group flex items-center justify-start gap-2 rounded-md p-1  hover:bg-[#a7a7a782] '
+              className='group flex items-center justify-start gap-2 rounded-md p-1 '
             >
               <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#eee] bg-opacity-50  p-2 text-gray-100 '>
                 <div className='rounded-sm  p-1 '>{list.icon}</div>
               </div>
               <div>
-                <h4 className=' text-lg font-[500] text-[#666] '>
+                <h4 className=' flex items-center gap-1  text-lg font-[500] text-[#666]'>
                   {list.title}
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className='text-[12px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
+                  />
                 </h4>
-                <p className='text-[15px] text-[#888]  '>{list.description}</p>
+                <p className='text-[15px] text-[#888] group-hover:font-[400]  group-hover:text-[#444]   '>
+                  {list.description}
+                </p>
               </div>
             </div>
           );
@@ -177,9 +185,14 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
       <div className='h-full  rounded-r-lg border-l-2 border-gray-200 bg-white p-6'>
         <Link
           href=''
-          className=' group cursor-pointer pb-8 text-2xl tracking-wider text-[#666]  '
+          className=' group  cursor-pointer  text-2xl tracking-wider text-[#666]  group-hover:font-[400]  group-hover:text-[#888]  '
         >
           Success stories
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            size='2xs'
+            className='relative top-[2px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
+          />
         </Link>
         <div className='mt-2 flex flex-col items-start justify-start gap-2 py-1 '>
           {customerstories.map((stroy, i) => {
