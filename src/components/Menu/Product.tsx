@@ -199,12 +199,12 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
             return (
               <div
                 key={i}
-                className=' flex flex-col items-start justify-start gap-1 py-2 '
+                className='group flex flex-col items-start justify-start gap-1 py-2 '
               >
                 <div className=' flex items-center justify-center rounded-lg  bg-opacity-50 text-gray-100'>
                   <img src={stroy.img} alt='' />
                 </div>
-                <p className='max-w-[280px] cursor-pointer text-[15px] text-[#888] '>
+                <p className='max-w-[280px] cursor-pointer text-[15px] text-[#888] transition-all group-hover:text-[#444] '>
                   {stroy.title}
                 </p>
               </div>
