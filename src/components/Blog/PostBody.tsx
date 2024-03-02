@@ -46,20 +46,29 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
           </div>
 
           <div className='items-left m-auto flex flex-col justify-between p-[20px] text-xl font-[400] text-[#666] md:max-w-[1200px]'>
-            <h1 className='w-[full]  pb-6 text-center text-[40px] font-light leading-tight text-black md:text-[55px] md:leading-[70px]  '>
-              {blogPost.title}
-            </h1>
-            <DateFormater dateString={blogPost.date} />
-            <Avatar
-              picture={blogPost.author.picture}
-              name={blogPost.author.name}
-            />
+            <div className='flex flex-col items-center '>
+              <h1 className='w-[full]  pb-6 text-center text-[40px] font-light leading-tight text-black md:text-[55px] md:leading-[70px]  '>
+                {blogPost.title}
+              </h1>
 
-            <div>
-              <div
-                className='py-4'
-                dangerouslySetInnerHTML={{ __html: content as any }}
-              />
+              <h2 className='text-[30px] font-light text-[#666]'>
+                <DateFormater dateString={blogPost.date} />
+              </h2>
+            </div>
+            <hr className='m-[20px]' />
+            <div className='flex flex-col md:flex-row'>
+              <div className='flex flex-col rounded border-2 p-6 md:w-[600px]  md:flex-col md:border-none md:p-0'>
+                <Avatar picture={blogPost.author.picture} name={''} />
+                <h1 className='text-[15px] text-black'>
+                  {blogPost.author.name}
+                </h1>
+              </div>
+              <div>
+                <div
+                  className='py-4'
+                  dangerouslySetInnerHTML={{ __html: content as any }}
+                />
+              </div>
             </div>
           </div>
         </section>
