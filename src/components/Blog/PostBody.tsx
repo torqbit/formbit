@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from 'react';
 import Head from 'next/head';
 import DateFormater from './DateFormater';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const PostBody: FC<{ slug: string }> = ({ slug }) => {
   const [blogPost, setBlogPost] = useState<any>();
@@ -72,6 +73,7 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
             </div>
           </div>
         </section>
+        <Footer />
       </>
     );
   } else {
