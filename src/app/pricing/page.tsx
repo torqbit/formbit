@@ -16,7 +16,7 @@ const PricingPage = () => {
   return (
     <section
       onClick={() => {
-        setMenuActive({ active: false, menu: '' });
+        menuActive.active && setMenuActive({ active: false, menu: '' });
       }}
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />

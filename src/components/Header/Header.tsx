@@ -18,10 +18,15 @@ const Header: FC<{
   };
 
   return (
-    <header className='  fixed left-0 right-0 z-[100]  h-[60px] bg-white  '>
+    <header
+      className='  fixed left-0 right-0 z-[100000]  h-[60px] bg-white  '
+      onClick={() => {
+        menuActive.active && onMenuActive(false, '');
+      }}
+    >
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
-          <div className='flex items-center gap-8 transition-all'>
+          <div className='relative z-[2000] flex items-center gap-8 transition-all'>
             <Link
               href='/'
               className='flex items-center gap-1 text-lg font-[600] '
@@ -32,41 +37,25 @@ const Header: FC<{
                 alt=''
               />
             </Link>
-            <div onClick={() => onMenuActive(!menuActive.active, 'product')}>
-              <Menu
-                as='div'
-                className={' absolute -left-[10px] top-[20px] h-full w-full'}
-              >
-                <Menu.Button
-                  className={`group relative -top-[2px] left-[320px] flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
-               ${
-                 menuActive.menu === 'product' && menuActive.active
-                   ? `text-gray-800`
-                   : `text-gray-400`
-               }
-               `}
-                >
-                  Product
-                </Menu.Button>
-                <Transition
-                  as={Fragment}
-                  enter='transition ease-out duration-100'
-                  enterFrom='transform opacity-0 scale-100'
-                  enterTo='transform opacity-100 scale-100'
-                  leave='transition ease-in duration-100'
-                  leaveFrom='transform opacity-100 scale-100'
-                  leaveTo='transform opacity-0 scale-100'
-                >
-                  <Menu.Items>
-                    <Product menu={menuActive.menu} />
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-            </div>
+
+            <Link
+              onClick={() => onMenuActive(!menuActive.active, 'product')}
+              href=''
+              className={` text-[18px] font-[500]
+              
+              ${
+                menuActive.menu === 'product' && menuActive.active
+                  ? `text-gray-800`
+                  : `text-gray-400`
+              }
+              text-gray-400 hover:text-gray-800`}
+            >
+              Product
+            </Link>
 
             <Link
               href='#price'
-              className=' ml-14 text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Solution
             </Link>
@@ -131,6 +120,41 @@ const Header: FC<{
           />
         </div>
       </div>
+
+      {menuActive.active && (
+        <div>
+          <Menu
+            as='div'
+            className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
+          >
+            {/* <Menu.Button
+                className={`group relative -top-[2px] left-[320px] z-10 flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
+             ${
+               menuActive.menu === 'product' && menuActive.active
+                 ? `text-gray-800`
+                 : `text-gray-400`
+             }
+             `}
+              >
+                Product
+              </Menu.Button> */}
+            <Transition
+              show={menuActive.active}
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-100'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-100'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-100'
+            >
+              <Menu.Items>
+                <Product menu={menuActive.menu} />
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        </div>
+      )}
     </header>
   );
 };
