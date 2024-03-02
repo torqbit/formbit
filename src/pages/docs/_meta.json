@@ -1,6 +1,9 @@
 {
   "index": "Introduction",
-  "apiReference": "API Reference",
+  "apiReference": {
+    "title": "API Reference",
+    "icon": "D"
+  },
   "sdkReference": "SDK Reference",
   "reactPrint": "react-print",
   "community": "Community",

@@ -2,6 +2,7 @@ import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 import { siteConfig } from '@/constant/config';
+
 const config: DocsThemeConfig = {
   logo: (
     <span>
@@ -78,6 +79,9 @@ const config: DocsThemeConfig = {
         <img src='/images/formbit-logo.png' alt='formbit' />
       </span>
     ),
+  },
+  toc: {
+    backToTop: true,
   },
 };
 
