@@ -1,7 +1,7 @@
 'use client';
 
 import Head from 'next/head';
-import * as React from 'react';
+import React, { FC, useEffect } from 'react';
 
 /**
  * SVGR Support
@@ -17,27 +17,27 @@ import Create from '@/components/Create/Create';
 import Steps from '@/components/Steps/Steps';
 import Pricing from '@/components/Pricing/Pricing';
 import Footer from '@/components/Footer/Footer';
-import { useState } from 'react';
+import Testimonial from '@/components/Testimonial/Testimonial';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
 // to customize the default configuration.
 
 export default function HomePage() {
-  const [open, setOpen] = useState<boolean>(false);
-
   return (
     <main className='bg-gray-200'>
       <Head>
         <title>Hi</title>
       </Head>
-      <section className={`bg-gray-200 ${open && 'fixed'}`}>
-        <Header open={open} setOpen={setOpen} />
-        <div className={`${open && ' blur-sm'}`} onClick={() => setOpen(false)}>
+      <section className={`bg-gray-200}`}>
+        <Header />
+
+        <div>
           <Hero />
           <Brands />
-          <Steps />
           <Create />
+          <Steps />
+          <Testimonial />
           <Pricing />
           <Footer />
         </div>

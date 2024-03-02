@@ -4,44 +4,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
   const options = [
     {
-      title: 'COMPANY',
+      title: 'Products',
       links: [
         {
-          title: 'About',
+          title: 'Atlas',
           href: '#',
         },
         {
-          title: 'Features',
+          title: 'Billing',
           href: '#',
         },
         {
-          title: 'Works',
+          title: 'Capital',
           href: '#',
         },
         {
-          title: 'Career',
+          title: 'Checkout',
           href: '#',
         },
       ],
     },
     {
-      title: 'HELP',
+      title: 'Solutions',
 
       links: [
         {
-          title: 'Customer Support',
+          title: 'Start-ups',
           href: '#',
         },
         {
-          title: 'Delivery Details',
+          title: 'Enterprises',
           href: '#',
         },
         {
-          title: 'Terms & Conditions',
+          title: 'SaaS',
           href: '#',
         },
         {
-          title: 'Privacy Policy',
+          title: 'Platforms',
           href: '#',
         },
       ],
@@ -50,19 +50,74 @@ const Footer = () => {
       title: 'RESOURCES',
       links: [
         {
-          title: 'Free eBooks',
+          title: 'Guides',
           href: '#',
         },
         {
-          title: 'Development Tutorial',
+          title: 'Customer',
           href: '#',
         },
         {
-          title: 'How to - Blog',
+          title: 'Stories',
           href: '#',
         },
         {
-          title: 'Youtube Playlist',
+          title: 'Blog',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Developers',
+      links: [
+        {
+          title: 'Documentation',
+          href: '#',
+        },
+        {
+          title: 'API Reference',
+          href: '#',
+        },
+        {
+          title: 'API Status',
+          href: '#',
+        },
+        {
+          title: 'API Changelog',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        {
+          title: 'Jobs',
+          href: '#',
+        },
+        {
+          title: 'Newsroom',
+          href: '#',
+        },
+        {
+          title: 'Become a Partner',
+          href: '#',
+        },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        {
+          title: 'Contact Sales',
+          href: '#',
+        },
+        {
+          title: 'Support Centre',
+          href: '#',
+        },
+        {
+          title: 'Support Plans',
           href: '#',
         },
       ],
@@ -146,14 +201,14 @@ const Footer = () => {
 
   return (
     <footer className='overflow-hidden bg-gray-50 py-20 '>
-      <div className='mx-auto my-0 max-w-[1200px] px-4 '>
+      <div className='mx-auto my-0 max-w-[1200px] px-8 '>
         <a
           href='#'
           className='flex cursor-pointer items-center justify-start gap-1 pb-16  '
         >
           <img src='/images/formbit-logo.png' className='w-[120px]' alt='' />
         </a>
-        <div className='relative z-40 grid grid-cols-1 items-start justify-between gap-x-0 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8  sm:grid-cols-2 lg:flex lg:gap-0'>
+        <div className='relative z-40 grid grid-cols-2 items-start justify-between gap-12 gap-x-8 gap-y-8 border-b-2 border-gray-400 border-opacity-25 pb-8 sm:grid-cols-3  md:grid-cols-4 lg:flex lg:gap-0'>
           {options.map((opt, i) => {
             return (
               <ul key={i}>
@@ -165,7 +220,7 @@ const Footer = () => {
                     return (
                       <a
                         key={i}
-                        className='cursor-pointer font-[500] text-gray-500 transition-all hover:text-gray-800'
+                        className='cursor-pointer font-[500] text-[#666] transition-all hover:text-gray-800'
                         href={link.href}
                       >
                         {link.title}
@@ -176,48 +231,11 @@ const Footer = () => {
               </ul>
             );
           })}
-          <div className=''>
-            <div className='pb-4 text-lg font-[600] text-gray-700 lg:text-xl'>
-              SUBSCRIBE TO NEWSLETTER
-            </div>
-            <div className=' relative z-20  flex items-center justify-start py-6 '>
-              <input
-                type='text'
-                placeholder='Enter email address'
-                className='h-[40px] w-full border-2 border-gray-400 border-opacity-50 bg-white px-4 text-lg text-black outline-none placeholder:text-sm focus:border-none focus:outline-none active:border-none active:outline-none md:w-[250px] lg:h-[50px] lg:w-[300px] lg:placeholder:text-lg '
-              />
-              <button className='flex h-[40px] w-[60px] items-center justify-center rounded-xl  rounded-bl-none rounded-tl-none border-opacity-25 bg-black text-sm font-[600]   text-white outline-none lg:h-[50px] lg:w-[100px] lg:text-xl'>
-                Join
-              </button>
-            </div>
-            <div className='relative z-10 -mt-[70px] mb-2 h-[50px] w-full rounded-lg  bg-gradient-to-r  from-[#f2b5d4]  via-pink-200 to-[#7bdff2] opacity-75 blur  md:w-[320px] lg:-mt-[80px] lg:h-[55px] lg:w-[400px]  '></div>
-
-            <div className='flex w-full items-center justify-between gap-2 pt-2 md:w-[250px] lg:w-full lg:gap-0 '>
-              <div className='font-[600] lg:text-[18px]'>
-                <div className='text-gray-800'>CALL US</div>
-                <a
-                  href=''
-                  className=' text-gray-500 transition-all hover:text-gray-800 lg:text-lg'
-                >
-                  444-5555-555
-                </a>
-              </div>
-              <div className='font-[600] lg:text-[18px]'>
-                <div className='text-gray-800'>EMAIL US</div>
-                <a
-                  href=''
-                  className='text-gray-500 transition-all hover:text-gray-800 lg:text-lg'
-                >
-                  info@formbit.xyz
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
         <div className='mt-10 flex flex-col-reverse items-center justify-between gap-4 lg:flex-row lg:gap-0'>
-          <div className='flex cursor-pointer items-center gap-1 font-[600] text-gray-600 transition-all hover:text-gray-800'>
+          <div className='flex cursor-pointer items-center gap-1 font-[600] text-[#666] transition-all hover:text-gray-800'>
             <FontAwesomeIcon icon={faCopyright} size='sm' color='black' />
-            Copyright2021.All Rights Reserved
+            Copyright 2024. All Rights Reserved
           </div>
           <div className='flex items-center gap-5'>
             {socialIcons.map((icon, i) => {

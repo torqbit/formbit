@@ -1,16 +1,16 @@
 const Hero = () => {
   return (
     <section className=' h-full  py-20'>
-      <div className=' relative z-10 mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center px-4'>
-        <h1 className=' py-4 text-center text-4xl font-[600] leading-tight lg:text-6xl'>
-          Form that capture <br /> the world&apos;s attentions.{' '}
+      <div className=' relative z-10 mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
+        <h1 className=' py-4 text-left text-2xl leading-tight sm:text-center lg:text-6xl lg:font-[600]'>
+          Form that capture <br /> the world&apos;s attention.{' '}
         </h1>
-        <p className='max-w-[500px] text-center text-lg font-[600] text-gray-700 md:max-w-[600] lg:max-w-[800px] lg:text-2xl'>
-          With Frombit - capture feedbacks, assess students & employees, collect
+        <p className=' text-left text-lg text-[#666] sm:text-center md:max-w-[600px] lg:max-w-[800px] lg:text-2xl lg:font-[400]'>
+          With Formbit - capture feedbacks, assess students & employees, collect
           interests of potential clients and much more.
         </p>
-        <div className='flex w-full items-center justify-center gap-3 px-4 py-8'>
-          <button className='h-[50px] w-full rounded bg-black font-[600] text-gray-200 hover:shadow-xl sm:w-[400px] md:w-[200px] lg:w-[300px]'>
+        <div className='flex w-full justify-start gap-3 py-8 sm:justify-center lg:items-center lg:px-4'>
+          <button className='h-[50px] w-full rounded bg-black font-[400] text-gray-200 hover:shadow-xl sm:w-[400px] md:w-[200px] lg:w-[300px] lg:font-[600]'>
             Get started for free
           </button>
         </div>
