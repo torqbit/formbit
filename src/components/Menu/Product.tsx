@@ -1,5 +1,6 @@
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Menu } from '@headlessui/react';
 import Link from 'next/link';
 import { FC } from 'react';
 export const menuList = [
@@ -153,32 +154,31 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
   ];
   return (
     <div
-      className={`absolute left-[200px] top-16 z-[100000] flex
+      className={`absolute left-[200px] top-12 z-[100000] flex
     items-start justify-center rounded-lg bg-white transition-all `}
     >
       <div className=' h-full  cursor-pointer  p-6'>
         {menuList.map((list, i) => {
           return (
-            <div
-              key={i}
-              className='group flex items-center justify-start gap-2 rounded-md p-1 '
-            >
-              <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#eee] bg-opacity-50  p-2 text-gray-100 '>
-                <div className='rounded-sm  p-1 '>{list.icon}</div>
+            <Menu.Item key={i}>
+              <div className='group flex items-center justify-start gap-2 rounded-md p-1 '>
+                <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#eee] bg-opacity-50  p-2 text-gray-100 '>
+                  <div className='rounded-sm  p-1 '>{list.icon}</div>
+                </div>
+                <div>
+                  <h4 className=' flex items-center gap-1  text-lg font-[500] text-[#666]'>
+                    {list.title}
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className='text-[12px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
+                    />
+                  </h4>
+                  <p className='text-[15px] text-[#888] group-hover:font-[400]  group-hover:text-[#444]   '>
+                    {list.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className=' flex items-center gap-1  text-lg font-[500] text-[#666]'>
-                  {list.title}
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className='text-[12px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
-                  />
-                </h4>
-                <p className='text-[15px] text-[#888] group-hover:font-[400]  group-hover:text-[#444]   '>
-                  {list.description}
-                </p>
-              </div>
-            </div>
+            </Menu.Item>
           );
         })}
       </div>
@@ -197,17 +197,16 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
         <div className='mt-2 flex flex-col items-start justify-start gap-2 py-1 '>
           {customerstories.map((stroy, i) => {
             return (
-              <div
-                key={i}
-                className='group flex flex-col items-start justify-start gap-1 py-2 '
-              >
-                <div className=' flex items-center justify-center rounded-lg  bg-opacity-50 text-gray-100'>
-                  <img src={stroy.img} alt='' />
+              <Menu.Item key={i}>
+                <div className='group flex flex-col items-start justify-start gap-1 py-2 '>
+                  <div className=' flex items-center justify-center rounded-lg  bg-opacity-50 text-gray-100'>
+                    <img src={stroy.img} alt='' />
+                  </div>
+                  <p className='max-w-[280px] cursor-pointer text-[15px] text-[#888] transition-all group-hover:text-[#444] '>
+                    {stroy.title}
+                  </p>
                 </div>
-                <p className='max-w-[280px] cursor-pointer text-[15px] text-[#888] transition-all group-hover:text-[#444] '>
-                  {stroy.title}
-                </p>
-              </div>
+              </Menu.Item>
             );
           })}
         </div>

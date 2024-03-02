@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 
@@ -6,14 +6,12 @@ import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 
-const Header = () => {
+const Header: FC<{
+  menuActive: { active: boolean; menu: string };
+  onMenuActive: (value: boolean, name: string) => void;
+}> = ({ menuActive, onMenuActive }) => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
   const [active, setActive] = useState(false);
-
-  const [menuActive, setMenuActive] = useState({
-    active: false,
-    menu: '',
-  });
 
   const onAnchorClick = () => {
     setSideNav(false);
@@ -34,17 +32,13 @@ const Header = () => {
                 alt=''
               />
             </Link>
-            <div
-              onClick={() =>
-                setMenuActive({
-                  active: !menuActive.active,
-                  menu: 'product',
-                })
-              }
-            >
-              <Menu as='div'>
+            <div onClick={() => onMenuActive(!menuActive.active, 'product')}>
+              <Menu
+                as='div'
+                className={' absolute -left-[10px] top-[20px] h-full w-full'}
+              >
                 <Menu.Button
-                  className={`group flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
+                  className={`group relative -top-[2px] left-[320px] flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
                ${
                  menuActive.menu === 'product' && menuActive.active
                    ? `text-gray-800`
@@ -55,33 +49,24 @@ const Header = () => {
                   Product
                 </Menu.Button>
                 <Transition
-                  show={menuActive.active}
-                  enter='transition-all duration-150'
-                  enterFrom='opacity-0 '
-                  enterTo='opacity-100 '
-                  leave='transition-all duration-150'
-                  leaveFrom='opacity-100 '
-                  leaveTo='opacity-0 '
-                  unmount={true}
+                  as={Fragment}
+                  enter='transition ease-out duration-100'
+                  enterFrom='transform opacity-0 scale-100'
+                  enterTo='transform opacity-100 scale-100'
+                  leave='transition ease-in duration-100'
+                  leaveFrom='transform opacity-100 scale-100'
+                  leaveTo='transform opacity-0 scale-100'
                 >
                   <Menu.Items>
-                    <Menu.Item>
-                      <Product menu={menuActive.menu} />
-                    </Menu.Item>
+                    <Product menu={menuActive.menu} />
                   </Menu.Items>
                 </Transition>
               </Menu>
             </div>
 
             <Link
-              onClick={() =>
-                setMenuActive({
-                  active: !menuActive.active,
-                  menu: 'solution',
-                })
-              }
               href='#price'
-              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              className=' ml-14 text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Solution
             </Link>
