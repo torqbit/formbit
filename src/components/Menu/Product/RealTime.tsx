@@ -18,7 +18,7 @@ const RealTime: FC<{
   return (
     <section className='  h-full  bg-[#eee] py-20'>
       <div
-        className={`mx-auto my-0 ${flex} flex max-w-[1200px] flex-col  items-start   justify-between gap-10 px-8 lg:gap-40 `}
+        className={`mx-auto my-0 ${flex} flex max-w-[1200px] flex-col  items-center   justify-between gap-10 px-8 lg:gap-40 lg:px-0 `}
       >
         <div className='lg:w-[50%] lg:p-4'>
           <h2 className='max-w-[500px] pb-4 text-2xl text-black lg:text-3xl'>

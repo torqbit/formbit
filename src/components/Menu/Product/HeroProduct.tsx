@@ -8,7 +8,7 @@ const HeroProduct: FC<{
 }> = ({ label, title, description, img }) => {
   return (
     <section className='  h-full  bg-[#eee] py-20'>
-      <div className=' mx-auto my-0 flex max-w-[1200px] flex-col-reverse justify-between px-8  lg:mt-16 lg:flex-row '>
+      <div className=' mx-auto my-0 flex max-w-[1200px] flex-col-reverse justify-between px-8 lg:mt-16 lg:flex-row lg:px-0 '>
         <div className='flex flex-col items-start justify-start'>
           <h4 className='max-w-[300px] pt-2 text-[#666]'>{label}</h4>
           <h1 className='m-0 py-4 text-left text-2xl text-[#000] lg:max-w-[500px] lg:text-6xl'>

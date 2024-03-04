@@ -18,21 +18,20 @@ const viewData = [
     icon: <FontAwesomeIcon icon={faEnvelope} />,
     title: 'Personalized Messages',
     description:
-      'Deliver a message that’s audience-, time-, channel-, and behavior-specific.',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
   },
   {
     icon: <FontAwesomeIcon icon={faWrench} />,
 
     title: 'Truly Omni Omni-channel',
-    description:
-      'Real-time customer profiles power rich audiences, which mean journeys can span native and external channels, whether paid or owned.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
   },
   {
     icon: <FontAwesomeIcon icon={faHamburger} />,
 
     title: 'Propensity modeling',
     description:
-      'Optimize your offers by predicting the likelihood someone will buy.',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Sed quae laborum asperiores dicta numquam quam ',
   },
 ];
 
@@ -40,27 +39,28 @@ const realtime = [
   {
     title: 'Real-time audiences',
     description:
-      'Target the right customer with the right message at the right time. Build audiences and create real-time campaigns, without relying on other teams.',
-    img: '/images/hero-image.png',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos',
+    img: 'https://placehold.co/600x700',
     flex: 'lg:flex-row',
-    link: 'Explore Twilio Engage',
+    link: 'Explore Formbit Engage',
     array: viewData,
   },
   {
     title: 'Deliver unified, personalized customer experiences',
     description:
-      'Build and activate data-driven, personalized campaigns across every customer channel from a centralized platform without relying on other teams.',
-    img: '/images/hero-image.png',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos,',
+    img: 'https://placehold.co/600x800',
     flex: 'lg:flex-row-reverse',
-    link: 'Explore Twilio Engage',
+    link: 'Explore Formbit Engage',
     array: viewData,
   },
   {
     title: 'Robust marketing appstore',
-    description: 'Activate audiences in 450+ marketing tools, in real-time.',
-    img: '/images/hero-image.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam ',
+    img: 'https://placehold.co/600x700',
     flex: 'lg:flex-row',
-    link: 'Explore Segment Connections',
+    link: 'Explore Formbit Connections',
     array: viewData,
   },
 ];
@@ -84,13 +84,13 @@ const ProductPage = () => {
         label={'For Marketing Teams'}
         title={'Know your customer, hit your goals'}
         description={
-          '1st party data reduces Customer Acquisition Cost, and increases Return on Ad Spend by enabling better targeting and omnichannel engagement.'
+          ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         }
-        img='/images/tools-illustration.svg'
+        img='https://placehold.co/600x500'
       />
       <View
         title='Complete view of the customer'
-        description='Unify your customer touch points across all platforms and channels. Understand your customer journey.'
+        description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem'
         viewData={viewData}
       />
       {realtime.map((content, i) => {
