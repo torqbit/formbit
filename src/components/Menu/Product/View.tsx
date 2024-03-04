@@ -20,20 +20,21 @@ const View: FC<{
             <p className='max-w-[600px]  text-lg text-[#666]'>{description}</p>
           </div>
         </div>
-        <div className='flex w-full flex-col items-start justify-center gap-8 pt-4 lg:flex-row lg:gap-16'>
+        <div className='flex w-full flex-col items-start justify-between  pt-4 lg:flex-row lg:gap-16'>
           {viewData.map((data, i) => {
             return (
-              <div key={i} className=' '>
-                <div className='place-content-center  py-4 lg:min-h-[250px]'>
-                  <div className='mb-8 flex h-10 w-10 items-center justify-center rounded-[50%] bg-[#fff]  shadow-xl'>
-                    {data.icon}
-                  </div>
-                  <div>
-                    <h4 className='pb-4 text-xl text-black'>{data.title}</h4>
-                    <p className='max-w-[400px] text-sm text-[#666]'>
-                      {data.description}
-                    </p>
-                  </div>
+              <div
+                key={i}
+                className='place-content-center  py-4 lg:min-h-[250px]'
+              >
+                <div className='mb-8 flex h-10 w-10 items-center justify-center rounded-[50%] bg-[#fff]  shadow-xl'>
+                  {data.icon}
+                </div>
+                <div>
+                  <h4 className='pb-4 text-xl text-black'>{data.title}</h4>
+                  <p className='max-w-[300px] text-sm text-[#666]'>
+                    {data.description}
+                  </p>
                 </div>
               </div>
             );
