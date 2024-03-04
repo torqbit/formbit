@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withFormbit = require('nextra')({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.tsx',
+  // options
+  flexsearch: true,
+  staticImage: true,
+  defaultShowCopyCode: true,
+});
+
+const nextConfig = withFormbit({
   eslint: {
     dirs: ['src'],
   },
@@ -45,6 +55,6 @@ const nextConfig = {
 
     return config;
   },
-};
+});
 
 module.exports = nextConfig;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
+import Link from 'next/link';
 
 const Header = () => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
@@ -38,6 +39,12 @@ const Header = () => {
             >
               Pricing
             </a>
+            <Link
+              href='/docs'
+              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+            >
+              Documentation
+            </Link>
           </div>
           <div className='flex items-center gap-5'>
             <a
