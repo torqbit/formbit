@@ -100,9 +100,9 @@ const HeroPrice = () => {
             onClick={() => setActive('month')}
             className={`flex w-[170px] items-center justify-center rounded-l-[25px] px-4 py-2  text-sm text-[#666]
             ${
-              active === 'annual'
-                ? `h-[41px] border   bg-white shadow-lg`
-                : `h-[40px] border-b-4 border-l-4 border-gray-200 bg-gray-50 shadow-md`
+              active === 'month'
+                ? `h-[42px] border   bg-white shadow-sm`
+                : `h-[40px] border-b-2 border-l-2 border-gray-200 bg-gray-50 shadow-md`
             }
             delay-70 transition-all`}
           >
@@ -110,11 +110,11 @@ const HeroPrice = () => {
           </div>
           <div
             onClick={() => setActive('annual')}
-            className={`flex w-[170px] items-center justify-center rounded-r-[25px] px-4 py-2  text-sm text-[#666]
+            className={`flex w-[170px] items-center justify-center  rounded-r-[25px] px-4 py-2  text-sm text-[#666]
             ${
-              active === 'month'
-                ? `h-[41px] border   bg-white shadow-lg`
-                : `h-[40px] border-b-4 border-r-4 border-gray-200 bg-gray-50 shadow-md`
+              active === 'annual'
+                ? `h-[42px] border   bg-white shadow-sm`
+                : `h-[40px] border-b-2 border-r-2  border-gray-200 bg-gray-50 shadow-md`
             }
             delay-70 flex items-center justify-center gap-x-2 transition-all`}
           >
@@ -197,7 +197,11 @@ const HeroPrice = () => {
 
                   <button
                     className={`
-                ${data.mode === 'Pro' ? `bg-[#242120] text-white` : `bg-gray-100 `}
+                ${
+                  data.mode === 'Pro'
+                    ? `bg-[#242120] text-white`
+                    : `bg-gray-100 `
+                }
                 mb-6 flex h-[40px] w-full items-center justify-center rounded-[15px] px-4 py-2 text-sm font-[600] text-[#666] shadow-md
                 `}
                   >

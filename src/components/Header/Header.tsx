@@ -19,7 +19,7 @@ const Header: FC<{
 
   return (
     <header
-      className='  fixed left-0 right-0 z-[100000]  h-[60px] bg-white  '
+      className='  fixed left-0 right-0 z-[1000]  h-[60px] bg-white  '
       onClick={() => {
         menuActive.active && onMenuActive(false, '');
       }}
