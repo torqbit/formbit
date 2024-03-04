@@ -23,6 +23,7 @@ export const menuList = [
     ),
     title: 'Quiz',
     description: 'Assess the skills of your audience',
+    href: '/quiz',
   },
   {
     icon: (
@@ -43,6 +44,7 @@ export const menuList = [
     ),
     title: 'Forms',
     description: 'Engage with your audience',
+    href: '/forms',
   },
   {
     icon: (
@@ -63,6 +65,7 @@ export const menuList = [
     ),
     title: 'Polls',
     description: 'Record interests of your audience',
+    href: '/polls',
   },
   {
     icon: (
@@ -83,6 +86,7 @@ export const menuList = [
     ),
     title: 'Sell',
     description: 'Use forms to sell your product',
+    href: '/sell',
   },
 
   {
@@ -104,6 +108,7 @@ export const menuList = [
     ),
     title: 'Connect',
     description: 'Send and manage your audience',
+    href: '/connect',
   },
   {
     icon: (
@@ -129,6 +134,7 @@ export const menuList = [
     ),
     title: 'Analyze',
     description: 'Analyze the usage of your forms',
+    href: '/analyze',
   },
 ];
 
@@ -161,23 +167,25 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
         {menuList.map((list, i) => {
           return (
             <Menu.Item key={i}>
-              <div className='group flex items-center justify-start gap-2 rounded-md p-1 '>
-                <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#eee] bg-opacity-50  p-2 text-gray-100 '>
-                  <div className='rounded-sm  p-1 '>{list.icon}</div>
+              <Link href={list.href}>
+                <div className='group flex items-center justify-start gap-2 rounded-md p-1 '>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-[#eee] bg-opacity-50  p-2 text-gray-100 '>
+                    <div className='rounded-sm  p-1 '>{list.icon}</div>
+                  </div>
+                  <div>
+                    <h4 className=' flex items-center gap-1  text-lg font-[500] text-[#666]'>
+                      {list.title}
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        className='text-[12px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
+                      />
+                    </h4>
+                    <p className='text-[15px] text-[#888] group-hover:font-[400]  group-hover:text-[#444]   '>
+                      {list.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className=' flex items-center gap-1  text-lg font-[500] text-[#666]'>
-                    {list.title}
-                    <FontAwesomeIcon
-                      icon={faChevronRight}
-                      className='text-[12px] opacity-0 transition-all group-hover:translate-x-2 group-hover:opacity-[1]'
-                    />
-                  </h4>
-                  <p className='text-[15px] text-[#888] group-hover:font-[400]  group-hover:text-[#444]   '>
-                    {list.description}
-                  </p>
-                </div>
-              </div>
+              </Link>
             </Menu.Item>
           );
         })}

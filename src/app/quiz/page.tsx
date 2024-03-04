@@ -81,8 +81,8 @@ const ProductPage = () => {
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
       <HeroProduct
-        label={'For Marketing Teams'}
-        title={'Know your customer, hit your goals'}
+        label={'For Quiz'}
+        title={'Assess the skills of your audience'}
         description={
           ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         }
