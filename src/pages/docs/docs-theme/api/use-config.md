@@ -1,4 +1,4 @@
-import { Callout } from 'nextra/components'
+import { Callout } from 'formbit/components'
 
 # useConfig
 

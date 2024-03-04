@@ -2,15 +2,15 @@
 title: SDK Reference
 ---
 
-**Nextra** is a framework on top of Next.js, that lets you build content focused
+**Formbit** is a framework on top of Next.js, that lets you build content focused
 websites. It has all the great features from Next.js, plus extra power to create
 Markdown-based content with ease.
 
 ## Quick Start
 
-import { Cards } from 'nextra/components'
+import { Cards } from 'formbit/components'
 
-To start using Nextra, you need to select a theme first:
+To start using Formbit, you need to select a theme first:
 
 <Cards num={2}>
   <Cards.Card
@@ -26,14 +26,14 @@ To start using Nextra, you need to select a theme first:
   </Cards.Card>
 </Cards>
 
-If you want to use Nextra without using these built-in themes, you can follow
+If you want to use Formbit without using these built-in themes, you can follow
 the [Custom Theme](/docs/custom-theme) docs.
 
-## Nextra FAQ
+## Formbit FAQ
 
-The Nextra FAQ is a collection of useful questions and answers about the
+The Formbit FAQ is a collection of useful questions and answers about the
 project. If you have a question that isn't answered here, please
-[open a discussion](https://github.com/shuding/nextra/discussions).
+[open a discussion](https://github.com/shuding/formbit/discussions).
 
 export function FAQBox({ title, children }) {
 return (
@@ -50,16 +50,16 @@ return (
 )
 }
 
-<FAQBox title="Can I use Nextra with Next.js app router?">
-  No, Nextra only works with the `/pages` directory at the moment. Support for
+<FAQBox title="Can I use Formbit with Next.js app router?">
+  No, Formbit only works with the `/pages` directory at the moment. Support for
   the app router has not been implemented yet. But you can use `/app` and
   `/pages` at the same time - just put your docs inside `/pages` and your other
   routes in `/app`
 </FAQBox>
 
-<FAQBox title="Can I use X with Nextra?">
-  The answer is “yes” for most things. Since Nextra is just a Next.js plugin, almost all the things
-  that can be done with React can be done with Nextra. Here are some examples and guides:
+<FAQBox title="Can I use X with Formbit?">
+  The answer is “yes” for most things. Since Formbit is just a Next.js plugin, almost all the things
+  that can be done with React can be done with Formbit. Here are some examples and guides:
 
 - [Use Tailwind CSS](/docs/guide/tailwind-css)
 - [Use custom CSS and Sass](/docs/guide/custom-css)
@@ -67,7 +67,7 @@ return (
 
 </FAQBox>
 
-<FAQBox title="How can I add a live coding component in Nextra?">
+<FAQBox title="How can I add a live coding component in Formbit?">
   There are libraries like [Sandpack](https://sandpack.codesandbox.io) and
   [react-live](https://github.com/FormidableLabs/react-live) that can help you
   add live coding components to your MDX.

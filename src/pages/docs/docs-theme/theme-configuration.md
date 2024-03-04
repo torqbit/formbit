@@ -1,5 +1,5 @@
 import { Screenshot } from 'components/screenshot'
-import { Callout } from 'nextra/components'
+import { Callout } from 'formbit/components'
 
 # Theme Configuration
 
@@ -10,7 +10,7 @@ should export an object that contains your configurations, for example:
 ```jsx filename="theme.config.jsx"
 export default {
   project: {
-    link: 'https://github.com/shuding/nextra',
+    link: 'https://github.com/shuding/formbit',
   },
   logo: <b>Project</b>,
 };
@@ -41,11 +41,11 @@ the `pages/` folder of your docs. For example:
 
 ```js
 export default {
-  docsRepositoryBase: 'https://github.com/shuding/nextra/tree/main/docs',
+  docsRepositoryBase: 'https://github.com/shuding/formbit/tree/main/docs',
 };
 ```
 
-Then Nextra will automatically generate the correct file path for all pages.
+Then Formbit will automatically generate the correct file path for all pages.
 
 ### SEO Options
 
@@ -129,7 +129,7 @@ export default {
   head: (
     <>
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <meta property='og:title' content='Nextra' />
+      <meta property='og:title' content='Formbit' />
       <meta property='og:description' content='The next site builder' />
     </>
   ),
@@ -143,7 +143,7 @@ head tags based on the current page’s front matter. For example:
 
 ```jsx
 import { useRouter } from 'next/router';
-import { useConfig } from 'nextra-theme-docs';
+import { useConfig } from 'formbit-theme-docs';
 
 export default {
   head: () => {
@@ -156,7 +156,7 @@ export default {
     return (
       <>
         <meta property='og:url' content={url} />
-        <meta property='og:title' content={frontMatter.title || 'Nextra'} />
+        <meta property='og:title' content={frontMatter.title || 'Formbit'} />
         <meta
           property='og:description'
           content={frontMatter.description || 'The next site builder'}
@@ -184,15 +184,15 @@ options={[
 Configuration for the{' '}
 <a
 href="https://github.com/pacocoursey/next-themes#themeprovider"
-target="_blank"
->
-next-themes
-</a>{' '}
-package.
-</>
-]
-]}
-/>
+target="\_blank"
+
+> next-themes
+> </a>{' '}
+> package.
+> </>
+> ]
+> ]}
+> />
 
 ### Theme Color
 
@@ -232,7 +232,7 @@ export const hue = (
         const value = `${e.target.value}deg`
         e.target.nextSibling.textContent = value
         document.documentElement.style.setProperty(
-          '--nextra-primary-hue',
+          '--formbit-primary-hue',
           value
         )
       }}
@@ -253,7 +253,7 @@ export const saturation = (
         const value = `${e.target.value}%`
         e.target.nextSibling.textContent = value
         document.documentElement.style.setProperty(
-          '--nextra-primary-saturation',
+          '--formbit-primary-saturation',
           value
         )
       }}
@@ -282,7 +282,7 @@ import logoImage from '../../../public/assets/docs/logo.png'
 
 <div className="mt-8 text-center text-sm">
   [Live example on StackBlitz
-  ↗](https://stackblitz.com/edit/nextra-2-docs-yrlccm?file=theme.config.jsx)
+  ↗](https://stackblitz.com/edit/formbit-2-docs-yrlccm?file=theme.config.jsx)
 </div>
 
 ```jsx
@@ -306,7 +306,7 @@ export default {
 ### Project Link
 
 Show a button that links to your project’s homepage on the navbar. By default,
-it links to Nextra’s GitHub repository.
+it links to Formbit’s GitHub repository.
 
 <OptionTable
 options={[
@@ -425,7 +425,7 @@ options={[
 
 #### Banner key
 
-A banner can be dismissed. By default `banner.key` will be `"nextra-banner"` and
+A banner can be dismissed. By default `banner.key` will be `"formbit-banner"` and
 it’s used by
 [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 to keep the banner state (dismissed or not) on the client.
@@ -443,8 +443,8 @@ export default {
   banner: {
     key: '2.0-release',
     text: (
-      <a href='https://nextra.site' target='_blank'>
-        🎉 Nextra 2.0 is released. Read more →
+      <a href='https://formbit.site' target='_blank'>
+        🎉 Formbit 2.0 is released. Read more →
       </a>
     ),
   },
@@ -519,14 +519,14 @@ Together with the [Separators](/docs/docs-theme/page-configuration#separators)
 item, you can customize how the sidebar content is rendered by using the
 `sidebar.titleComponent` option:
 
-import { Tabs } from 'nextra/components'
+import { Tabs } from 'formbit/components'
 import sidebarTitleComponentImage from '../../../public/assets/docs/sidebar-customized.png'
 
 <Screenshot src={sidebarTitleComponentImage} alt="Customized Sidebar" />
 
 <div className="mt-8 text-center text-sm">
   [Live example on StackBlitz
-  ↗](https://stackblitz.com/edit/nextra-2-docs-8xbfk3?file=pages%2F_meta.json,theme.config.jsx)
+  ↗](https://stackblitz.com/edit/formbit-2-docs-8xbfk3?file=pages%2F_meta.json,theme.config.jsx)
 </div>
 
 <Tabs items={['theme.config.jsx', 'pages/_meta.json']}>
@@ -674,7 +674,7 @@ filePath?: string
 The built-in feedback link provides a way for users to submit feedback about the
 documentation. By default, it’s a link that points to the issue creation form of
 the docs repository, with the current website title prefilled:
-[example](https://github.com/shuding/nextra/issues/new?title=Feedback%20for%20%E2%80%9CTheme%20Configuration%E2%80%9D&labels=feedback).
+[example](https://github.com/shuding/formbit/issues/new?title=Feedback%20for%20%E2%80%9CTheme%20Configuration%E2%80%9D&labels=feedback).
 
 <OptionTable
 options={[
@@ -776,8 +776,8 @@ export default {
     text: (
       <span>
         MIT {new Date().getFullYear()} ©{' '}
-        <a href='https://nextra.site' target='_blank'>
-          Nextra
+        <a href='https://formbit.site' target='_blank'>
+          Formbit
         </a>
         .
       </span>

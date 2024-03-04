@@ -13,7 +13,7 @@ import styles from './style.module.sass';
 
 I am going to the movies today.
 
-{/_ Check out https://nextra.site/docs/guide/syntax-highlighting _/}
+{/_ Check out https://formbit.site/docs/guide/syntax-highlighting _/}
 
 ```javascript filename="index.js" {1,4-5}
 const http = require('http');
