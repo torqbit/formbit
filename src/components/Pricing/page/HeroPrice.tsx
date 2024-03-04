@@ -136,7 +136,7 @@ const HeroPrice = () => {
                 className={` w-full rounded-xl border-t-[8px]  
                 ${
                   data.mode === 'Enterprise'
-                    ? `border-[#4d4d4db8] bg-[#242120] `
+                    ? `border-[#4d4d4db8] bg-[#242120]  `
                     : `border-gray-200 bg-white `
                 }
                  shadow-2xl`}
@@ -199,10 +199,10 @@ const HeroPrice = () => {
                     className={`
                 ${
                   data.mode === 'Pro'
-                    ? `bg-[#242120] text-white`
+                    ? `bg-[#242120] text-white shadow-md transition-all hover:bg-[#373534] hover:shadow-lg`
                     : `bg-gray-100 `
                 }
-                mb-6 flex h-[40px] w-full items-center justify-center rounded-[15px] px-4 py-2 text-sm font-[600] text-[#666] shadow-md
+                mb-2 flex h-[40px] w-full items-center justify-center rounded-[15px] px-4 py-2 text-sm font-[600] text-[#666] shadow-md hover:shadow-lg
                 `}
                   >
                     Get started with {data.mode}
@@ -213,7 +213,7 @@ const HeroPrice = () => {
                   return (
                     <ul key={i}>
                       <li
-                        className={`p-6 text-lg 
+                        className={`px-6 py-2 text-lg 
                 ${data.mode === 'Enterprise' ? `text-white` : `text-[#666]`}
                       
                       `}
