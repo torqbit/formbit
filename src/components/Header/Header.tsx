@@ -1,7 +1,6 @@
 import { FC, Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
-import Link from 'next/link';
 
 import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
@@ -66,22 +65,19 @@ const Header: FC<{
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Pricing
-
             </Link>
-       
+
             <Link
               href='#price'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Blogs
-
-            </a>
+            </Link>
             <Link
               href='/docs'
               className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Documentation
-
             </Link>
           </div>
           <div className='flex items-center gap-5'>
