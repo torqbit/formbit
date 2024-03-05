@@ -39,7 +39,7 @@ const Header: FC<{
             </Link>
 
             <Link
-              onClick={() => onMenuActive(!menuActive.active, 'product')}
+              onMouseOver={() => onMenuActive(true, 'product')}
               href=''
               className={` text-[18px] font-[500]
               

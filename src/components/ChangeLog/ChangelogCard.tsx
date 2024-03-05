@@ -1,22 +1,64 @@
+import { faChevronRight, faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 const ChangelogCard: FC<{
   date: string;
   title: string;
   img: string;
   description: string;
-}> = ({ date, title, img, description }) => {
+  href: string;
+  link: string;
+  index: number;
+  lastIndex: number;
+}> = ({ date, title, img, description, href, link, index, lastIndex }) => {
+  const [scrollFix, setScrollFix] = useState<boolean>(false);
+
+  function setFixed() {
+    if (window.scrollY >= 200) {
+      setScrollFix(true);
+    } else {
+      setScrollFix(false);
+    }
+  }
+  window.addEventListener('scroll', setFixed);
   return (
-    <section className='  min-h-[300px]  bg-[#fff] lg:pt-20   '>
-      <div className=' mx-auto my-0 flex max-w-[1200px] items-start gap-16 border-t-2 border-black border-opacity-10 px-8   lg:px-0 lg:py-10 '>
-        <div className='w-[300px] pt-2 text-lg  text-[#666]'>{date}</div>
-        <div>
+    <section
+      className={` 
+    ${index === lastIndex ? `lg:pb-10` : `lg:pb-0`}
+    ${scrollFix ? `sticky` : ``}
+
+    bg-[#fff]  lg:pt-10`}
+    >
+      <div className=' mx-auto my-0  flex  max-w-[1200px] items-start gap-[190px]  border-t-2 border-black border-opacity-10 px-8   lg:px-0 lg:pt-20 '>
+        <div
+          className={`sticky top-28  h-[100px] w-[20%] pt-2 text-lg
+          text-[#666]`}
+        >
+          {date}
+        </div>
+        <div className={` overflow-y-auto`}>
           <Link href={''}>
             <h2 className='m-0 pb-6 pt-0'>{title}</h2>
           </Link>
           <img className='pb-6' src={img} alt='' />
           <p className='max-w-[500px] '>{description}</p>
+          <div></div>
+          <Link
+            href={href}
+            className='group flex w-full items-center justify-between pt-6 text-[#666]'
+          >
+            <span className='flex items-center gap-2'>
+              {' '}
+              <FontAwesomeIcon icon={faChevronRight} />
+              {link}
+            </span>
+            <FontAwesomeIcon
+              icon={faLink}
+              className='opacity-0 transition-all group-hover:opacity-[1]'
+            />
+          </Link>
         </div>
       </div>
     </section>

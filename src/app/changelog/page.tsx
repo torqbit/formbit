@@ -22,6 +22,8 @@ const ChangelogPage = () => {
       img: 'https://placehold.co/500x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
+      href: '',
+      link: 'New & Improved   ',
     },
     {
       date: 'February 22, 2024',
@@ -29,6 +31,8 @@ const ChangelogPage = () => {
       img: 'https://placehold.co/500x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
+      href: '',
+      link: 'New & Improved   ',
     },
     {
       date: 'February 22, 2024',
@@ -36,6 +40,8 @@ const ChangelogPage = () => {
       img: 'https://placehold.co/500x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
+      href: '',
+      link: 'New & Improved   ',
     },
   ];
   return (
@@ -50,10 +56,14 @@ const ChangelogPage = () => {
         return (
           <div key={i}>
             <ChangelogCard
+              index={i}
+              lastIndex={changelogData.length - 1}
               date={data.date}
               title={data.title}
               img={data.img}
               description={data.description}
+              href={data.href}
+              link={data.link}
             />
           </div>
         );
