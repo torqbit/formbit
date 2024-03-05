@@ -54,7 +54,7 @@ const Header: FC<{
             </Link>
 
             <Link
-              href='#price'
+              href='/solution'
               className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Solution
@@ -66,17 +66,18 @@ const Header: FC<{
             >
               Pricing
             </Link>
+
             <Link
-              href='/pricing'
-              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
-            >
-              Docs
-            </Link>
-            <Link
-              href='#price'
+              href='/blog'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Blogs
+            </Link>
+            <Link
+              href='/docs'
+              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+            >
+              Documentation
             </Link>
           </div>
           <div className='flex items-center gap-5'>
