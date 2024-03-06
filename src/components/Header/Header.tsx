@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 import Link from 'next/link';
+import Solution from '@/components/Menu/SolutionSection/Solution';
 
 const Header = () => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
+  const [active, setActive] = useState<boolean>(false);
 
   const onAnchorClick = () => {
     setSideNav(false);
@@ -14,7 +16,10 @@ const Header = () => {
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
           <div className='flex items-center gap-12 transition-all'>
-            <a href='#' className='flex items-center gap-1 text-lg font-[600] '>
+            <a
+              href='#'
+              className='group flex items-center gap-1 text-lg font-[600] '
+            >
               <img
                 src='/images/formbit-logo.png'
                 className='w-[120px]'
@@ -29,13 +34,14 @@ const Header = () => {
             </a>
             <a
               href=''
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              className='group text-[18px] font-[500]   text-gray-400 hover:text-gray-800'
             >
               Solutions
+              <Solution className='hidden group-hover:block' />
             </a>
             <a
               href='#Pricing'
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Pricing
             </a>
