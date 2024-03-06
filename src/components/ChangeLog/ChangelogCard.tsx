@@ -1,7 +1,7 @@
 import { faChevronRight, faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 const ChangelogCard: FC<{
   date: string;
@@ -22,14 +22,13 @@ const ChangelogCard: FC<{
     bg-[#fff]  lg:pt-10`}
     >
       <div className=' mx-auto my-0  flex  max-w-[1200px] items-start gap-[190px]  border-t-2 border-black border-opacity-10 px-8   lg:px-0 lg:pt-20 '>
-        <Link href={''}>
-          <div
-            className={`sticky top-28  h-[100px] w-[20%] pt-2 text-lg
+        <div
+          className={`sticky top-28  h-[100px]  pt-2 text-lg
           text-[#666]`}
-          >
-            {date}
-          </div>
-        </Link>
+        >
+          {date}
+        </div>
+
         <div className={` overflow-y-auto`}>
           <Link href={''}>
             <h2 className='m-0 pb-6 pt-0'>{title}</h2>
