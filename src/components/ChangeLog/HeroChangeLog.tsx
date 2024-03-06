@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { FC } from 'react';
 
-const HeroChangelog: FC<{}> = () => {
+const HeroChangelog = () => {
   return (
     <section className='  min-h-[300px]  bg-[#eee] py-2 lg:pb-20 lg:pt-40 '>
       <div className=' mx-auto my-0 flex max-w-[1200px]  items-center  justify-center  px-8 lg:px-0 '>
