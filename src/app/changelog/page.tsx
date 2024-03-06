@@ -2,6 +2,7 @@
 
 import ChangelogCard from '@/components/ChangeLog/ChangelogCard';
 import HeroChangelog from '@/components/ChangeLog/HeroChangeLog';
+
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import { useState } from 'react';
