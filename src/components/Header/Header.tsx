@@ -33,6 +33,7 @@ const Header: FC<{
         <div className=' hidden items-center justify-between py-3 lg:flex'>
           <div className='relative z-[2000] flex items-center gap-8 transition-all'>
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/'
               className='flex items-center gap-1 text-lg font-[600] '
             >
@@ -68,6 +69,7 @@ const Header: FC<{
             </Link>
 
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/solution'
               className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
@@ -75,6 +77,7 @@ const Header: FC<{
             </Link>
 
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/pricing'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
@@ -82,12 +85,14 @@ const Header: FC<{
             </Link>
 
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/blog'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Blogs
             </Link>
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/docs'
               className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
