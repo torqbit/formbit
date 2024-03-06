@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className='  h-full  py-20'>
+    <section className='h-full  py-20'>
       <div className=' mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
         <h1 className=' py-4 text-left text-2xl leading-tight sm:text-center lg:text-6xl lg:font-[600]'>
           Form that capture <br /> the world&apos;s attention.{' '}
