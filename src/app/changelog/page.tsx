@@ -18,26 +18,26 @@ const ChangelogPage = () => {
   const changelogData = [
     {
       date: 'February 22, 2024',
-      title: 'A new era for the timeline',
-      img: 'https://placehold.co/500x300',
+      title: 'Lorem ipsum dolor sit amet consectetur',
+      img: 'https://placehold.co/600x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
       href: '',
       link: 'New & Improved   ',
     },
     {
-      date: 'February 22, 2024',
-      title: 'A new era for the timeline',
-      img: 'https://placehold.co/500x300',
+      date: 'February 29, 2024',
+      title: 'Lorem ipsum dolor sit amet consectetur',
+      img: 'https://placehold.co/600x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
       href: '',
       link: 'New & Improved   ',
     },
     {
-      date: 'February 22, 2024',
-      title: 'A new era for the timeline',
-      img: 'https://placehold.co/500x300',
+      date: 'February 16, 2024',
+      title: 'Lorem ipsum dolor sit amet consectetur',
+      img: 'https://placehold.co/600x300',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
       href: '',

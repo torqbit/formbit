@@ -13,37 +13,29 @@ const ChangelogCard: FC<{
   index: number;
   lastIndex: number;
 }> = ({ date, title, img, description, href, link, index, lastIndex }) => {
-  const [scrollFix, setScrollFix] = useState<boolean>(false);
-
-  function setFixed() {
-    if (window.scrollY >= 200) {
-      setScrollFix(true);
-    } else {
-      setScrollFix(false);
-    }
-  }
-  window.addEventListener('scroll', setFixed);
   return (
     <section
       className={` 
     ${index === lastIndex ? `lg:pb-10` : `lg:pb-0`}
-    ${scrollFix ? `sticky` : ``}
+  
 
     bg-[#fff]  lg:pt-10`}
     >
       <div className=' mx-auto my-0  flex  max-w-[1200px] items-start gap-[190px]  border-t-2 border-black border-opacity-10 px-8   lg:px-0 lg:pt-20 '>
-        <div
-          className={`sticky top-28  h-[100px] w-[20%] pt-2 text-lg
+        <Link href={''}>
+          <div
+            className={`sticky top-28  h-[100px] w-[20%] pt-2 text-lg
           text-[#666]`}
-        >
-          {date}
-        </div>
+          >
+            {date}
+          </div>
+        </Link>
         <div className={` overflow-y-auto`}>
           <Link href={''}>
             <h2 className='m-0 pb-6 pt-0'>{title}</h2>
           </Link>
           <img className='pb-6' src={img} alt='' />
-          <p className='max-w-[500px] '>{description}</p>
+          <p className='max-w-[600px] '>{description}</p>
           <div></div>
           <Link
             href={href}
