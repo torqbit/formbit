@@ -5,6 +5,8 @@ import SideNav from '@/components/SideNav/SideNav';
 import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
@@ -21,6 +23,9 @@ const Header: FC<{
     <header
       className='  fixed left-0 right-0 z-[1000]  h-[60px] bg-white  '
       onClick={() => {
+        menuActive.active && onMenuActive(false, '');
+      }}
+      onMouseLeave={() => {
         menuActive.active && onMenuActive(false, '');
       }}
     >
@@ -41,8 +46,8 @@ const Header: FC<{
             <Link
               onMouseOver={() => onMenuActive(true, 'product')}
               href=''
-              className={` text-[18px] font-[500]
-              
+              className={` flex items-center
+              gap-1 text-[18px] font-[500]
               ${
                 menuActive.menu === 'product' && menuActive.active
                   ? `text-gray-800`
@@ -50,7 +55,16 @@ const Header: FC<{
               }
               text-gray-400 hover:text-gray-800`}
             >
-              Product
+              Product{' '}
+              <FontAwesomeIcon
+                className='pt-1'
+                size='sm'
+                icon={
+                  menuActive.menu === 'product' && menuActive.active
+                    ? faChevronUp
+                    : faChevronDown
+                }
+              />
             </Link>
 
             <Link
