@@ -1,7 +1,7 @@
 'use client';
 
 import ChangelogCard from '@/components/ChangeLog/ChangelogCard';
-import HeroChangelog from '@/components/ChangeLog/HeroChangeLog';
+import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
