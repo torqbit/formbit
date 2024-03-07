@@ -135,7 +135,6 @@ const Header: FC<{
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
               setSideNav(!showSideNav);
-              // setActive(false);
             }}
           />
         </div>
@@ -147,17 +146,6 @@ const Header: FC<{
             as='div'
             className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
           >
-            {/* <Menu.Button
-                className={`group relative -top-[2px] left-[320px] z-10 flex items-center gap-2  text-[18px] font-[500]  hover:text-gray-800
-             ${
-               menuActive.menu === 'product' && menuActive.active
-                 ? `text-gray-800`
-                 : `text-gray-400`
-             }
-             `}
-              >
-                Product
-              </Menu.Button> */}
             <Transition
               show={menuActive.active}
               as={Fragment}
