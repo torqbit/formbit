@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 import Link from 'next/link';
+import { Menu, Transition } from '@headlessui/react';
 import Solution from '@/components/Menu/SolutionSection/Solution';
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
     setSideNav(false);
   };
   return (
-    <header className='  h-[60px]  bg-white  '>
+    <header className=' h-[60px]  bg-white  '>
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
           <div className='flex items-center gap-12 transition-all'>
@@ -32,13 +33,26 @@ const Header = () => {
             >
               Product
             </a>
-            <a
-              href=''
-              className='group text-[18px] font-[500]   text-gray-400 hover:text-gray-800'
-            >
-              Solutions
-              <Solution className='hidden group-hover:block' />
-            </a>
+
+            <Menu as='div'>
+              <Menu.Button className=' text-[18px] font-[500] text-gray-400 hover:text-gray-800'>
+                Solution
+              </Menu.Button>
+              <Transition
+                enter='transition duration-100 ease-out'
+                enterFrom='transform scale-95 opacity-0'
+                enterTo='transform scale-100 opacity-100'
+                leave='transition duration-75 ease-out'
+                leaveFrom='transform scale-100 opacity-100'
+                leaveTo='transform scale-95 opacity-0'
+              >
+                <Menu.Items>
+                  <Menu.Item>
+                    <Solution />
+                  </Menu.Item>
+                </Menu.Items>
+              </Transition>
+            </Menu>
             <a
               href='#Pricing'
               className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'

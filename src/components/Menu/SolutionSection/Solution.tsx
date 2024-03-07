@@ -1,6 +1,7 @@
+import { Menu } from '@headlessui/react';
 import { FC } from 'react';
 
-const Solution: FC<{ className: string }> = ({ className }) => {
+const Solution: FC = () => {
   const Stage = [
     {
       icon: (
@@ -309,25 +310,24 @@ const Solution: FC<{ className: string }> = ({ className }) => {
   return (
     <>
       <section
-        className={`absolute left-[300px] z-20 w-[700px]   rounded-lg bg-white p-2 ${className}`}
+        className={`absolute z-20 m-auto ml-[-5rem] mt-[25px] w-[700px]  rounded-lg bg-white p-2 `}
       >
         <div className=''>
           <h3 className='ml-4 mt-4 p-2 text-[16px] uppercase text-gray-600'>
             By Stage
           </h3>
 
-          <div className='ml-7 flex w-[450px] justify-between  overflow-visible '>
+          <div className='ml-7 flex w-[450px] cursor-pointer justify-between '>
             {Stage.map((item, i) => {
               return (
-                <div
-                  key={i}
-                  className='group flex items-center justify-between'
-                >
-                  <a className='mr-2 text-blue-400 hover:text-black'>
-                    {item.icon}
-                  </a>
-                  <h1 className=' text-[15px] font-semibold'>{item.name}</h1>
-                </div>
+                <Menu.Item key={i}>
+                  <div className='flex items-center justify-between text-blue-400 hover:text-black'>
+                    <div className='mr-2  '>{item.icon}</div>
+                    <div className=' text-[15px] font-semibold text-black'>
+                      {item.name}
+                    </div>
+                  </div>
+                </Menu.Item>
               );
             })}
           </div>
@@ -338,12 +338,14 @@ const Solution: FC<{ className: string }> = ({ className }) => {
           <div className='ml-6 grid w-[510px] grid-flow-col grid-rows-5 justify-between'>
             {UseCase.map((item, i) => {
               return (
-                <div key={i} className='flex items-center  '>
-                  <a className='mr-2 text-blue-400 hover:text-black'>
-                    {item.icon}
-                  </a>
-                  <h1 className='text-[15px] font-semibold'>{item.name}</h1>
-                </div>
+                <Menu.Item key={i}>
+                  <div className='flex items-center text-blue-400 hover:text-black  '>
+                    <a className='mr-2 '>{item.icon}</a>
+                    <h1 className='text-[15px] font-semibold text-black'>
+                      {item.name}
+                    </h1>
+                  </div>
+                </Menu.Item>
               );
             })}
           </div>
@@ -356,15 +358,15 @@ const Solution: FC<{ className: string }> = ({ className }) => {
           <div className='grid w-[500px] grid-flow-col grid-rows-2 justify-between'>
             {Integration.map((item, i) => {
               return (
-                <div key={i} className='flex items-center  '>
-                  <a className='mr-2 text-blue-400 hover:text-black'>
-                    {item.icon}
-                  </a>
-                  <h1 className='mr-2 text-[15px] font-semibold'>
-                    {item.name}
-                  </h1>
-                  <a>{item.additionalIcon}</a>
-                </div>
+                <Menu.Item key={i}>
+                  <div className='flex  items-center text-blue-400 hover:text-black  '>
+                    <a className='mr-2'>{item.icon}</a>
+                    <h1 className='mr-2 text-[15px] font-semibold text-black'>
+                      {item.name}
+                    </h1>
+                    <a>{item.additionalIcon}</a>
+                  </div>
+                </Menu.Item>
               );
             })}
           </div>
