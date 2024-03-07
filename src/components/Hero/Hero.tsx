@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <section className=' h-full  py-20'>
-      <div className=' relative z-10 mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
+    <section className='h-full  py-20'>
+      <div className=' mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
         <h1 className=' py-4 text-left text-2xl leading-tight sm:text-center lg:text-6xl lg:font-[600]'>
           Form that capture <br /> the world&apos;s attention.{' '}
         </h1>
@@ -14,7 +14,7 @@ const Hero = () => {
             Get started for free
           </button>
         </div>
-        <div className=' relative z-20 my-20 h-[200px]  w-full  rounded bg-white sm:w-[500px] md:h-[400px]  lg:h-[500px] lg:w-[1000px]'>
+        <div className=' relative z-[11] my-20 h-[200px]  w-full  rounded bg-white sm:w-[500px] md:h-[400px]  lg:h-[500px] lg:w-[1000px]'>
           <img src='/images/hero-image.png' alt='' />
         </div>
         <div className='relative z-10 -mt-[290px] h-[220px] w-full rounded-lg bg-gradient-to-r   from-[#f2b5d4]  via-pink-200  to-[#7bdff2] opacity-90  blur-lg sm:w-[500px] md:-mt-[490px] md:h-[420px] lg:-mt-[590px] lg:h-[515px] lg:w-[1015px]'></div>

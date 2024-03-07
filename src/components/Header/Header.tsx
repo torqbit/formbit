@@ -1,45 +1,98 @@
-import { useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
-import Link from 'next/link';
 
-const Header = () => {
+import Product from '@/components/Menu/Product';
+import { Menu, Transition } from '@headlessui/react';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
+const Header: FC<{
+  menuActive: { active: boolean; menu: string };
+  onMenuActive: (value: boolean, name: string) => void;
+}> = ({ menuActive, onMenuActive }) => {
   const [showSideNav, setSideNav] = useState<boolean>(false);
+  const [active, setActive] = useState(false);
 
   const onAnchorClick = () => {
     setSideNav(false);
   };
+
   return (
-    <header className='  h-[60px]  bg-white  '>
+    <header
+      className='  fixed left-0 right-0 z-[1000]  h-[60px] bg-white  '
+      onClick={() => {
+        menuActive.active && onMenuActive(false, '');
+      }}
+      onMouseLeave={() => {
+        menuActive.active && onMenuActive(false, '');
+      }}
+    >
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
-          <div className='flex items-center gap-12 transition-all'>
-            <a href='#' className='flex items-center gap-1 text-lg font-[600] '>
+          <div className='relative z-[2000] flex items-center gap-8 transition-all'>
+            <Link
+              onMouseOver={() => onMenuActive(false, '')}
+              href='/'
+              className='flex items-center gap-1 text-lg font-[600] '
+            >
               <img
                 src='/images/formbit-logo.png'
                 className='w-[120px]'
                 alt=''
               />
-            </a>
-            <a
+            </Link>
+
+            <Link
+              onMouseOver={() => onMenuActive(true, 'product')}
               href=''
-              className='text-[18px] font-[500] text-gray-400 hover:text-gray-800'
+              className={` flex items-center
+              gap-1 text-[18px] font-[500]
+              ${
+                menuActive.menu === 'product' && menuActive.active
+                  ? `text-gray-800`
+                  : `text-gray-400`
+              }
+              text-gray-400 hover:text-gray-800`}
             >
-              Product
-            </a>
-            <a
-              href=''
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              Product{' '}
+              <FontAwesomeIcon
+                className='pt-1'
+                size='sm'
+                icon={
+                  menuActive.menu === 'product' && menuActive.active
+                    ? faChevronUp
+                    : faChevronDown
+                }
+              />
+            </Link>
+
+            <Link
+              onMouseOver={() => onMenuActive(false, '')}
+              href='/solution'
+              className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
-              Solutions
-            </a>
-            <a
-              href='#Pricing'
-              className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              Solution
+            </Link>
+
+            <Link
+              onMouseOver={() => onMenuActive(false, '')}
+              href='/pricing'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
               Pricing
-            </a>
+            </Link>
+
             <Link
+              onMouseOver={() => onMenuActive(false, '')}
+              href='/blog'
+              className=' text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+            >
+              Blogs
+            </Link>
+            <Link
+              onMouseOver={() => onMenuActive(false, '')}
               href='/docs'
               className='text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
             >
@@ -47,12 +100,12 @@ const Header = () => {
             </Link>
           </div>
           <div className='flex items-center gap-5'>
-            <a
+            <Link
               href=''
               className='text-[18px] font-[500]  text-gray-600 hover:text-gray-800'
             >
               Customer Login
-            </a>
+            </Link>
             <button className='flex h-[35px] w-[100px] items-center justify-center rounded-lg   bg-black   text-center font-[500] text-white shadow-lg'>
               Sign up
             </button>
@@ -62,8 +115,13 @@ const Header = () => {
          * responsive
          */}
 
-        <div className=' lg:hidden'>
-          <SideNav isOpen={showSideNav} onAnchorClick={onAnchorClick} />
+        <div className=' relative  lg:hidden'>
+          <SideNav
+            isOpen={showSideNav}
+            onAnchorClick={onAnchorClick}
+            active={active}
+            setActive={setActive}
+          />
         </div>
         <img
           src='/images/formbit-logo.png'
@@ -76,11 +134,35 @@ const Header = () => {
             direction='left'
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
-              setSideNav(toggle);
+              setSideNav(!showSideNav);
             }}
           />
         </div>
       </div>
+
+      {menuActive.active && (
+        <div>
+          <Menu
+            as='div'
+            className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
+          >
+            <Transition
+              show={menuActive.active}
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-100'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-100'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-100'
+            >
+              <Menu.Items>
+                <Product menu={menuActive.menu} />
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        </div>
+      )}
     </header>
   );
 };

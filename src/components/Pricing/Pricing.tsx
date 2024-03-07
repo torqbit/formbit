@@ -1,5 +1,6 @@
 import { faCheck, faDollar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const Pricing = () => {
   const packages = [
@@ -7,7 +8,7 @@ const Pricing = () => {
     ['Custom domain', 'API access', 'Bulk importer'],
   ];
   return (
-    <section className='relative z-10 bg-gray-50 py-20' id='Pricing'>
+    <section className='  bg-gray-50 py-20' id='Pricing'>
       <div className='mx-auto my-0 flex max-w-[1200px] flex-col items-center justify-center gap-10 px-8 '>
         <h1 className=' py-4 text-left text-2xl lg:max-w-[800px] lg:text-center lg:text-6xl lg:font-[600] '>
           All features for one price. Try Formbit for free!
@@ -22,13 +23,13 @@ const Pricing = () => {
                 >
                   {items.map((item, i) => {
                     return (
-                      <a
+                      <Link
                         key={i}
                         href=''
                         className='mb-4 flex items-center gap-2 text-[14px] text-white sm:mb-8 sm:items-center md:text-lg lg:mb-0'
                       >
                         <FontAwesomeIcon icon={faCheck} size='sm' /> {item}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
