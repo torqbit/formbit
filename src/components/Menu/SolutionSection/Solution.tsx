@@ -319,16 +319,14 @@ const Solution: FC<{ className: string }> = ({ className }) => {
           <div className='ml-7 flex w-[450px] justify-between  overflow-visible '>
             {Stage.map((item, i) => {
               return (
-                <div>
-                  <div
-                    key={i}
-                    className='group flex items-center justify-between'
-                  >
-                    <a className='mr-2 text-blue-400 hover:text-black'>
-                      {item.icon}
-                    </a>
-                    <h1 className=' text-[15px] font-semibold'>{item.name}</h1>
-                  </div>
+                <div
+                  key={i}
+                  className='group flex items-center justify-between'
+                >
+                  <a className='mr-2 text-blue-400 hover:text-black'>
+                    {item.icon}
+                  </a>
+                  <h1 className=' text-[15px] font-semibold'>{item.name}</h1>
                 </div>
               );
             })}
@@ -365,7 +363,7 @@ const Solution: FC<{ className: string }> = ({ className }) => {
                   <h1 className='mr-2 text-[15px] font-semibold'>
                     {item.name}
                   </h1>
-                  <a href=''>{item.additionalIcon}</a>
+                  <a>{item.additionalIcon}</a>
                 </div>
               );
             })}
