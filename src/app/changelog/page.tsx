@@ -5,6 +5,7 @@ import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 const ChangelogPage = () => {
@@ -16,42 +17,41 @@ const ChangelogPage = () => {
     setMenuActive({ active: value, menu: name });
   };
 
-  const changelogData: {
-    date: string;
-    title: string;
-    img: string;
-    description: string;
-    href: string;
-    link: string;
-  }[] = [
-    {
-      date: 'February 22, 2024',
-      title: 'Lorem ipsum dolor sit amet ',
-      img: 'https://placehold.co/600x300',
-      description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
-      href: '',
-      link: 'New & Improved   ',
-    },
-    {
-      date: 'February 29, 2024',
-      title: 'Lorem ipsum dolor sit  consectetur',
-      img: 'https://placehold.co/600x300',
-      description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
-      href: '',
-      link: 'New & Improved   ',
-    },
-    {
-      date: 'February 16, 2024',
-      title: 'Lorem ipsum dolor amet consectetur',
-      img: 'https://placehold.co/600x300',
-      description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, voluptas neque temporibus exercitationem ad doloremque est sed impedit ab tempore aspernatur fugit delectus animi, pariatur dolores eius? Eaque, minus ab?',
-      href: '',
-      link: 'New & Improved   ',
-    },
-  ];
+  const [allPost, setPost] = React.useState<
+    [
+      {
+        coverImage: string;
+        slug: string;
+        title: string;
+        fileName: string;
+        date: string;
+        link: string;
+        excerpt: string;
+        author: { picture: string; name: string };
+      }
+    ]
+  >();
+
+  const Post = async () => {
+    try {
+      const res = await fetch(`/api/allPosts?dir=_changelog`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+
+      const result = await res.json();
+      console.log(result.post, 'my post');
+      setPost(result.post);
+    } catch (err) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    Post();
+  }, []);
 
   return (
     <section
@@ -60,24 +60,34 @@ const ChangelogPage = () => {
       }}
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
-      <HeroChangelog />
-      {changelogData.map((data, i) => {
-        return (
-          <div key={i}>
-            <ChangelogCard
-              index={i}
-              lastIndex={changelogData.length - 1}
-              date={data.date}
-              title={data.title}
-              img={data.img}
-              description={data.description}
-              href={data.href}
-              link={data.link}
-              post={false}
-            />
-          </div>
-        );
-      })}
+      {allPost ? (
+        <div>
+          <HeroChangelog />
+          {allPost.map((data, i) => {
+            return (
+              <div key={i}>
+                <ChangelogCard
+                  index={i}
+                  lastIndex={allPost.length - 1}
+                  date={data.date}
+                  title={data.title}
+                  img={data.coverImage}
+                  description={data.excerpt}
+                  href={'/'}
+                  fileName={data.fileName}
+                  link={data.link}
+                  post={false}
+                  content={<div></div>}
+                />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className='flex h-[100vh] flex-col items-center justify-center'>
+          <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
+        </div>
+      )}
       <Footer />
     </section>
   );
