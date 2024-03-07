@@ -23,19 +23,26 @@ const SideNav: FC<{
 
   const trail = useTrail(5, {
     config: { mass: 5, tension: 2000, friction: 200 },
-    delay: 450,
+    // delay: 450,
     opacity: isOpen ? 1 : 0,
     x: isOpen ? 0 : 20,
     height: isOpen ? 110 : 0,
     from: { opacity: 0, x: 20, height: 0 },
   });
 
-  useEffect(() => {
+  const startAnimation = () => {
     api.start({
       to: {
         width: isOpen ? '80%' : '0%',
       },
     });
+  };
+
+  useEffect(() => {
+    startAnimation();
+    return () => {
+      api.delete;
+    };
   }, [isOpen]);
 
   return (

@@ -38,8 +38,7 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
   };
   useEffect(() => {
     post();
-    console.log(changelogPost);
-  });
+  }, []);
   if (changelogPost) {
     return (
       <>
