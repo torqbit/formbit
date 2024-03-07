@@ -310,7 +310,7 @@ const Solution: FC = () => {
   return (
     <>
       <section
-        className={`absolute z-20 m-auto ml-[-5rem] mt-[25px] w-[700px]  rounded-lg bg-white p-2 `}
+        className={`absolute z-20  m-auto ml-[-5rem] mt-[25px] w-[700px]  rounded-lg bg-white p-2 `}
       >
         <div className=''>
           <h3 className='ml-4 mt-4 p-2 text-[16px] uppercase text-gray-600'>

@@ -13,7 +13,7 @@ const Header = () => {
     setSideNav(false);
   };
   return (
-    <header className=' h-[60px]  bg-white  '>
+    <header className='relative h-[60px]  bg-white  '>
       <div className='mx-auto my-0  h-[60px] max-w-[1200px] '>
         <div className=' hidden items-center justify-between py-3 lg:flex'>
           <div className='flex items-center gap-12 transition-all'>

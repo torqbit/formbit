@@ -1,8 +1,8 @@
 const Hero = () => {
   return (
     <section className=' h-full  py-20'>
-      <div className=' relative z-10 mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
-        <h1 className=' py-4 text-left text-2xl leading-tight sm:text-center lg:text-6xl lg:font-[600]'>
+      <div className=' mx-auto my-0 flex max-w-[1200px] flex-col px-8 sm:items-center sm:justify-center'>
+        <h1 className=' py-16 text-left text-2xl leading-tight sm:text-center lg:text-6xl lg:font-[600]'>
           Form that capture <br /> the world&apos;s attention.{' '}
         </h1>
         <p className=' text-left text-lg text-[#666] sm:text-center md:max-w-[600px] lg:max-w-[800px] lg:text-2xl lg:font-[400]'>
