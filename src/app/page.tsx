@@ -38,7 +38,12 @@ export default function HomePage() {
       </Head>
       <section className={`bg-gray-200}`}>
         <Header menuActive={menuActive} onMenuActive={onMenuActive} />
-        <div>
+
+        <div
+          onClick={() => {
+            setMenuActive({ active: false, menu: '' });
+          }}
+        >
           <Hero />
           <Brands />
           <Create />

@@ -1,9 +1,12 @@
 import { FC, Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
+import Solution from '@/components/Menu/SolutionSection/Solution';
+import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import Solution from '@/components/Menu/SolutionSection/Solution';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
@@ -40,12 +43,29 @@ const Header: FC<{
                 alt=''
               />
             </Link>
+
             <Link
-              onMouseOver={() => onMenuActive(false, '')}
-              href='/solution'
-              className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              onMouseOver={() => onMenuActive(true, 'product')}
+              href=''
+              className={` flex items-center
+              gap-1 text-[18px] font-[500]
+              ${
+                menuActive.menu === 'product' && menuActive.active
+                  ? `text-gray-800`
+                  : `text-gray-400`
+              }
+              text-gray-400 hover:text-gray-800`}
             >
-              Product
+              Product{' '}
+              <FontAwesomeIcon
+                className='pt-1'
+                size='sm'
+                icon={
+                  menuActive.menu === 'product' && menuActive.active
+                    ? faChevronUp
+                    : faChevronDown
+                }
+              />
             </Link>
 
             <Link
@@ -60,7 +80,8 @@ const Header: FC<{
               }
               text-gray-400 hover:text-gray-800`}
             >
-              Solution{' '}
+              Solution
+
             </Link>
 
             <Link
@@ -106,8 +127,9 @@ const Header: FC<{
           <SideNav
             isOpen={showSideNav}
             onAnchorClick={onAnchorClick}
-            // active={active}
-            // setActive={setActive}
+            active={active}
+            setActive={setActive}
+
           />
         </div>
         <img
@@ -129,7 +151,11 @@ const Header: FC<{
 
       {menuActive.active && (
         <div>
-          <Menu as='div' className={'  h-full w-full'}>
+
+          <Menu
+            as='div'
+            className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
+          >
             <Transition
               show={menuActive.active}
               as={Fragment}
@@ -141,6 +167,7 @@ const Header: FC<{
               leaveTo='transform opacity-0 scale-100'
             >
               <Menu.Items>
+                <Product menu={menuActive.menu} />
                 <Solution menu={menuActive.menu} />
               </Menu.Items>
             </Transition>
