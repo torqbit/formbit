@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 
 import ChangelogCard from '@/components/ChangeLog/ChangelogCard';
 import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
