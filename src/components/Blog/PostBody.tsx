@@ -11,7 +11,7 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
 
   const post = () => {
     if (slug) {
-      fetch(`/api/slug?slug=${slug}`, {
+      fetch(`/api/slug?slug=${slug}&dir=_post`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
@@ -35,7 +35,13 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
           <title>{blogPost.title}</title>
           <meta property='og:image' content={blogPost.ogImage.url} />
         </Head>
-        <Header />
+        <Header
+          menuActive={{
+            active: false,
+            menu: '',
+          }}
+          onMenuActive={function (value: boolean, name: string): void {}}
+        />
         <section className='m-auto bg-gray-50 md:w-[full] '>
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'></div>
           <div className='m-auto mt-[-100px] flex w-[full] flex-col items-center  justify-center rounded-lg p-2  md:w-[1200px]  '>
@@ -58,9 +64,9 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
             </div>
             <hr className='m-[20px]' />
             <div className='flex flex-col md:flex-row'>
-              <div className='flex flex-col rounded border-2 p-6 md:w-[600px]  md:flex-col md:border-none md:p-0'>
+              <div className='flex flex-col  rounded border-2  p-6 md:w-[600px]  md:flex-col md:border-none md:p-0'>
                 <Avatar picture={blogPost.author.picture} name={''} />
-                <h1 className='text-[15px] text-black'>
+                <h1 className='text-left text-[15px]	 text-black '>
                   {blogPost.author.name}
                 </h1>
               </div>

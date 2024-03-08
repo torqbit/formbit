@@ -1,5 +1,5 @@
 'use client';
-
+import { useState } from 'react';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import HeroProduct from '@/components/Menu/Product/HeroProduct';
@@ -11,7 +11,6 @@ import {
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 
 const viewData = [
   {

@@ -19,7 +19,13 @@ const Blog: FC<{
 
   return (
     <>
-      <Header />
+      <Header
+        menuActive={{
+          active: false,
+          menu: '',
+        }}
+        onMenuActive={function (value: boolean, name: string): void {}}
+      />
       <section id='blog'>
         <div className='m-auto bg-gray-50 '>
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'>
