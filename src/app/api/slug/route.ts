@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getPostBySlug } from '@/lib/post';
 
 import markdown from '@/lib/markdownToHtml';
