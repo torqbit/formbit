@@ -1,6 +1,7 @@
 import { Menu } from '@headlessui/react';
+import { FC } from 'react';
 
-const Solution = () => {
+const Solution: FC<{ menu: string }> = ({ menu }) => {
   const Stage = [
     {
       icon: (
