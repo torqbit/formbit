@@ -140,15 +140,22 @@ const Header: FC<{
         </div>
       </div>
 
-      {menuActive.active && (
-        <div>
+      {
+        <div
+          className={`
+          
+          ${
+            menuActive.active && menuActive.menu === 'product'
+              ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+              : ` translate-y-4 transform opacity-0 duration-200 `
+          }`}
+        >
           <Menu
             as='div'
             className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
           >
             <Transition
               show={menuActive.active}
-              as={Fragment}
               enter='transition ease-out duration-100'
               enterFrom='transform opacity-0 scale-100'
               enterTo='transform opacity-100 scale-100'
@@ -162,7 +169,7 @@ const Header: FC<{
             </Transition>
           </Menu>
         </div>
-      )}
+      }
     </header>
   );
 };

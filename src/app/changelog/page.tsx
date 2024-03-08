@@ -17,19 +17,17 @@ const ChangelogPage = () => {
     setMenuActive({ active: value, menu: name });
   };
 
-  const [allPost, setPost] = React.useState<
-    [
-      {
-        coverImage: string;
-        slug: string;
-        title: string;
-        fileName: string;
-        date: string;
-        link: string;
-        excerpt: string;
-        author: { picture: string; name: string };
-      }
-    ]
+  const [allPost, setPost] = useState<
+    {
+      coverImage: string;
+      slug: string;
+      title: string;
+      fileName: string;
+      date: string;
+      link: string;
+      excerpt: string;
+      author: { picture: string; name: string };
+    }[]
   >();
 
   const Post = async () => {
@@ -45,7 +43,7 @@ const ChangelogPage = () => {
       console.log(result.post, 'my post');
       setPost(result.post);
     } catch (err) {
-      return;
+      console.log('error while fetching post from changelog', err);
     }
   };
 

@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     const dir = searchParams.get('dir') as string;
 
     if (slug) {
-      const post = getPostBySlug(
+      const post = await getPostBySlug(
         slug as string,
         [
           'title',
@@ -34,6 +34,7 @@ export async function GET(request: Request) {
       return NextResponse.json({ success: false, message: 'field is empty' });
     }
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ success: false, error: error });
   }
 }

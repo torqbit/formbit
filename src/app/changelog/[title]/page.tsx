@@ -22,24 +22,27 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
   const [content, setContent] = useState();
 
   const post = () => {
-    if (slug) {
-      fetch(`/api/slug?slug=${slug}&dir=_changelog`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-      }).then((res) =>
-        res.json().then((data) => {
-          setchangelogPost(data.post);
-          setContent(data.content);
-        })
-      );
+    try {
+      if (slug) {
+        fetch(`/api/slug?slug=${slug}&dir=_changelog`, {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+          },
+        }).then((res) =>
+          res.json().then((data) => {
+            setchangelogPost(data.post);
+            setContent(data.content);
+          })
+        );
+      }
+    } catch (error) {
+      console.log('error while fetching post from changelog', error);
     }
   };
   useEffect(() => {
     post();
-    console.log(changelogPost);
-  });
+  }, []);
   if (changelogPost) {
     return (
       <>
@@ -76,9 +79,13 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
     );
   } else {
     return (
-      <div className='flex h-[100vh] flex-col items-center justify-center'>
-        <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
-      </div>
+      <>
+        <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+        <div className='flex h-[100vh] flex-col items-center justify-center'>
+          <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
+        </div>
+        <Footer />
+      </>
     );
   }
 };
