@@ -1,0 +1,12 @@
+{
+  "index": {
+    "title": "Introduction"
+  },
+  "apiReference": {
+    "title": "API Reference"
+  },
+  "sdkReference": "SDK Reference",
+  "community": "Community",
+  "github": "GitHub",
+  "templates": "Templates"
+}

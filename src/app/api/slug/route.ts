@@ -9,16 +9,24 @@ export async function GET(request: Request) {
     const searchParams = new URLSearchParams(url.searchParams);
     const slug = searchParams.get('slug');
 
+    const dir = searchParams.get('dir') as string;
+
     if (slug) {
-      const post = getPostBySlug(slug as string, [
-        'title',
-        'date',
-        'author',
-        'content',
-        'ogImage',
-        'coverImage',
-        'excerpt',
-      ]);
+      const post = getPostBySlug(
+        slug as string,
+        [
+          'title',
+          'date',
+          'author',
+          'content',
+          'ogImage',
+          'fileName',
+          'link',
+          'coverImage',
+          'excerpt',
+        ],
+        dir
+      );
 
       const content = await markdown(post.content || '');
 
