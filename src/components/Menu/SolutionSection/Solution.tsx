@@ -1,7 +1,6 @@
 import { Menu } from '@headlessui/react';
-import { FC } from 'react';
 
-const Solution: FC = () => {
+const Solution = () => {
   const Stage = [
     {
       icon: (
@@ -310,7 +309,7 @@ const Solution: FC = () => {
   return (
     <>
       <section
-        className={`absolute z-20  m-auto ml-[-5rem] mt-[25px] w-[700px]  rounded-lg bg-white p-2 `}
+        className={`absolute left-40  z-20 m-auto ml-[180px] mt-[2px] w-[700px]  rounded-lg bg-white p-2 `}
       >
         <div className=''>
           <h3 className='ml-4 mt-4 p-2 text-[16px] uppercase text-gray-600'>
