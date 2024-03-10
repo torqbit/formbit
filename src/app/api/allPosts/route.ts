@@ -21,9 +21,11 @@ export async function GET(request: NextRequest) {
         ],
         dir
       );
+      console.log(allPost, 'this is all post');
       return NextResponse.json({ post: allPost });
     }
   } catch (error) {
+    console.log(error, 'this is error in all post api');
     return NextResponse.json({ error: 'Server Error' });
   }
 }

@@ -45,6 +45,7 @@ const ChangelogPage = () => {
       const result = await res.json();
       setPost(result.post);
     } catch (err) {
+      console.log(err, 'this is all post page error');
       return;
     }
   };

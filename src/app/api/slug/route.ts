@@ -28,12 +28,15 @@ export async function GET(request: NextRequest) {
       );
 
       const content = await markdown(post.content || '');
+      console.log(post, 'this is single post');
 
       return NextResponse.json({ success: true, post: post, content });
     } else if (!slug) {
       return NextResponse.json({ success: false, message: 'field is empty' });
     }
   } catch (error) {
+    console.log(error, 'this is error in slug api');
+
     return NextResponse.json({ success: false, error: error });
   }
 }
