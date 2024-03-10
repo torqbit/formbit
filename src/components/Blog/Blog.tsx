@@ -24,7 +24,9 @@ const Blog: FC<{
           active: false,
           menu: '',
         }}
-        onMenuActive={function (value: boolean, name: string): void {}}
+        onMenuActive={function (value: boolean, name: string): void {
+          throw new Error('Function not implemented.');
+        }}
       />
       <section id='blog'>
         <div className='m-auto bg-gray-50 '>

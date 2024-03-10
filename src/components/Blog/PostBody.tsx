@@ -40,7 +40,9 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
             active: false,
             menu: '',
           }}
-          onMenuActive={function (value: boolean, name: string): void {}}
+          onMenuActive={function (value: boolean, name: string): void {
+            throw new Error('Function not implemented.');
+          }}
         />
         <section className='m-auto bg-gray-50 md:w-[full] '>
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'></div>
