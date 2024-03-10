@@ -25,7 +25,7 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
 
   const post = async () => {
     try {
-      if (slug) {
+      if (slug && !changelogPost) {
         const res = await fetch(`/api/slug?slug=${slug}&dir=_changelog`, {
           method: 'GET',
           headers: {
@@ -33,7 +33,6 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
           },
         });
         const data = await res.json();
-        console.log(data, 'my data');
         setchangelogPost(data.post);
         setContent(data.content);
       }

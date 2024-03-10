@@ -3,16 +3,14 @@ export const dynamic = 'force-dynamic';
 import { getPostBySlug } from '@/lib/post';
 
 import markdown from '@/lib/markdownToHtml';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
-    const url = new URL(request.url);
-    const searchParams = new URLSearchParams(url.searchParams);
-    const slug = searchParams.get('slug');
-    const dir = searchParams.get('dir') as string;
+    const slug = request.nextUrl.searchParams.get('slug');
+    const dir = request.nextUrl.searchParams.get('dir');
 
-    if (slug) {
+    if (slug && dir) {
       const post = await getPostBySlug(
         slug as string,
         [

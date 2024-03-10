@@ -53,7 +53,6 @@ const Testimonial = () => {
           {testimonialInfo.map((info, i) => {
             return (
               <div
-                onClick={() => console.log(i)}
                 key={i}
                 className={` mb-5 w-full  rounded bg-gray-50 p-4 lg:mb-10
                 
