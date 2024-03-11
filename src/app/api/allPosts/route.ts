@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-import { getAllPosts } from '../../../lib/post';
+import { getAllBlogs } from '@/lib/blog';
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
   const dir = searchParams.get('dir') as string;
   try {
-    const allPost = getAllPosts(
+    const allPost = getAllBlogs(
       [
         'title',
         'date',
