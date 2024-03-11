@@ -20,7 +20,7 @@ const BlogPage = () => {
 
   const Post = async () => {
     try {
-      const res = await fetch(`/api/allPosts`, {
+      const res = await fetch(`/api/allPosts?dir=post`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',

@@ -11,7 +11,7 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
 
   const post = () => {
     if (slug) {
-      fetch(`/api/slug?slug=${slug}&dir=_post`, {
+      fetch(`/api/slug?slug=${slug}&dir=post`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',

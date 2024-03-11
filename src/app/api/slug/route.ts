@@ -13,8 +13,28 @@ export async function GET(request: Request) {
 
     const dir = searchParams.get('dir') as string;
 
-    if (slug) {
+    if (slug && dir === 'changelog') {
       const post = await getPostBySlug(
+        slug as string,
+        [
+          'title',
+          'date',
+          'author',
+          'content',
+          'ogImage',
+          'fileName',
+          'link',
+          'coverImage',
+          'excerpt',
+        ],
+        dir
+      );
+
+      const content = await markdown(post.content || '');
+
+      return NextResponse.json({ success: true, post: post, content });
+    } else if (slug && dir === 'post') {
+      const post = await getBlogBySlug(
         slug as string,
         [
           'title',
