@@ -33,7 +33,8 @@ const ChangelogCard: FC<{
   post,
   content,
 }) => {
-  const pageLink = fileName.replace(/\s+/g, '');
+  console.log(date, 'md file date');
+  const pageLink = fileName?.replace(/\s+/g, '');
   return (
     <section
       className={` 

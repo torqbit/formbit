@@ -13,17 +13,7 @@ export async function GET(request: NextRequest) {
     if (slug && dir) {
       const post = await getPostBySlug(
         slug as string,
-        [
-          'title',
-          'date',
-          'author',
-          'content',
-          'ogImage',
-          'fileName',
-          'link',
-          'coverImage',
-          'excerpt',
-        ],
+    
         dir
       );
 

@@ -1,4 +1,3 @@
-'use client';
 export const dynamic = 'force-dynamic';
 
 import ChangelogCard from '@/components/ChangeLog/ChangelogCard';
@@ -6,65 +5,69 @@ import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
+import { getAllPosts } from '@/lib/post';
 import React, { useEffect } from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
-const ChangelogPage = () => {
-  const [menuActive, setMenuActive] = useState({
-    active: false,
-    menu: '',
-  });
-  const onMenuActive = (value: boolean, name: string) => {
-    setMenuActive({ active: value, menu: name });
-  };
+const ChangelogPage = async () => {
+  // const [menuActive, setMenuActive] = useState({
+  //   active: false,
+  //   menu: '',
+  // });
+  // const onMenuActive = (value: boolean, name: string) => {
+  //   setMenuActive({ active: value, menu: name });
+  // };
 
-  const [allPost, setPost] = React.useState<
-    [
-      {
-        coverImage: string;
-        slug: string;
-        title: string;
-        fileName: string;
-        date: string;
-        link: string;
-        excerpt: string;
-        author: { picture: string; name: string };
-      }
-    ]
-  >();
+  // const [allPost, setPost] = React.useState<
+  //   [
+  //     {
+  //       coverImage: string;
+  //       slug: string;
+  //       title: string;
+  //       fileName: string;
+  //       date: string;
+  //       link: string;
+  //       excerpt: string;
+  //       author: { picture: string; name: string };
+  //     }
+  //   ]
+  // >();
 
-  const Post = async () => {
-    try {
-      const res = await fetch(`/api/allPosts?dir=_changelog`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-      });
+  // const Post = async () => {
+  //   try {
+  //     const res = await fetch(`/api/allPosts?dir=_changelog`, {
+  //       method: 'GET',
+  //       headers: {
+  //         'content-type': 'application/json',
+  //       },
+  //     });
 
-      const result = await res.json();
-      setPost(result.post);
-    } catch (err) {
-      console.log(err, 'this is all post page error');
-      return;
-    }
-  };
+  //     const result = await res.json();
+  //     setPost(result.post);
+  //   } catch (err) {
+  //     console.log(err, 'this is all post page error');
+  //     return;
+  //   }
+  // };
 
-  useEffect(() => {
-    Post();
-  }, []);
+  // useEffect(() => {
+  //   Post();
+  // }, []);
+
+  const allPost = (await getAllPosts('_changelog')) as any[];
+  console.log(allPost[0], 'all post of changelog');
 
   return (
     <section
-      onClick={() => {
-        menuActive.active && setMenuActive({ active: false, menu: '' });
-      }}
+    // onClick={() => {
+    //   menuActive.active && setMenuActive({ active: false, menu: '' });
+    // }}
     >
-      <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+      {/* <Header menuActive={menuActive} onMenuActive={onMenuActive} /> */}
       {allPost ? (
         <div>
           <HeroChangelog />
-          {allPost.map((data, i) => {
+          {allPost?.map((data, i) => {
             return (
               <div key={i}>
                 <ChangelogCard

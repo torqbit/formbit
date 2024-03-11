@@ -6,21 +6,7 @@ export async function GET(request: NextRequest) {
   const dir = request.nextUrl.searchParams.get('dir');
   try {
     if (dir) {
-      const allPost = getAllPosts(
-        [
-          'title',
-          'date',
-          'slug',
-          'author',
-          'link',
-          'content',
-          'ogImage',
-          'fileName',
-          'coverImage',
-          'excerpt',
-        ],
-        dir
-      );
+      const allPost = getAllPosts(dir);
       console.log(allPost, 'this is all post');
       return NextResponse.json({ post: allPost });
     }
