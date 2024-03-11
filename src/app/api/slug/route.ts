@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+
 import { getPostBySlug } from '@/lib/post';
 import markdown from '@/lib/markdownToHtml';
 import { NextResponse } from 'next/server';
@@ -12,7 +13,7 @@ export async function GET(request: Request) {
     const dir = searchParams.get('dir') as string;
 
     if (slug) {
-      const post = getPostBySlug(
+      const post = await getPostBySlug(
         slug as string,
         [
           'title',

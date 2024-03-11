@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import * as React from 'react';
+export const dynamic = 'force-dynamic';
 
 // import Font Awesome CSS
 import '@fortawesome/fontawesome-svg-core/styles.css';
