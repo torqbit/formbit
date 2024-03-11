@@ -2,7 +2,7 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-export const postDirectory = (dir: string) => join(process.cwd(), `src/${dir}`);
+export const postDirectory = (dir: string) => join(process.cwd(), `${dir}`);
 
 export function getPostSlugs(dir: string) {
   return fs.readdirSync(postDirectory(dir));
