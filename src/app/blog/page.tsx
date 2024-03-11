@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 import Blog from '@/components/Blog/Blog';
 import React from 'react';
 import { useEffect } from 'react';

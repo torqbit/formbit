@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { getAllPosts } from '../../../lib/post';
 import { NextResponse } from 'next/server';
 
