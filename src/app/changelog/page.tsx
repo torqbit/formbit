@@ -35,7 +35,7 @@ const ChangelogPage = () => {
 
   const Post = async () => {
     try {
-      const res = await fetch(`/api/allPosts?dir=_changelog`, {
+      const res = await fetch(`/api/allPosts?dir=changelog`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
