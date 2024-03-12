@@ -323,7 +323,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
                 <Menu.Item key={i}>
                   <div className='flex items-center justify-between text-[#666] hover:text-[#000]'>
                     <div className='mr-2  '>{item.icon}</div>
-                    <div className=' text-[15px] font-semibold text-[#000]'>
+                    <div className=' text-[15px] font-semibold '>
                       {item.name}
                     </div>
                   </div>
@@ -341,9 +341,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
                 <Menu.Item key={i}>
                   <div className='flex items-center text-[#666] hover:text-[#000]  '>
                     <a className='mr-2 '>{item.icon}</a>
-                    <h1 className='text-[15px] font-semibold text-[#000]'>
-                      {item.name}
-                    </h1>
+                    <h1 className='text-[15px] font-semibold'>{item.name}</h1>
                   </div>
                 </Menu.Item>
               );
@@ -361,7 +359,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
                 <Menu.Item key={i}>
                   <div className='flex  items-center text-[#666] hover:text-[#000]  '>
                     <a className='mr-2'>{item.icon}</a>
-                    <h1 className='mr-2 text-[15px] font-semibold text-[#000]'>
+                    <h1 className='mr-2 text-[15px] font-semibold'>
                       {item.name}
                     </h1>
                     <a>{item.additionalIcon}</a>
