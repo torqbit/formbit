@@ -1,10 +1,12 @@
 'use client';
+export const dynamic = 'force-dynamic';
 
 import ChangelogCard from '@/components/ChangeLog/ChangelogCard';
 import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import { Params } from '@fortawesome/fontawesome-svg-core';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+
 import { FC, useEffect, useState } from 'react';
 
 const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
@@ -21,14 +23,17 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
   const [changelogPost, setchangelogPost] = useState<any>();
   const [content, setContent] = useState();
 
-  const post = () => {
+
+  const post = async () => {
     try {
       if (slug) {
-        fetch(`/api/slug?slug=${slug}&dir=_changelog`, {
+        const res = await fetch(`/api/slug?slug=${slug}&dir=changelog`, {
+
           method: 'GET',
           headers: {
             'content-type': 'application/json',
           },
+
         }).then((res) =>
           res.json().then((data) => {
             setchangelogPost(data.post);
@@ -38,11 +43,15 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
       }
     } catch (error) {
       console.log('error while fetching post from changelog', error);
+
     }
   };
   useEffect(() => {
     post();
+
   }, []);
+
+
   if (changelogPost) {
     return (
       <>
