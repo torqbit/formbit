@@ -76,7 +76,7 @@ const Header: FC<{
               onMouseOver={() => onMenuActive(true, 'solution')}
               href=''
               className={` flex items-center
-              gap-1 text-[18px] font-[500]
+              gap-1 text-[18px] font-[500] 
               ${
                 menuActive.menu === 'solution' && menuActive.active
                   ? 'text-gray-800'
@@ -86,13 +86,17 @@ const Header: FC<{
             >
               Solution
               <FontAwesomeIcon
-                className='pt-1'
-                size='sm'
-                icon={
+                className={`
+                
+                 transition-all
+                ${
                   menuActive.menu === 'solution' && menuActive.active
-                    ? faChevronUp
-                    : faChevronDown
+                    ? ' -rotate-180 pb-1   '
+                    : ''
                 }
+                `}
+                size='sm'
+                icon={faChevronDown}
               />
             </Link>
 
@@ -193,11 +197,12 @@ const Header: FC<{
       {
         <div
           className={`
-          ${
-            menuActive.active && menuActive.menu === 'solution'
-              ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
-              : ` translate-y-4 transform opacity-0 duration-200 `
-          }`}
+          
+        ${
+          menuActive.active && menuActive.menu === 'solution'
+            ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+            : ` translate-y-4 transform opacity-0 duration-200 `
+        }`}
         >
           <Menu
             as='div'
