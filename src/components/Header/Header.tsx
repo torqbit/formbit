@@ -81,7 +81,6 @@ const Header: FC<{
               text-gray-400 hover:text-gray-800`}
             >
               Solution
-
             </Link>
 
             <Link
@@ -129,7 +128,6 @@ const Header: FC<{
             onAnchorClick={onAnchorClick}
             active={active}
             setActive={setActive}
-
           />
         </div>
         <img
@@ -149,15 +147,22 @@ const Header: FC<{
         </div>
       </div>
 
-      {menuActive.active && (
-        <div>
-
+      {
+        <div
+          className={`
+          
+          ${
+            menuActive.active && menuActive.menu === 'product'
+              ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+              : ` translate-y-4 transform opacity-0 duration-200 `
+          }`}
+        >
           <Menu
             as='div'
             className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
           >
             <Transition
-              show={menuActive.active}
+              show={menuActive.active && menuActive.menu === 'product'}
               as={Fragment}
               enter='transition ease-out duration-100'
               enterFrom='transform opacity-0 scale-100'
@@ -168,12 +173,42 @@ const Header: FC<{
             >
               <Menu.Items>
                 <Product menu={menuActive.menu} />
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        </div>
+      }
+      {
+        <div
+          className={`
+          
+          ${
+            menuActive.active && menuActive.menu === 'solution'
+              ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+              : ` translate-y-4 transform opacity-0 duration-200 `
+          }`}
+        >
+          <Menu
+            as='div'
+            className={' absolute -left-[10px] top-[67px] z-10  h-full w-full'}
+          >
+            <Transition
+              show={menuActive.active && menuActive.menu === 'solution'}
+              as={Fragment}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-100'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-100'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-100'
+            >
+              <Menu.Items>
                 <Solution menu={menuActive.menu} />
               </Menu.Items>
             </Transition>
           </Menu>
         </div>
-      )}
+      }
     </header>
   );
 };
