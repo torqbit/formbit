@@ -6,7 +6,12 @@ import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowAltCircleUp,
+  faChevronDown,
+  faChevronUp,
+} from '@fortawesome/free-solid-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
@@ -68,7 +73,7 @@ const Header: FC<{
               />
             </Link>
 
-            <Link
+            {/* <Link
               onMouseOver={() => onMenuActive(true, 'solution')}
               href=''
               className={` flex items-center
@@ -81,6 +86,43 @@ const Header: FC<{
               text-gray-400 hover:text-gray-800`}
             >
               Solution
+              <FontAwesomeIcon
+                className='pt-1'
+                size='sm'
+                icon={
+                  menuActive.menu === 'solution' && menuActive.active
+                    ? faChevronUp
+                    : faChevronDown
+                }
+              />
+            </Link> */}
+
+            <Link
+              onMouseOver={() => onMenuActive(true, 'solution')}
+              href=''
+              className={` flex  items-center
+              gap-1 text-[18px] font-[500]
+              ${
+                menuActive.menu === 'solution' && menuActive.active
+                  ? 'text-gray-800'
+                  : 'text-gray-400'
+              }
+              text-gray-400 hover:text-gray-800 `}
+            >
+              Solution
+              <FontAwesomeIcon
+                className={`
+              
+                 transition-all
+                ${
+                  menuActive.menu === 'solution' && menuActive.active
+                    ? ' -rotate-180 pb-1   '
+                    : ''
+                }
+                `}
+                size='sm'
+                icon={faChevronDown}
+              />
             </Link>
 
             <Link
@@ -181,7 +223,6 @@ const Header: FC<{
       {
         <div
           className={`
-          
           ${
             menuActive.active && menuActive.menu === 'solution'
               ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
@@ -190,7 +231,7 @@ const Header: FC<{
         >
           <Menu
             as='div'
-            className={' absolute -left-[10px] top-[67px] z-10  h-full w-full'}
+            className={' absolute -left-[10px] top-[64px] z-10  h-full w-full'}
           >
             <Transition
               show={menuActive.active && menuActive.menu === 'solution'}
