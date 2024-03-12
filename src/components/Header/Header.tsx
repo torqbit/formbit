@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from 'react';
+import { FC, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 
@@ -6,7 +6,7 @@ import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
@@ -47,7 +47,7 @@ const Header: FC<{
             <Link
               onMouseOver={() => onMenuActive(true, 'product')}
               href=''
-              className={` flex items-center
+              className={` flex  items-center
               gap-1 text-[18px] font-[500]
               ${
                 menuActive.menu === 'product' && menuActive.active
@@ -58,13 +58,17 @@ const Header: FC<{
             >
               Product{' '}
               <FontAwesomeIcon
-                className='pt-1'
-                size='sm'
-                icon={
+                className={`
+                
+                 transition-all
+                ${
                   menuActive.menu === 'product' && menuActive.active
-                    ? faChevronUp
-                    : faChevronDown
+                    ? ' -rotate-180 pb-1   '
+                    : ''
                 }
+                `}
+                size='sm'
+                icon={faChevronDown}
               />
             </Link>
 
@@ -140,15 +144,22 @@ const Header: FC<{
         </div>
       </div>
 
-      {menuActive.active && (
-        <div>
+      {
+        <div
+          className={`
+          
+          ${
+            menuActive.active && menuActive.menu === 'product'
+              ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+              : ` translate-y-4 transform opacity-0 duration-200 `
+          }`}
+        >
           <Menu
             as='div'
-            className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
+            className={' absolute -left-[10px] top-[17px] z-10  h-full w-full '}
           >
             <Transition
-              show={menuActive.active}
-              as={Fragment}
+              show={menuActive.active && menuActive.menu === 'product'}
               enter='transition ease-out duration-100'
               enterFrom='transform opacity-0 scale-100'
               enterTo='transform opacity-100 scale-100'
@@ -162,7 +173,7 @@ const Header: FC<{
             </Transition>
           </Menu>
         </div>
-      )}
+      }
     </header>
   );
 };

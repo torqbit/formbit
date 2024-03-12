@@ -6,6 +6,7 @@ import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import Head from 'next/head';
 
 import { FC, useEffect, useState } from 'react';
 
@@ -31,26 +32,28 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
           headers: {
             'content-type': 'application/json',
           },
-        });
-        const data = await res.json();
-        console.log(data, 'my data');
-        setchangelogPost(data.post);
-        setContent(data.content);
+        }).then((res) =>
+          res.json().then((data) => {
+            setchangelogPost(data.post);
+            setContent(data.content);
+          })
+        );
       }
     } catch (error) {
-      console.log(error, 'err');
+      return error;
     }
   };
   useEffect(() => {
     post();
-  });
+  }, []);
+
   if (changelogPost) {
     return (
       <>
-        <head>
+        <Head>
           <title>{changelogPost.title}</title>
           <meta property='og:image' content={changelogPost.ogImage.url} />
-        </head>
+        </Head>
         <section
           onClick={() => {
             menuActive.active && setMenuActive({ active: false, menu: '' });
@@ -67,7 +70,7 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
               title={changelogPost.title}
               img={changelogPost.coverImage}
               description={changelogPost.excerpt}
-              href={'/'}
+              href='/'
               link={changelogPost.link}
               fileName=''
               post={true}
@@ -80,9 +83,16 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
     );
   } else {
     return (
-      <div className='flex h-[100vh] flex-col items-center justify-center'>
-        <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
-      </div>
+      <>
+        <>
+          <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+          <div className='flex h-[100vh] flex-col items-center justify-center gap-2'>
+            <div className='mt-20 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />{' '}
+            <h2>Loading...</h2>
+          </div>
+          <Footer />
+        </>
+      </>
     );
   }
 };
