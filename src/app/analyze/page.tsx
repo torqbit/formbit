@@ -80,11 +80,9 @@ const ProductPage = () => {
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
       <HeroProduct
-        label={'For Analyzing Teams'}
-        title={'Analyze the usage of your forms'}
-        description={
-          ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
-        }
+        label='For Analyzing Teams'
+        title='Analyze the usage of your forms'
+        description=' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         img='https://placehold.co/600x500'
       />
       <View

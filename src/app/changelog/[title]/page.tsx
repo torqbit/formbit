@@ -40,7 +40,7 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
         );
       }
     } catch (error) {
-      console.log('error while fetching post from changelog', error);
+      return error;
     }
   };
   useEffect(() => {
@@ -70,7 +70,7 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
               title={changelogPost.title}
               img={changelogPost.coverImage}
               description={changelogPost.excerpt}
-              href={'/'}
+              href='/'
               link={changelogPost.link}
               fileName=''
               post={true}
@@ -84,11 +84,14 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
   } else {
     return (
       <>
-        <Header menuActive={menuActive} onMenuActive={onMenuActive} />
-        <div className='flex h-[100vh] flex-col items-center justify-center'>
-          <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
-        </div>
-        <Footer />
+        <>
+          <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+          <div className='flex h-[100vh] flex-col items-center justify-center gap-2'>
+            <div className='mt-20 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />{' '}
+            <h2>Loading...</h2>
+          </div>
+          <Footer />
+        </>
       </>
     );
   }

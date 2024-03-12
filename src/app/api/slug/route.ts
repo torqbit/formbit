@@ -57,7 +57,6 @@ export async function GET(request: Request) {
       return NextResponse.json({ success: false, message: 'field is empty' });
     }
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ success: false, error: error });
   }
 }

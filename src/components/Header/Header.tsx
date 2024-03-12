@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from 'react';
+import { FC, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
 

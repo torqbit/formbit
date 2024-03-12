@@ -41,10 +41,10 @@ const ChangelogPage = () => {
       });
 
       const result = await res.json();
-      console.log(result.post, 'my post');
+
       setPost(result.post);
     } catch (err) {
-      console.log('error while fetching post from changelog', err);
+      return err;
     }
   };
 
@@ -72,7 +72,7 @@ const ChangelogPage = () => {
                   title={data.title}
                   img={data.coverImage}
                   description={data.excerpt}
-                  href={'/'}
+                  href='/'
                   fileName={data.fileName}
                   link={data.link}
                   post={false}
@@ -83,9 +83,14 @@ const ChangelogPage = () => {
           })}
         </div>
       ) : (
-        <div className='flex h-[100vh] flex-col items-center justify-center'>
-          <div className='mt-40 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />
-        </div>
+        <>
+          <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+          <div className='flex h-[100vh] flex-col items-center justify-center gap-2'>
+            <div className='mt-20 h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-black' />{' '}
+            <h2>Loading...</h2>
+          </div>
+          <Footer />
+        </>
       )}
       <Footer />
     </section>

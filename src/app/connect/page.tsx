@@ -81,11 +81,9 @@ const ProductPage = () => {
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
       <HeroProduct
-        label={'Connect to Formbit'}
-        title={'Send and manage your audience'}
-        description={
-          ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
-        }
+        label='Connect to Formbit'
+        title='Send and manage your audience'
+        description=' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         img='https://placehold.co/600x500'
       />
       <View
