@@ -310,10 +310,10 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
   return (
     <>
       <section
-        className={`gray absolute left-40 z-20 m-auto ml-[180px] mt-[2px] w-[700px]  rounded-lg bg-white p-2 `}
+        className={` absolute left-40 z-20 m-auto ml-[180px] mt-[2px] w-[700px]  rounded-lg bg-white p-2 `}
       >
         <div className=''>
-          <h3 className='text-primary-600 ml-4 mt-4 p-2 text-[16px] uppercase'>
+          <h3 className='ml-4 mt-4 p-2 text-[16px] uppercase text-[#666]'>
             By Stage
           </h3>
 
@@ -321,9 +321,9 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
             {Stage.map((item, i) => {
               return (
                 <Menu.Item key={i}>
-                  <div className='text-primary-500 flex items-center justify-between hover:text-black'>
+                  <div className='flex items-center justify-between text-[#666] hover:text-[#000]'>
                     <div className='mr-2  '>{item.icon}</div>
-                    <div className=' text-[15px] font-semibold text-black'>
+                    <div className=' text-[15px] font-semibold text-[#000]'>
                       {item.name}
                     </div>
                   </div>
@@ -332,16 +332,16 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
             })}
           </div>
           <div className='mb-5 mt-6 w-[700px] border-b-2 border-dashed' />
-          <h3 className='text-primary-600 ml-6 mt-6 text-[16px] uppercase'>
+          <h3 className='ml-6 mt-6 text-[16px] uppercase text-[#666]'>
             By Use Case
           </h3>
-          <div className='ml-6 grid w-[510px] grid-flow-col grid-rows-5 justify-between'>
+          <div className='ml-6 grid w-[510px] cursor-pointer grid-flow-col grid-rows-5 justify-between'>
             {UseCase.map((item, i) => {
               return (
                 <Menu.Item key={i}>
-                  <div className='text-primary-500 flex items-center hover:text-black  '>
+                  <div className='flex items-center text-[#666] hover:text-[#000]  '>
                     <a className='mr-2 '>{item.icon}</a>
-                    <h1 className='text-[15px] font-semibold text-black'>
+                    <h1 className='text-[15px] font-semibold text-[#000]'>
                       {item.name}
                     </h1>
                   </div>
@@ -352,16 +352,16 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
         </div>
 
         <div className='mt-4 rounded-lg  bg-gray-100 p-8'>
-          <h3 className='text-primary-600 text-[16px] uppercase'>
+          <h3 className='text-[16px] uppercase text-[#666]'>
             Intergrations & Custom solutions
           </h3>
-          <div className='grid w-[500px] grid-flow-col grid-rows-2 justify-between'>
+          <div className='grid w-[500px] cursor-pointer grid-flow-col grid-rows-2 justify-between'>
             {Integration.map((item, i) => {
               return (
                 <Menu.Item key={i}>
-                  <div className='text-primary-500  flex items-center hover:text-black  '>
+                  <div className='flex  items-center text-[#666] hover:text-[#000]  '>
                     <a className='mr-2'>{item.icon}</a>
-                    <h1 className='mr-2 text-[15px] font-semibold text-black'>
+                    <h1 className='mr-2 text-[15px] font-semibold text-[#000]'>
                       {item.name}
                     </h1>
                     <a>{item.additionalIcon}</a>
