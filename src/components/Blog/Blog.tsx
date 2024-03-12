@@ -16,19 +16,23 @@ const Blog: FC<{
   ];
 }> = ({ morePost }) => {
   const [active, setActive] = useState<string>('');
+  const [menuActive, setMenuActive] = useState({
+    active: false,
+    menu: '',
+  });
+  const onMenuActive = (value: boolean, name: string) => {
+    setMenuActive({ active: value, menu: name });
+  };
 
   return (
     <>
-      <Header
-        menuActive={{
-          active: false,
-          menu: '',
+      <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+      <section
+        id='blog'
+        onClick={() => {
+          menuActive.active && setMenuActive({ active: false, menu: '' });
         }}
-        onMenuActive={function (value: boolean, name: string): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-      <section id='blog'>
+      >
         <div className='m-auto bg-gray-50 '>
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'>
             <h1 className='mb-[50px] p-6 text-left text-[35px]  font-normal text-black md:m-auto md:mb-[20px] md:mt-0 md:w-[1200px]  md:p-2 md:text-[60px]'>

@@ -161,7 +161,7 @@ const Product: FC<{ menu: string }> = ({ menu }) => {
   return (
     <div
       className={`absolute left-[200px] top-12 z-[10] flex
-    items-start justify-center rounded-lg bg-white transition-all `}
+    items-start justify-center rounded-lg bg-white shadow-xl transition-all `}
     >
       <div className=' h-full  cursor-pointer  p-6'>
         {menuList.map((list, i) => {
