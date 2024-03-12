@@ -31,19 +31,21 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
           headers: {
             'content-type': 'application/json',
           },
-        });
-        const data = await res.json();
-        console.log(data, 'my data');
-        setchangelogPost(data.post);
-        setContent(data.content);
+        }).then((res) =>
+          res.json().then((data) => {
+            setchangelogPost(data.post);
+            setContent(data.content);
+          })
+        );
       }
     } catch (error) {
-      console.log(error, 'err');
+      console.log('error while fetching post from changelog', error);
     }
   };
   useEffect(() => {
     post();
-  });
+  }, []);
+
   if (changelogPost) {
     return (
       <>
