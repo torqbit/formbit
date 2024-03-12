@@ -2,19 +2,15 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-export const postDirectory = (dir: string) =>
-  dir === 'changelog'
+export const postDirectory = () => join(process.cwd(), 'src/_post');
 
-    ? join(process.cwd(), `src/_changelog`)
-    : join(process.cwd(), `src/_post`);
-
-export function getPostSlugs(dir: string) {
-  return fs.readdirSync(postDirectory(dir));
+export function getPostSlugs() {
+  return fs.readdirSync(postDirectory());
 }
 
-export function getPostBySlug(slug: string, fields: string[], dir: string) {
+export function getBlogBySlug(slug: string, fields: string[], dir: string) {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postDirectory(dir), `${realSlug}.md`);
+  const fullPath = join(postDirectory(), `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
   const items: any = {};
@@ -34,11 +30,11 @@ export function getPostBySlug(slug: string, fields: string[], dir: string) {
   return items;
 }
 
-export function getAllPosts(fields: any[], dir: string) {
-  const slug = getPostSlugs(dir);
+export function getAllBlogs(fields: any[], dir: string) {
+  const slug = getPostSlugs();
 
   const posts = slug
-    .map((slug) => getPostBySlug(slug, fields, dir))
+    .map((slug) => getBlogBySlug(slug, fields, dir))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
