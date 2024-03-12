@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import SideNav from '@/components/SideNav/SideNav';
-
+import Solution from '@/components/Menu/SolutionSection/Solution';
 import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
@@ -69,11 +69,19 @@ const Header: FC<{
             </Link>
 
             <Link
-              onMouseOver={() => onMenuActive(false, '')}
-              href='/solution'
-              className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              onMouseOver={() => onMenuActive(true, 'solution')}
+              href=''
+              className={` flex items-center
+              gap-1 text-[18px] font-[500]
+              ${
+                menuActive.menu === 'solution' && menuActive.active
+                  ? 'text-gray-800'
+                  : 'text-gray-400'
+              }
+              text-gray-400 hover:text-gray-800`}
             >
               Solution
+
             </Link>
 
             <Link
@@ -121,6 +129,7 @@ const Header: FC<{
             onAnchorClick={onAnchorClick}
             active={active}
             setActive={setActive}
+
           />
         </div>
         <img
@@ -142,6 +151,7 @@ const Header: FC<{
 
       {menuActive.active && (
         <div>
+
           <Menu
             as='div'
             className={' absolute -left-[10px] top-[20px] z-10  h-full w-full'}
@@ -158,6 +168,7 @@ const Header: FC<{
             >
               <Menu.Items>
                 <Product menu={menuActive.menu} />
+                <Solution menu={menuActive.menu} />
               </Menu.Items>
             </Transition>
           </Menu>
