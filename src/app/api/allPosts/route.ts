@@ -44,6 +44,6 @@ export async function GET(request: Request) {
       return NextResponse.json({ post: allPost });
     }
   } catch (error) {
-    return NextResponse.json({ error: 'Server Error' });
+    return NextResponse.json({ message: 'Server Error', error });
   }
 }
