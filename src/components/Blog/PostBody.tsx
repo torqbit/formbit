@@ -8,6 +8,13 @@ import Footer from '@/components/Footer/Footer';
 const PostBody: FC<{ slug: string }> = ({ slug }) => {
   const [blogPost, setBlogPost] = useState<any>();
   const [content, setContent] = useState();
+  const [menuActive, setMenuActive] = useState({
+    active: false,
+    menu: '',
+  });
+  const onMenuActive = (value: boolean, name: string) => {
+    setMenuActive({ active: value, menu: name });
+  };
 
   const post = () => {
     if (slug) {
@@ -35,16 +42,13 @@ const PostBody: FC<{ slug: string }> = ({ slug }) => {
           <title>{blogPost.title}</title>
           <meta property='og:image' content={blogPost.ogImage.url} />
         </Head>
-        <Header
-          menuActive={{
-            active: false,
-            menu: '',
+        <Header menuActive={menuActive} onMenuActive={onMenuActive} />
+        <section
+          className='m-auto bg-gray-50 md:w-[full] '
+          onClick={() => {
+            menuActive.active && setMenuActive({ active: false, menu: '' });
           }}
-          onMenuActive={function (value: boolean, name: string): void {
-            throw new Error('Function not implemented.');
-          }}
-        />
-        <section className='m-auto bg-gray-50 md:w-[full] '>
+        >
           <div className=' flex  h-[250px] w-[full] items-end bg-gradient-to-b from-gray-300 via-gray-200 to-gray-100 align-baseline  md:h-[250px]'></div>
           <div className='m-auto mt-[-100px] flex w-[full] flex-col items-center  justify-center rounded-lg p-2  md:w-[1200px]  '>
             <img

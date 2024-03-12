@@ -6,6 +6,7 @@ import HeroChangelog from '@/components/ChangeLog/HeroChangelog';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import Head from 'next/head';
 
 import { FC, useEffect, useState } from 'react';
 
@@ -49,10 +50,10 @@ const ChangelogPost: FC<{ params: Params }> = ({ params }) => {
   if (changelogPost) {
     return (
       <>
-        <head>
+        <Head>
           <title>{changelogPost.title}</title>
           <meta property='og:image' content={changelogPost.ogImage.url} />
-        </head>
+        </Head>
         <section
           onClick={() => {
             menuActive.active && setMenuActive({ active: false, menu: '' });
