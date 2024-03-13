@@ -105,11 +105,11 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
         className={`absolute left-40 z-20 m-auto ml-[180px] mt-[2px] w-[700px] rounded-lg  bg-white p-2 `}
       >
         <div>
-          <h3 className='ml-4 mt-4 p-2 text-[14px] font-medium uppercase text-[#666]'>
+          <h3 className='mb-0 ml-6 mt-5 text-[18px] font-medium uppercase text-[#666]'>
             Role
           </h3>
 
-          <div className='ml-7 flex w-[535px] cursor-pointer  justify-between  '>
+          <div className='ml-7  flex w-[535px] cursor-pointer  justify-between  '>
             {Stage.map((item, i) => {
               return (
                 <Menu.Item key={i}>
@@ -124,11 +124,11 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
               );
             })}
           </div>
-          <div className='mb-5 mt-6 w-[700px] border-b-2 border-dashed' />
-          <h3 className='ml-6 mt-6  text-[14px] font-medium uppercase text-[#666]'>
+          <div className='mb-2 mt-3 w-[700px] border-b-2 border-dashed' />
+          <h3 className='ml-6 mt-6  text-[18px] font-medium uppercase text-[#666]'>
             Tools
           </h3>
-          <div className='ml-6 grid w-[450px] cursor-pointer grid-flow-col grid-rows-5 justify-between'>
+          <div className='ml-6 grid w-[450px] cursor-pointer grid-flow-col grid-rows-5 justify-between gap-[-10px]'>
             {UseCase.map((item, i) => {
               return (
                 <Menu.Item key={i}>
@@ -146,10 +146,10 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
         </div>
 
         <div className='mt-4  rounded-lg bg-gray-100  p-8 '>
-          <h3 className=' text-[14px] font-medium uppercase text-[#666]'>
+          <h3 className=' text-[18px] font-medium uppercase text-[#666]'>
             Resources
           </h3>
-          <div className='grid w-[525px]  cursor-pointer grid-flow-col grid-rows-2 justify-between'>
+          <div className='grid w-[525px] cursor-pointer  grid-flow-col grid-rows-2 justify-between gap-[-20px]'>
             {Integration.map((item, i) => {
               return (
                 <Menu.Item key={i}>
