@@ -6,7 +6,8 @@ import Product from '@/components/Menu/Product';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import Solution from '@/components/Menu/SolutionSection/Solution';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
@@ -51,8 +52,8 @@ const Header: FC<{
               gap-1 text-[18px] font-[500]
               ${
                 menuActive.menu === 'product' && menuActive.active
-                  ? `text-gray-800`
-                  : `text-gray-400`
+                  ? 'text-gray-800'
+                  : 'text-gray-400'
               }
               text-gray-400 hover:text-gray-800`}
             >
@@ -71,13 +72,32 @@ const Header: FC<{
                 icon={faChevronDown}
               />
             </Link>
-
             <Link
-              onMouseOver={() => onMenuActive(false, '')}
-              href='/solution'
-              className='  text-[18px] font-[500]  text-gray-400 hover:text-gray-800'
+              onMouseOver={() => onMenuActive(true, 'solution')}
+              href=''
+              className={` flex items-center
+              gap-1 text-[18px] font-[500] 
+              ${
+                menuActive.menu === 'solution' && menuActive.active
+                  ? 'text-gray-800'
+                  : 'text-gray-400'
+              }
+              text-gray-400 hover:text-gray-800`}
             >
               Solution
+              <FontAwesomeIcon
+                className={`
+                
+                 transition-all
+                ${
+                  menuActive.menu === 'solution' && menuActive.active
+                    ? ' -rotate-180 pb-1   '
+                    : ''
+                }
+                `}
+                size='sm'
+                icon={faChevronDown}
+              />
             </Link>
 
             <Link
@@ -169,6 +189,36 @@ const Header: FC<{
             >
               <Menu.Items>
                 <Product menu={menuActive.menu} />
+              </Menu.Items>
+            </Transition>
+          </Menu>
+        </div>
+      }
+      {
+        <div
+          className={`
+          
+        ${
+          menuActive.active && menuActive.menu === 'solution'
+            ? `  -translate-y-16 transform opacity-100 transition duration-200 ease-out  `
+            : ` translate-y-4 transform opacity-0 duration-200 `
+        }`}
+        >
+          <Menu
+            as='div'
+            className={' absolute -left-[10px] top-[64px] z-10  h-full w-full'}
+          >
+            <Transition
+              show={menuActive.active && menuActive.menu === 'solution'}
+              enter='transition ease-out duration-100'
+              enterFrom='transform opacity-0 scale-100'
+              enterTo='transform opacity-100 scale-100'
+              leave='transition ease-in duration-100'
+              leaveFrom='transform opacity-100 scale-100'
+              leaveTo='transform opacity-0 scale-100'
+            >
+              <Menu.Items>
+                <Solution menu={menuActive.menu} />
               </Menu.Items>
             </Transition>
           </Menu>
