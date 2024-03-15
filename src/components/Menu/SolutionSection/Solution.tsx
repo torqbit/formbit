@@ -1,7 +1,10 @@
 import {
+  faBowlFood,
   faBoxOpen,
   faBuilding,
   faBus,
+  faCalendar,
+  faCamera,
   faDumbbell,
   faGift,
   faGraduationCap,
@@ -56,19 +59,35 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
       icon: <FontAwesomeIcon icon={faHotel} />,
       name: 'Hotel',
     },
+    {
+      icon: <FontAwesomeIcon icon={faMoneyBill} />,
+      name: 'Agencies',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCalendar} />,
+      name: 'Event planner',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faBowlFood} />,
+      name: 'Restaurants',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCamera} />,
+      name: 'Social Media',
+    },
   ];
 
   return (
     <>
       <section
-        className={`absolute left-40 z-20 m-auto ml-[180px] mt-[2px] w-[700px] rounded-lg  bg-white p-2 `}
+        className={`absolute left-40 z-20 m-auto ml-[180px] mt-[2px] w-[525px] rounded-lg bg-white  p-9 `}
       >
         <div>
-          <h3 className='mb-0 ml-6 mt-5 text-[18px] font-medium uppercase text-[#666]'>
+          <h3 className='mb-0 text-[18px] font-medium uppercase text-[#666]'>
             For Education
           </h3>
 
-          <div className='ml-7 flex  w-[415px] cursor-pointer justify-between  '>
+          <div className='flex  w-[415px] cursor-pointer justify-between  '>
             {Stage.map((item, i) => {
               return (
                 <Menu.Item key={i}>
@@ -85,11 +104,11 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
               );
             })}
           </div>
-          <div className='mb-2 mt-3 w-[700px] border-b-2 border-dashed' />
-          <h3 className='ml-6 mt-6  text-[18px] font-medium uppercase text-[#666]'>
+          <div className='mb-2 ml-[-30px] mt-3 w-[700px] border-b-2 border-dashed' />
+          <h3 className=' mt-6  text-[18px] font-medium uppercase text-[#666]'>
             For Businesses
           </h3>
-          <div className='ml-6 grid w-[450px] cursor-pointer grid-flow-col grid-rows-3 justify-between gap-[-10px]'>
+          <div className='grid w-[450px] cursor-pointer grid-flow-col grid-rows-5 justify-between gap-[-10px]'>
             {UseCase.map((item, i) => {
               return (
                 <Menu.Item key={i}>
