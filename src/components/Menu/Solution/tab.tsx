@@ -8,7 +8,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function TabItem() {
-  let [categories] = useState({
+  const [categories] = useState({
     Recent: [
       {
         id: 1,
