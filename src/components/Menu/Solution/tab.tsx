@@ -98,39 +98,37 @@ export default function TabItem() {
               >
                 <ul className='group: mt-5 flex  justify-between gap-6 rounded-xl '>
                   {posts.map((post) => (
-                    <div>
-                      <li
-                        key={post.id}
-                        className='group relative w-[580px] rounded-md bg-white p-8  hover:shadow-2xl'
-                      >
-                        <h3 className='group text-2xl font-medium leading-5'>
-                          {post.title}
-                        </h3>
+                    <li
+                      key={post.id}
+                      className='group relative w-[580px] rounded-md bg-white p-8  hover:shadow-2xl'
+                    >
+                      <h3 className='group text-2xl font-medium leading-5'>
+                        {post.title}
+                      </h3>
 
-                        <ul className='group mt-4 flex w-[500px] space-x-1 text-xl font-normal text-[#666]'>
-                          <li>{post.shareCount} shares</li>
-                        </ul>
-                        <button className='mt-4 flex items-center font-medium text-[#666] group-hover:text-black '>
-                          Learn more
-                          <FontAwesomeIcon
-                            className='ml-2 group-hover:text-lg'
-                            icon={faArrowRight}
-                          />
-                        </button>
-                        <a
-                          href='#'
-                          className={classNames(
-                            'absolute inset-0 rounded-md',
-                            'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
-                          )}
+                      <ul className='group mt-4 flex w-[500px] space-x-1 text-xl font-normal text-[#666]'>
+                        <li>{post.shareCount} shares</li>
+                      </ul>
+                      <button className='mt-4 flex items-center font-medium text-[#666] group-hover:text-black '>
+                        Learn more
+                        <FontAwesomeIcon
+                          className='ml-2 group-hover:text-lg'
+                          icon={faArrowRight}
                         />
-                        <img
-                          className='mt-6'
-                          src='https://placehold.co/600x400'
-                          alt=''
-                        />
-                      </li>
-                    </div>
+                      </button>
+                      <a
+                        href='#'
+                        className={classNames(
+                          'absolute inset-0 rounded-md',
+                          'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
+                        )}
+                      />
+                      <img
+                        className='mt-6'
+                        src='https://placehold.co/600x400'
+                        alt=''
+                      />
+                    </li>
                   ))}
                 </ul>
               </Tab.Panel>
