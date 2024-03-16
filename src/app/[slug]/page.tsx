@@ -45,7 +45,7 @@ const SolutionPage = ({ params }: { params: { slug: string } }) => {
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
       <HeroSolution
-        title={`This page show ${params.slug} contents`}
+        title={`${params.slug} contents`}
         description={
           ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         }
