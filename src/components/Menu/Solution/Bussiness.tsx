@@ -28,7 +28,7 @@ const View: FC<{
             return (
               <div
                 key={i}
-                className='h-[420px] cursor-pointer place-content-center rounded-md bg-white p-12 hover:shadow-md'
+                className='h-[420px] cursor-pointer place-content-center rounded-md bg-white p-12 hover:shadow-2xl'
               >
                 <div>
                   <h4 className='pb-4 text-4xl font-medium text-black'>

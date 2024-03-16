@@ -16,7 +16,7 @@ const HeroSolution: FC<{
           </h1>
           <p className='max-w-[400px] py-4 text-[#666]'>{description}</p>
           <div className='flex gap-4 pb-4'>
-            <button className='flex h-[30px] w-[110px] items-center justify-between rounded-full bg-[#666] p-2 font-[500] text-[#fff]'>
+            <button className='flex h-[30px] w-[110px] items-center justify-between rounded-full bg-[#666] p-3 text-sm font-[500] text-[#fff] hover:bg-black hover:text-white'>
               Start Now
               <FontAwesomeIcon
                 className='h-[13px] w-[13px]'

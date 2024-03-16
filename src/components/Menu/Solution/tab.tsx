@@ -67,19 +67,19 @@ export default function TabItem() {
 
   return (
     <section className=' bg-[#eee] py-10'>
-      <div className='m-auto max-w-[1200px]'>
+      <div className='m-auto w-[1200px]'>
         <Tab.Group>
-          <Tab.List className='flex w-[100%] space-x-1 rounded-xl bg-white p-1'>
+          <Tab.List className='space-x- flex w-[100%] hover:text-black'>
             {Object.keys(categories).map((category) => (
               <Tab
                 key={category}
                 className={({ selected }) =>
                   classNames(
-                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
-                    'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                    'w-full py-5 text-base font-medium leading-5',
+                    ' ring-white/60',
                     selected
-                      ? 'bg-white text-black shadow'
-                      : 'hover:bg-gray/[0.12] text-[#666] hover:text-black'
+                      ? ' border-t-4 border-[#666] text-black'
+                      : 'hover:bg-gray/[0.12] border-t-4 border-white text-[#666] hover:text-black'
                   )
                 }
               >
@@ -92,41 +92,45 @@ export default function TabItem() {
               <Tab.Panel
                 key={idx}
                 className={classNames(
-                  'rounded-xl bg-white p-1',
+                  'rounded-xl p-1',
                   'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
                 )}
               >
-                <ul className='flex h-[550px] w-[1200px] justify-between gap-6'>
+                <ul className='group: mt-5 flex  justify-between gap-6 rounded-xl '>
                   {posts.map((post) => (
-                    <li
-                      key={post.id}
-                      className='relative w-[600px] rounded-md p-8 shadow-md hover:bg-gray-100'
-                    >
-                      <h3 className='text-2xl font-medium leading-5'>
-                        {post.title}
-                      </h3>
+                    <div>
+                      <li
+                        key={post.id}
+                        className='group relative w-[580px] rounded-md bg-white p-8  hover:shadow-2xl'
+                      >
+                        <h3 className='group text-2xl font-medium leading-5'>
+                          {post.title}
+                        </h3>
 
-                      <ul className='mt-4 flex w-[400px] space-x-1 text-xl font-normal text-gray-500'>
-                        <li>{post.shareCount} shares</li>
-                      </ul>
-                      <button className='mt-4 flex items-center'>
-                        Learn more
-                        <FontAwesomeIcon className='ml-2' icon={faArrowRight} />
-                      </button>
-                      <img
-                        className='mt-6'
-                        src='https://placehold.co/600x300'
-                        alt=''
-                      />
-
-                      <a
-                        href='#'
-                        className={classNames(
-                          'absolute inset-0 rounded-md',
-                          'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
-                        )}
-                      />
-                    </li>
+                        <ul className='group mt-4 flex w-[500px] space-x-1 text-xl font-normal text-[#666]'>
+                          <li>{post.shareCount} shares</li>
+                        </ul>
+                        <button className='mt-4 flex items-center font-medium text-[#666] group-hover:text-black '>
+                          Learn more
+                          <FontAwesomeIcon
+                            className='ml-2 group-hover:text-lg'
+                            icon={faArrowRight}
+                          />
+                        </button>
+                        <a
+                          href='#'
+                          className={classNames(
+                            'absolute inset-0 rounded-md',
+                            'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
+                          )}
+                        />
+                        <img
+                          className='mt-6'
+                          src='https://placehold.co/600x400'
+                          alt=''
+                        />
+                      </li>
+                    </div>
                   ))}
                 </ul>
               </Tab.Panel>
