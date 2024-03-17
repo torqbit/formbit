@@ -9,20 +9,29 @@ import { useState } from 'react';
 
 const viewData = [
   {
-    icon: <img src='images/logos/asana.png' alt='' />,
+    icon1: (
+      <img className='object-cover' src='images/logos/rm-boi.png' alt='' />
+    ),
+    icon2: (
+      <img className='object-cover' src='images/logos/rm-sbi.png' alt='' />
+    ),
+    icon3: <img className='object-cover' src='images/logos/rm-cb.png' alt='' />,
     title: 'Bank',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
   },
   {
-    icon: <img src='images/logos/asana.png' alt='' />,
+    icon1: <img className='object-cover' src='images/logos/rm-h1.png' alt='' />,
+    icon2: <img className='object-cover' src='images/logos/rm-h2.png' alt='' />,
+    icon3: <img className='object-cover' src='images/logos/rm-h3.png' alt='' />,
     title: 'Hotel',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
   },
   {
-    icon: <img src='images/logos/asana.png' alt='' />,
-
+    icon1: <img className='object-cover' src='images/logos/rm-s1.png' alt='' />,
+    icon2: <img className='object-cover' src='images/logos/rm-s2.png' alt='' />,
+    icon3: <img className='object-cover' src='images/logos/rm-s3.png' alt='' />,
     title: 'Shop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
@@ -45,7 +54,7 @@ const SolutionPage = ({ params }: { params: { slug: string } }) => {
     >
       <Header menuActive={menuActive} onMenuActive={onMenuActive} />
       <HeroSolution
-        title={`${params.slug} contents`}
+        title={`${params.slug}`}
         description={
           ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore, sequi eos, beatae iste autem debitis, ducimus illo dolor eaque non?          '
         }

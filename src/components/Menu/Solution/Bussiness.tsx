@@ -7,7 +7,9 @@ const View: FC<{
   title: string;
   description: string;
   viewData: {
-    icon: ReactNode;
+    icon1: ReactNode;
+    icon2: ReactNode;
+    icon3: ReactNode;
     title: string;
     description: string;
   }[];
@@ -28,7 +30,7 @@ const View: FC<{
             return (
               <div
                 key={i}
-                className='h-[420px] cursor-pointer place-content-center rounded-md bg-white p-12 hover:shadow-2xl'
+                className='h-[440px] cursor-pointer place-content-center rounded-md bg-white p-12 hover:shadow-2xl'
               >
                 <div>
                   <h4 className='pb-4 text-4xl font-medium text-black'>
@@ -45,10 +47,10 @@ const View: FC<{
                     />
                   </button>
                   <hr className='mt-16' />
-                  <div className='mt-10 flex h-[20px] w-[81px] gap-6'>
-                    {data.icon}
-                    {data.icon}
-                    {data.icon}
+                  <div className='mt-5 flex h-[70px] w-[90px]	 gap-9 object-cover'>
+                    {data.icon1}
+                    {data.icon2}
+                    {data.icon3}
                   </div>
                 </div>
               </div>
