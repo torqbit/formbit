@@ -5,33 +5,48 @@ import Header from '@/components/Header/Header';
 import Bussiness from '@/components/Menu/Solution/Bussiness';
 import HeroSolution from '@/components/Menu/Solution/HeroSolution';
 import TabItem from '@/components/Menu/Solution/tab';
+import Sbi from '@/components/logo/Sbi';
+
 import { useState } from 'react';
+import Un from '@/components/logo/Un';
+import Atlas from '@/components/logo/Atlas';
+import Oberoi from '@/components/logo/Oberoi';
+import Taj from '@/components/logo/Taj';
+import Royal from '@/components/logo/Royal';
+import Kfc from '@/components/logo/Kfc';
+import Hfc from '@/components/logo/Hfc';
 
 const viewData = [
   {
-    icon1: (
-      <img className='object-cover' src='images/logos/rm-boi.png' alt='' />
-    ),
-    icon2: (
-      <img className='object-cover' src='images/logos/rm-sbi.png' alt='' />
-    ),
-    icon3: <img className='object-cover' src='images/logos/rm-cb.png' alt='' />,
+    icon1: <Sbi />,
+    name1: 'Sbi',
+    icon2: <Un />,
+    name2: 'UB',
+    icon3: <img src='images/logos/cb.svg' alt='' />,
+    name3: 'CB',
+
     title: 'Bank',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
   },
   {
-    icon1: <img className='object-cover' src='images/logos/rm-h1.png' alt='' />,
-    icon2: <img className='object-cover' src='images/logos/rm-h2.png' alt='' />,
-    icon3: <img className='object-cover' src='images/logos/rm-h3.png' alt='' />,
+    name1: 'ATLAS',
+    name2: 'TAJ',
+    name3: 'Oberoi',
+    icon1: <Atlas />,
+    icon2: <Taj />,
+    icon3: <Oberoi />,
     title: 'Hotel',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
   },
   {
-    icon1: <img className='object-cover' src='images/logos/rm-s1.png' alt='' />,
-    icon2: <img className='object-cover' src='images/logos/rm-s2.png' alt='' />,
-    icon3: <img className='object-cover' src='images/logos/rm-s3.png' alt='' />,
+    name1: 'KFC',
+    name2: 'HFC',
+    name3: 'ROYAL',
+    icon1: <Kfc />,
+    icon2: <Hfc />,
+    icon3: <Royal />,
     title: 'Shop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
