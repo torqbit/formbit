@@ -27,24 +27,24 @@ const View: FC<{
             </p>
           </div>
         </div>
-        <div className='flex w-full flex-col items-start justify-between pt-4 lg:flex-row'>
+        <div className='flex w-full flex-col items-start justify-between gap-6 pt-4 lg:flex-row'>
           {viewData.map((data, i) => {
             return (
               <div
                 key={i}
-                className='group h-[440px] scale-95 cursor-pointer
-                place-content-center
-                 rounded-md border-t-8 border-[#666] bg-white p-12 transition-all	 
-                 duration-500 ease-in-out hover:scale-100	 hover:shadow-2xl	'
+                className='group h-[440px] w-full cursor-pointer place-content-center
+                rounded-md
+                 border-t-8 border-[#666] bg-white p-12 transition-all
+                 duration-500 ease-in hover:scale-105  hover:shadow-2xl'
               >
                 <div>
                   <h4 className='group pb-4 text-4xl font-medium text-black'>
                     {data.title}
                   </h4>
-                  <p className='group max-w-[300px] text-xl font-normal text-[#666]'>
+                  <p className='group max-w-[500px] text-xl font-normal text-[#666]'>
                     {data.description}
                   </p>
-                  <button className='mt-4 text-xl text-[#666]  group-hover:text-black'>
+                  <button className='mt-5 flex items-baseline justify-between text-xl font-medium text-[#666]  group-hover:text-black'>
                     Learn more
                     <FontAwesomeIcon
                       className='ml-1 h-[13px] w-[13px] group-hover:hidden'
@@ -55,19 +55,20 @@ const View: FC<{
                       icon={faArrowRight}
                     />
                   </button>
-                  <hr className='mt-16' />
-                  <div className=' scale-none mt-5 flex h-[70px]	w-[90px] items-center justify-between gap-9 object-cover	 text-[#666] transition-none'>
-                    <div className=' flex items-center justify-between hover:fill-current group-hover:text-[#888]'>
-                      {data.icon1}
-                      <h1 className='group ml-1 text-xl'>{data.name1}</h1>
+                  <hr className='mt-[105px]' />
+                  <div className='mt-5 flex h-[70px]	items-center justify-between gap-9 object-cover	 text-[#666] transition-none'>
+                    <div className=' flex items-center justify-between hover:fill-current hover:text-[#888]'>
+                      <span>{data.icon1}</span>
+                      <h1 className=' ml-2 text-xl'>{data.name1}</h1>
                     </div>
-                    <div className='flex  group-hover:text-[#888]'>
-                      {data.icon2}
-                      <h1 className='group ml-1 text-xl'>{data.name2}</h1>
+                    <div className=' flex items-center justify-between hover:fill-current hover:text-[#888]'>
+                      <span>{data.icon2}</span>
+                      <h1 className=' ml-2 text-xl'>{data.name2}</h1>
                     </div>
-                    <div className='flex group-hover:text-[#888]'>
-                      {data.icon3}
-                      <h1 className='group ml-1 text-xl'>{data.name3}</h1>
+                    <div className=' flex items-center justify-between hover:fill-current hover:text-[#888]'>
+                      <span>{data.icon3}</span>
+
+                      <h1 className=' ml-2 text-xl'>{data.name3}</h1>
                     </div>
                   </div>
                 </div>
