@@ -120,7 +120,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
               );
             })}
           </div>
-          <div className='mb-2 ml-[-30px] mt-3 w-[700px] border-b-2 border-dashed' />
+          <div className='mb-2 ml-[-30px] mt-3 w-[520px] overflow-hidden	 border-b-2 border-dashed' />
           <h3 className=' mt-6  text-[18px] font-medium uppercase text-[#666]'>
             For Businesses
           </h3>

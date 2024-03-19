@@ -23,7 +23,7 @@ const viewData = [
     icon3: <Oberoi />,
     title: 'Hotel',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore',
   },
   {
     name1: 'VOLVO',
@@ -34,7 +34,7 @@ const viewData = [
     icon3: <Mi />,
     title: 'Shop',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam ',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore',
   },
 ];
 
