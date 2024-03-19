@@ -3,15 +3,15 @@
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import Bussiness from '@/components/Menu/Solution/Bussiness';
-import HeroSolution from '@/components/Menu/Solution/HeroSolution';
 import TabItem from '@/components/Menu/Solution/tab';
 import { useState } from 'react';
 import Oberoi from '@/components/logo/Guest';
+import HeroSolution from '@/components/Menu/Solution/HeroSolution';
 import Blue from '@/components/logo/Blue';
-import Petropol from '@/components/logo/Petropol';
-import Volvo from '@/components/logo/Volvo';
 import Lg from '@/components/logo/Lg';
 import Mi from '@/components/logo/Mi';
+import Petropol from '@/components/logo/Petropol';
+import Volvo from '@/components/logo/Volvo';
 
 const viewData = [
   {
