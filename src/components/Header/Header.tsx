@@ -7,7 +7,7 @@ import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import Solution from '@/components/Menu/SolutionSection/Solution';
+import Solution from '@/components/Menu/Solution';
 
 const Header: FC<{
   menuActive: { active: boolean; menu: string };
