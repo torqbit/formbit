@@ -89,22 +89,22 @@ export default function TabItem() {
           </Tab.List>
           <Tab.Panels className='mt-2'>
             {Object.values(categories).map((posts, idx) => (
-              <Tab.Panel key={idx} className={classNames('rounded-xl p-1', '')}>
+              <Tab.Panel key={idx} className={classNames('rounded-xl ', '')}>
                 <div className='group: mt-5 flex  justify-between gap-6 rounded-xl '>
                   {posts.map((post) => (
-                    <div key={post.id} className='group'>
+                    <div key={post.id} className='group  '>
                       <div
-                        className='absolute h-[690px] w-[565px] 
-                  transform-none cursor-pointer place-content-center rounded-lg
-                border-t-8 border-[#666]
-                bg-white       
-                duration-200
-                 ease-in group-hover:scale-[1.021]   	
+                        className='absolute h-[690px] w-[570px] transform-none 
+                  cursor-pointer place-content-center rounded-lg bg-white
+                
+                p-1
+                 shadow-2xl duration-200   ease-in	 group-hover:scale-[1.021]
                   group-hover:shadow-[0_80px_150px_-25px_rgba(0,0,0,0.3)]'
                       ></div>
-                      <div className='relative'>
+                      <div className='relative     '>
                         <div
-                          className='mt-2 p-8
+                          className=' w-[570px] 
+                          p-9 
 '
                         >
                           <button className='mb-6 w-[70px] rounded-full bg-[#eee] p-1 text-xs font-medium'>
@@ -131,15 +131,9 @@ export default function TabItem() {
                               />
                             </button>
                           </div>
-                          <a
-                            href='#'
-                            className={classNames(
-                              'absolute inset-0 rounded-md',
-                              'ring-blue-400 focus:z-10 focus:outline-none focus:ring-2'
-                            )}
-                          />
+                          <a href='#' className={classNames('', '')} />
                         </div>
-                        <div className='absolute p-1 transition-all group-hover:scale-[1.021]'>
+                        <div className='absolute bg-white p-1 transition-all group-hover:scale-[1.021]'>
                           <img
                             className='mt-4'
                             src='https://placehold.co/600x400'
