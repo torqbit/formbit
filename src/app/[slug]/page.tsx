@@ -17,7 +17,7 @@ const viewData = [
   {
     name1: 'BLUE',
     name2: 'PETROPOL',
-    name3: 'GUEST',
+    name3: 'QUALITY',
     icon1: <Blue />,
     icon2: <Petropol />,
     icon3: <Oberoi />,
@@ -26,7 +26,7 @@ const viewData = [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore',
   },
   {
-    name1: 'VOLVO',
+    name1: 'MERCEDES',
     name2: 'I-TECH',
     name3: 'MI',
     icon1: <Volvo />,

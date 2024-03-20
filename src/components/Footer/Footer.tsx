@@ -201,7 +201,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className=' overflow-hidden bg-gray-50 py-20 '>
+    <footer className='relative overflow-hidden bg-gray-50 py-20 '>
       <div className='mx-auto my-0 max-w-[1200px] px-8 '>
         <Link
           href='#'
