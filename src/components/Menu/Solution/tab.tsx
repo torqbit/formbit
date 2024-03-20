@@ -123,9 +123,9 @@ export default function TabItem() {
                                 Learn More
                               </div>
 
-                              <span className='relative ml-2 hidden h-1 w-[13px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
+                              <span className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
                               <FontAwesomeIcon
-                                className=' absolute translate-x-[95px] transition-all group-hover:translate-x-[100px] group-hover:text-black'
+                                className=' absolute translate-x-[95px] transition-all group-hover:translate-x-[99px] group-hover:text-black'
                                 icon={faGreaterThan}
                                 size='sm'
                               />
