@@ -32,17 +32,17 @@ const View: FC<{
             return (
               <div
                 key={i}
-                className='group h-[480px] w-full cursor-pointer place-content-center
+                className='group h-[480px] w-full transform-none cursor-pointer place-content-center
                 rounded-lg border-t-8
                 border-[#666]
-                 bg-white p-12  duration-300  ease-in	
+                 bg-white p-12  duration-200  ease-in	
                  hover:scale-[1.021] hover:shadow-[0_80px_150px_-25px_rgba(0,0,0,0.3)]'
               >
                 <div className=''>
                   <h4 className='group pb-4 pt-8 text-4xl font-medium text-black'>
                     {data.title}
                   </h4>
-                  <p className='group max-w-[450px] text-xl font-normal text-[#666]'>
+                  <p className='group  sticky w-[450px] text-xl	 font-normal text-[#666]'>
                     {data.description}
                   </p>
                   <button className='mt-5 flex items-center	 justify-between text-xl font-medium text-[#666]  group-hover:text-black'>
