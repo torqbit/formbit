@@ -90,7 +90,7 @@ export default function TabItem() {
           <Tab.Panels className='mt-2'>
             {Object.values(categories).map((posts, idx) => (
               <Tab.Panel key={idx} className={classNames('rounded-xl ', '')}>
-                <div className='group: mt-5 flex  justify-between gap-6 rounded-xl '>
+                <div className='mt-5 flex cursor-pointer  justify-between gap-6 rounded-xl '>
                   {posts.map((post) => (
                     <div key={post.id} className='group  '>
                       <div
@@ -119,21 +119,33 @@ export default function TabItem() {
                           </div>
                           <div className='group mt-8 flex cursor-pointer items-center justify-between    font-[500] text-[#666]  hover:text-black'>
                             <button className='group flex w-[160px]  items-center  font-[500] text-[#666] hover:text-black '>
-                              <div className='text-base font-bold'>
-                                Learn More
+                              <div className='text-base font-bold group-hover:text-black'>
+                                Learn more
                               </div>
 
                               <span className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
-                              <FontAwesomeIcon
-                                className=' absolute translate-x-[95px] transition-all group-hover:translate-x-[99px] group-hover:text-black'
-                                icon={faGreaterThan}
-                                size='sm'
-                              />
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                stroke-width='3'
+                                stroke='currentColor'
+                                height={15}
+                                fontWeight={800}
+                                width={15}
+                                className=' absolute translate-x-[93px] transition-all group-hover:translate-x-[97px] group-hover:text-black'
+                              >
+                                <path
+                                  stroke-linecap='round'
+                                  stroke-linejoin='round'
+                                  d='m8.25 4.5 7.5 7.5-7.5 7.5'
+                                />
+                              </svg>
                             </button>
                           </div>
                           <a href='#' className={classNames('', '')} />
                         </div>
-                        <div className='absolute bg-white p-1 transition-all group-hover:scale-[1.021]'>
+                        <div className='absolute p-1 transition-all group-hover:scale-[1.021]'>
                           <img
                             className='mt-4'
                             src='https://placehold.co/600x400'

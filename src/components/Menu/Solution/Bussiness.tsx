@@ -18,7 +18,7 @@ const View: FC<{
 }> = ({ title, description, viewData }) => {
   return (
     <section className='  h-full  bg-[#eee] py-2 lg:py-20'>
-      <div className=' mx-auto my-0 w-[1200px]  px-8 lg:px-0 '>
+      <div className=' mx-auto my-0 w-[1200px]   px-8 lg:px-0'>
         <div className=' w-full  py-4 text-left lg:text-center'>
           <h1 className='py-4 text-left text-5xl text-black '>{title}</h1>
           <div className='flex'>
@@ -27,7 +27,7 @@ const View: FC<{
             </p>
           </div>
         </div>
-        <div className='flex flex-col  items-start gap-[130px]  pt-8 lg:flex-row'>
+        <div className='flex cursor-pointer flex-col  items-start gap-[130px]  pt-8 lg:flex-row'>
           {viewData.map((data, i) => {
             return (
               <div key={i} className='group shadow-2xl '>
@@ -50,16 +50,30 @@ const View: FC<{
                     {data.description}
                   </p>
 
-                  <div className='group mt-6 flex cursor-pointer items-center justify-between    font-[500] text-[#666]  hover:text-black'>
+                  <div className='group mt-6 flex  items-center justify-between    text-[#666]  hover:text-black'>
                     <button className='group flex w-[160px]  items-center text-base  font-[500] text-[#666] hover:text-black '>
-                      <div className='font-bold'>Learn More</div>
+                      <div className='font-bold group-hover:text-black'>
+                        Learn more
+                      </div>
 
-                      <span className='relative ml-2 hidden  h-[0.14rem] w-[13px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
-                      <FontAwesomeIcon
-                        className=' absolute translate-x-[95px] transition-all group-hover:translate-x-[99px] group-hover:text-black'
-                        icon={faGreaterThan}
-                        size='sm'
-                      />
+                      <div className='relative ml-2 hidden  h-1 w-[12px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></div>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='3'
+                        stroke='currentColor'
+                        height={15}
+                        fontWeight={800}
+                        width={15}
+                        className=' absolute translate-x-[93px] transition-all group-hover:translate-x-[97px] group-hover:text-black'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='m8.25 4.5 7.5 7.5-7.5 7.5'
+                        />
+                      </svg>
                     </button>
                   </div>
 
