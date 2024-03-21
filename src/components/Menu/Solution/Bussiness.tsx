@@ -32,7 +32,7 @@ const View: FC<{
             return (
               <div key={i} className='group shadow-2xl '>
                 <div
-                  className='absolute h-[465px] w-[580px] 
+                  className='absolute h-[460px] w-[580px] 
                   transform-none cursor-pointer place-content-center rounded-lg
                 border-t-8 border-[#666]
                 bg-white       
@@ -40,23 +40,21 @@ const View: FC<{
                  ease-in group-hover:scale-[1.021]   	
                   group-hover:shadow-[0_80px_150px_-25px_rgba(0,0,0,0.3)]'
                 ></div>
-
-                {/* scale-[1.021] */}
                 <div className='relative ml-12 mt-14 w-[450px]'>
                   <h4 className='group pb-5 pt-8 text-4xl font-medium text-black'>
                     {data.title}
                   </h4>
-                  <p className='group  sticky w-[450px] text-xl	 font-normal text-[#666]'>
+                  <p className='group sticky w-[450px] text-xl	 font-normal text-[#666]'>
                     {data.description}
                   </p>
 
-                  <div className='group mt-6 flex  items-center justify-between    text-[#666]  hover:text-black'>
+                  <div className='mt-[20px]'>
                     <button className='group flex w-[160px]  items-center text-base  font-[500] text-[#666] hover:text-black '>
                       <div className='font-bold group-hover:text-black'>
                         Learn more
                       </div>
 
-                      <div className='relative ml-2 hidden  h-1 w-[12px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></div>
+                      <div className='relative ml-2 hidden  h-[2px] w-[12px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></div>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
