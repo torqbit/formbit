@@ -1,4 +1,4 @@
-const Oberoi = () => {
+const Quality = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -35,4 +35,4 @@ const Oberoi = () => {
     </svg>
   );
 };
-export default Oberoi;
+export default Quality;

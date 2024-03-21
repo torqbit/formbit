@@ -21,7 +21,7 @@ const HeroSolution: FC<{
             <button className='group flex w-[130px]  cursor-pointer  items-center rounded-full bg-[#666]  py-2  text-base font-[500]  text-white   hover:bg-black hover:text-white '>
               <div className='ml-4'> Start now</div>
 
-              <span className='relative ml-2 hidden  h-[2px] w-[12px] bg-white transition-all group-hover:inline-flex'></span>
+              <span className='relative ml-2 hidden h-[2px]  w-[12px] bg-white transition-all delay-700 duration-300 ease-in group-hover:inline-flex'></span>
 
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -44,7 +44,7 @@ const HeroSolution: FC<{
             <button className='group flex w-[160px]  items-center text-base  font-[500] text-[#666] hover:text-black '>
               <div className=''> Contact sales</div>
 
-              <span className='relative ml-2 hidden h-[2px] w-[12px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
+              <span className='relative ml-2 hidden h-[2px] w-[12px] bg-[#666] transition-all delay-700 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></span>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'

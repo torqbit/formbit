@@ -4,14 +4,14 @@ import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import TabItem from '@/components/Menu/Solution/tab';
 import { useState } from 'react';
-import Oberoi from '@/components/logo/Guest';
 import HeroSolution from '@/components/Menu/Solution/HeroSolution';
 import Blue from '@/components/logo/Blue';
-import Lg from '@/components/logo/Lg';
 import Mi from '@/components/logo/Mi';
 import Petropol from '@/components/logo/Petropol';
-import Volvo from '@/components/logo/Volvo';
 import Bussiness from '@/components/Menu/Solution/Bussiness';
+import Quality from '@/components/logo/Quality';
+import Apple from '@/components/logo/Apple';
+import Dell from '@/components/logo/Dell';
 
 const viewData = [
   {
@@ -20,19 +20,19 @@ const viewData = [
     name3: 'QUALITY',
     icon1: <Blue />,
     icon2: <Petropol />,
-    icon3: <Oberoi />,
+    icon3: <Quality />,
     title: 'Hotel',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore',
   },
   {
-    name1: 'MERCEDES',
+    name1: 'DELL',
     name2: 'I-TECH',
     name3: 'MI',
-    icon1: <Volvo />,
-    icon2: <Lg />,
+    icon1: <Dell />,
+    icon2: <Apple />,
     icon3: <Mi />,
-    title: 'Shop',
+    title: 'Retail Shop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quae laborum asperiores dicta numquam quam quidem nemo amet dolore',
   },

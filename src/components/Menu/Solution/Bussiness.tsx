@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FC, ReactNode } from 'react';
 
 const View: FC<{
@@ -54,7 +52,7 @@ const View: FC<{
                         Learn more
                       </div>
 
-                      <div className='relative ml-2 hidden  h-[2px] w-[12px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></div>
+                      <div className='relative ml-2 hidden h-[2px] w-[12px] bg-[#666] transition-all delay-700 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></div>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'

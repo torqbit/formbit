@@ -1,4 +1,4 @@
-const Hfc = () => {
+const Apple = () => {
   return (
     <svg
       height='40'
@@ -14,4 +14,4 @@ const Hfc = () => {
     </svg>
   );
 };
-export default Hfc;
+export default Apple;

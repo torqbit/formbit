@@ -66,7 +66,7 @@ export default function TabItem() {
   });
 
   return (
-    <section className='bg-[#eee] py-10 pb-[450px]'>
+    <section className='bg-[#eee] py-10 pb-[50px]'>
       <div className='m-auto w-[1200px]'>
         <Tab.Group>
           <Tab.List className='space-x- flex w-[100%] hover:text-black'>
@@ -90,11 +90,11 @@ export default function TabItem() {
           <Tab.Panels className='mt-2'>
             {Object.values(categories).map((posts, idx) => (
               <Tab.Panel key={idx} className={classNames('rounded-xl ', '')}>
-                <div className='mt-5 flex cursor-pointer  justify-between gap-6 rounded-xl '>
+                <div className='mt-5 flex cursor-pointer  justify-between  rounded-xl '>
                   {posts.map((post) => (
                     <div key={post.id} className='group  '>
                       <div
-                        className='absolute h-[690px] w-[570px] transform-none 
+                        className='absolute h-[713px] w-[580px] transform-none 
                   cursor-pointer place-content-center rounded-lg bg-white
                 
                 p-1
@@ -123,7 +123,7 @@ export default function TabItem() {
                                 Learn more
                               </div>
 
-                              <span className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all group-hover:inline-flex group-hover:bg-black'></span>
+                              <span className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all delay-700 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></span>
                               <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 fill='none'
@@ -145,13 +145,14 @@ export default function TabItem() {
                           </div>
                           <a href='#' className={classNames('', '')} />
                         </div>
-                        <div className='absolute p-1 transition-all group-hover:scale-[1.021]'>
-                          <img
-                            className='mt-4'
-                            src='https://placehold.co/600x400'
-                            alt=''
-                          />
-                        </div>
+                        <img
+                          className='relative ml-1
+                           mt-4  overflow-hidden rounded-md transition-all group-hover:translate-y-1 group-hover:scale-[1.021]
+
+                            '
+                          src='https://placehold.co/573x400'
+                          alt=''
+                        />
                       </div>
                     </div>
                   ))}
