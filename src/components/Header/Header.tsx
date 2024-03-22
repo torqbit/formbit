@@ -18,6 +18,7 @@ const Header: FC<{
 
   const onAnchorClick = () => {
     setSideNav(false);
+    setActive(false);
   };
 
   return (
@@ -139,7 +140,7 @@ const Header: FC<{
          * responsive
          */}
 
-        <div className=' relative  lg:hidden'>
+        <div className='   lg:hidden'>
           <SideNav
             isOpen={showSideNav}
             onAnchorClick={onAnchorClick}
@@ -159,6 +160,7 @@ const Header: FC<{
             toggled={showSideNav}
             onToggle={(toggle: boolean | ((prevState: boolean) => boolean)) => {
               setSideNav(!showSideNav);
+              setActive(false);
             }}
           />
         </div>
