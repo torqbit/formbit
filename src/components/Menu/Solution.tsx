@@ -21,16 +21,19 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu } from '@headlessui/react';
 import { FC } from 'react';
+import Link from 'next/link';
 
 const Solution: FC<{ menu: string }> = ({ menu }) => {
   const Stage = [
     {
       icon: <FontAwesomeIcon icon={faBuilding} />,
       name: 'School',
+      href: '/school',
     },
     {
       icon: <FontAwesomeIcon icon={faUniversity} />,
       name: 'University',
+      href: '/university',
     },
   ];
 
@@ -38,42 +41,53 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
     {
       icon: <FontAwesomeIcon icon={faPiggyBank} />,
       name: 'Bank',
+      href: '/bank',
     },
     {
       icon: <FontAwesomeIcon icon={faHospital} />,
       name: 'Hospital',
+      href: '/hospital',
     },
     {
       icon: <FontAwesomeIcon icon={faShop} />,
       name: 'Shop',
+      href: '/shop',
     },
     {
       icon: <FontAwesomeIcon icon={faDumbbell} />,
       name: 'Gym',
+      href: '/gym',
     },
     {
       icon: <FontAwesomeIcon icon={faBus} />,
       name: 'Travel Service',
+      href: '/travel',
     },
+
     {
       icon: <FontAwesomeIcon icon={faHotel} />,
       name: 'Hotel',
+      href: '/hotel',
     },
     {
       icon: <FontAwesomeIcon icon={faMoneyBill} />,
       name: 'Agencies',
+      href: '/agencies',
     },
     {
       icon: <FontAwesomeIcon icon={faCalendar} />,
       name: 'Event planner',
+      href: '/event',
     },
     {
       icon: <FontAwesomeIcon icon={faBowlFood} />,
       name: 'Restaurants',
+      href: '/restaurant',
     },
     {
       icon: <FontAwesomeIcon icon={faCamera} />,
       name: 'Social Media',
+      href: '/social',
     },
   ];
 
@@ -91,15 +105,17 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
             {Stage.map((item, i) => {
               return (
                 <Menu.Item key={i}>
-                  <div
-                    className='flex items-baseline justify-between  text-[#666]
+                  <Link href={item.href}>
+                    <div
+                      className='flex items-baseline justify-between  text-[#666]
  hover:text-[#000]'
-                  >
-                    <a className='h-[16px] w-[16px]'>{item.icon}</a>
-                    <h1 className='ml-2 text-[16px] font-normal '>
-                      {item.name}
-                    </h1>
-                  </div>
+                    >
+                      <a className='h-[16px] w-[16px]'>{item.icon}</a>
+                      <h1 className='ml-2 text-[16px] font-normal  '>
+                        {item.name}
+                      </h1>
+                    </div>
+                  </Link>
                 </Menu.Item>
               );
             })}
@@ -112,15 +128,17 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
             {UseCase.map((item, i) => {
               return (
                 <Menu.Item key={i}>
-                  <div
-                    className='flex items-baseline	
+                  <Link href={item.href}>
+                    <div
+                      className='flex items-baseline	
   text-[#666] hover:text-[#000]  '
-                  >
-                    <a className='h-[16px] w-[16px]'>{item.icon}</a>
-                    <h1 className='pl-3 text-[16px] font-normal '>
-                      {item.name}
-                    </h1>
-                  </div>
+                    >
+                      <a className='h-[16px] w-[16px]'>{item.icon}</a>
+                      <h1 className='pl-3 text-[16px] font-normal  '>
+                        {item.name}
+                      </h1>
+                    </div>
+                  </Link>
                 </Menu.Item>
               );
             })}
