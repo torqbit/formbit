@@ -11,7 +11,7 @@ const HeroSolution: FC<{
     <section className='  h-full  bg-[#eee] py-20'>
       <div className=' mx-auto my-0 flex max-w-[1200px] flex-col-reverse justify-between px-8 lg:mt-16 lg:flex-row lg:px-0 '>
         <div className='flex flex-col items-start justify-start'>
-          <h1 className='mt-2 py-4 text-left text-2xl text-[#000] lg:max-w-[500px] lg:text-6xl'>
+          <h1 className='mt-2 py-4 text-left text-2xl capitalize text-[#000] lg:max-w-[500px] lg:text-6xl'>
             {title}
           </h1>
           <p className='max-w-[500px] py-4 text-xl text-[#666]'>

@@ -28,12 +28,12 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
     {
       icon: <FontAwesomeIcon icon={faBuilding} />,
       name: 'School',
-      href: '/School',
+      href: '/school',
     },
     {
       icon: <FontAwesomeIcon icon={faUniversity} />,
       name: 'University',
-      href: '/University',
+      href: '/university',
     },
   ];
 
@@ -41,53 +41,53 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
     {
       icon: <FontAwesomeIcon icon={faPiggyBank} />,
       name: 'Bank',
-      href: '/Bank',
+      href: '/bank',
     },
     {
       icon: <FontAwesomeIcon icon={faHospital} />,
       name: 'Hospital',
-      href: '/Hospital',
+      href: '/hospital',
     },
     {
       icon: <FontAwesomeIcon icon={faShop} />,
       name: 'Shop',
-      href: '/Shop',
+      href: '/shop',
     },
     {
       icon: <FontAwesomeIcon icon={faDumbbell} />,
       name: 'Gym',
-      href: '/Gym',
+      href: '/gym',
     },
     {
       icon: <FontAwesomeIcon icon={faBus} />,
       name: 'Travel Service',
-      href: '/Travel',
+      href: '/travel',
     },
 
     {
       icon: <FontAwesomeIcon icon={faHotel} />,
       name: 'Hotel',
-      href: '/Hotel',
+      href: '/hotel',
     },
     {
       icon: <FontAwesomeIcon icon={faMoneyBill} />,
       name: 'Agencies',
-      href: '/Agencies',
+      href: '/agencies',
     },
     {
       icon: <FontAwesomeIcon icon={faCalendar} />,
       name: 'Event planner',
-      href: '/Event',
+      href: '/event',
     },
     {
       icon: <FontAwesomeIcon icon={faBowlFood} />,
       name: 'Restaurants',
-      href: '/Restaurant',
+      href: '/restaurant',
     },
     {
       icon: <FontAwesomeIcon icon={faCamera} />,
       name: 'Social Media',
-      href: '/Social',
+      href: '/social',
     },
   ];
 
@@ -111,7 +111,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
  hover:text-[#000]'
                     >
                       <a className='h-[16px] w-[16px]'>{item.icon}</a>
-                      <h1 className='ml-2 text-[16px] font-normal '>
+                      <h1 className='ml-2 text-[16px] font-normal  '>
                         {item.name}
                       </h1>
                     </div>
@@ -134,7 +134,7 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
   text-[#666] hover:text-[#000]  '
                     >
                       <a className='h-[16px] w-[16px]'>{item.icon}</a>
-                      <h1 className='pl-3 text-[16px] font-normal '>
+                      <h1 className='pl-3 text-[16px] font-normal  '>
                         {item.name}
                       </h1>
                     </div>
