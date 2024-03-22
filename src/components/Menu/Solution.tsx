@@ -28,12 +28,12 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
     {
       icon: <FontAwesomeIcon icon={faBuilding} />,
       name: 'School',
-      href: '/school',
+      href: '/School',
     },
     {
       icon: <FontAwesomeIcon icon={faUniversity} />,
       name: 'University',
-      href: '/university',
+      href: '/University',
     },
   ];
 
@@ -41,53 +41,53 @@ const Solution: FC<{ menu: string }> = ({ menu }) => {
     {
       icon: <FontAwesomeIcon icon={faPiggyBank} />,
       name: 'Bank',
-      href: '/bank',
+      href: '/Bank',
     },
     {
       icon: <FontAwesomeIcon icon={faHospital} />,
       name: 'Hospital',
-      href: '/hospital',
+      href: '/Hospital',
     },
     {
       icon: <FontAwesomeIcon icon={faShop} />,
       name: 'Shop',
-      href: '/shop',
+      href: '/Shop',
     },
     {
       icon: <FontAwesomeIcon icon={faDumbbell} />,
       name: 'Gym',
-      href: '/gym',
+      href: '/Gym',
     },
     {
       icon: <FontAwesomeIcon icon={faBus} />,
       name: 'Travel Service',
-      href: '/travel',
+      href: '/Travel',
     },
 
     {
       icon: <FontAwesomeIcon icon={faHotel} />,
       name: 'Hotel',
-      href: '/hotel',
+      href: '/Hotel',
     },
     {
       icon: <FontAwesomeIcon icon={faMoneyBill} />,
       name: 'Agencies',
-      href: '/agencies',
+      href: '/Agencies',
     },
     {
       icon: <FontAwesomeIcon icon={faCalendar} />,
       name: 'Event planner',
-      href: '/event',
+      href: '/Event',
     },
     {
       icon: <FontAwesomeIcon icon={faBowlFood} />,
       name: 'Restaurants',
-      href: '/restaurant',
+      href: '/Restaurant',
     },
     {
       icon: <FontAwesomeIcon icon={faCamera} />,
       name: 'Social Media',
-      href: '/social',
+      href: '/Social',
     },
   ];
 

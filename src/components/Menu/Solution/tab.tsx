@@ -122,8 +122,6 @@ export default function TabItem() {
                               <div className='text-base font-bold group-hover:text-black'>
                                 Learn more
                               </div>
-
-                              <div className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all delay-1000 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></div>
                               <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 fill='none'
@@ -133,7 +131,7 @@ export default function TabItem() {
                                 height={15}
                                 fontWeight={800}
                                 width={15}
-                                className=' absolute translate-x-[93px] transition-all group-hover:translate-x-[97px] group-hover:text-black'
+                                className='opacity-0 transition-all group-hover:translate-x-1 group-hover:text-black group-hover:opacity-[1]'
                               >
                                 <path
                                   stroke-linecap='round'
