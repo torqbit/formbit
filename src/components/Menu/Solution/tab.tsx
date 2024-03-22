@@ -123,7 +123,7 @@ export default function TabItem() {
                                 Learn more
                               </div>
 
-                              <span className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all delay-700 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></span>
+                              <div className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all delay-1000 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></div>
                               <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 fill='none'

@@ -18,11 +18,10 @@ const HeroSolution: FC<{
             {description}
           </p>
           <div className=' flex items-center justify-between gap-4 py-5 pb-4'>
-            <button className='group flex w-[130px]  cursor-pointer  items-center rounded-full bg-[#666]  py-2  text-base font-[500]  text-white   hover:bg-black hover:text-white '>
+            <button className='group flex w-[130px]   cursor-pointer  items-center rounded-full bg-[#666]  py-2  text-base font-[500]  text-white   hover:bg-black hover:text-white '>
               <div className='ml-4'> Start now</div>
 
-              <span className='relative ml-2 hidden h-[2px]  w-[12px] bg-white transition-all delay-700 duration-300 ease-in group-hover:inline-flex'></span>
-
+              <hr className=' ml-2 hidden h-[2px] w-[12px] bg-white transition-all delay-1000 duration-300 ease-in  group-hover:inline-flex' />
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
@@ -43,8 +42,7 @@ const HeroSolution: FC<{
             </button>
             <button className='group flex w-[160px]  items-center text-base  font-[500] text-[#666] hover:text-black '>
               <div className=''> Contact sales</div>
-
-              <span className='relative ml-2 hidden h-[2px] w-[12px] bg-[#666] transition-all delay-700 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></span>
+              <div className='relative ml-2 hidden h-[2px] w-[13px] bg-[#666] transition-all delay-1000 duration-300 ease-in group-hover:inline-flex group-hover:bg-black'></div>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
